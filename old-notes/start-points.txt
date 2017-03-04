@@ -1,0 +1,82 @@
+
+I would like to make a git repo for each language+testFramework combination.
+This would include the visible-files at startup and the Dockerfile +context files
+(eg .jar files).
+A problem with this is that start-point create has to clone from a git repo
+and I don't want to clone the Dockerfile stuff I only want the visible-files stuff.
+I think this is possible.
+For example, suppose I wanted to only git clone the app/ dir of
+https://github.com/cyber-dojo/web.git
+here's what I'd need to do
+
+mkdir partial
+cd partial
+git init
+git remote add origin https://github.com/cyber-dojo/web.git
+git config core.sparseCheckout true
+echo "app/" >> .git/info/sparse-checkout
+git pull --depth=1 origin master
+rm -rf .git
+
+-------------------------------------------------
+
+The idea is that the creation of the start-point looks for manifest.json
+files and *ALSO* for new json files called 'manifest_link.json'
+which contain the URL of where to grab the start-files
+(from the partial git repo as above).
+     { "link" : "https://github.com/cyber-dojo-languages/csharp_nunit.git" }
+
+-------------------------------------------------
+
+Further, the structure could incorporate the major,minor display name, eg
+
+$ cyber-dojo start-point create abc --json=https://raw.githubusercontent.com/cyber-dojo/catalogs/master/all.git
+
+https://raw.githubusercontent.com/cyber-dojo/catalogs/master/all.git
+{
+  "C++" : {
+    "assert" : "https://github.com/cyber-dojo-languages/C++,assert.git",
+    "catch"  : "https://github.com/cyber-dojo-languages/C++,catch.git",
+    "custom" : "localDir"
+  },
+  "Java" : {
+    "JUnit"   : "https://github.com/cyber-dojo-languages/Java,junit.git",
+    "Mockito" : "https://github.com/cyber-dojo-languages/Java,mockito.git",
+  },
+  ...
+}
+
+furthermore, I can use the Composite pattern.
+I can create a catalog manifests for specific collections
+
+eg one for C++
+https://raw.githubusercontent.com/cyber-dojo/catalogs/master/C++.git
+{
+  "C++" : {
+    "assert" : "https://github.com/cyber-dojo-languages/C++,assert.git",
+    "catch"  : "https://github.com/cyber-dojo-languages/C++,catch.git",
+    ...
+  }
+}
+
+and one for Java
+https://raw.githubusercontent.com/cyber-dojo/catalogs/master/Java.git
+
+{
+  "Java" : {
+    "JUnit"   : "https://github.com/cyber-dojo-languages/Java,junit.git",
+    "Mockito" : "https://github.com/cyber-dojo-languages/Java,mockito.git",
+    ...
+  }
+}
+
+and I can then all can become
+https://raw.githubusercontent.com/cyber-dojo/catalogs/master/all.git
+
+{
+  "https://raw.githubusercontent.com/cyber-dojo/catalogs/master/C++.git",
+  "https://raw.githubusercontent.com/cyber-dojo/catalogs/master/Java.git",
+  ...
+}
+
+

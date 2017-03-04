@@ -1,0 +1,35 @@
+
+     Copying files from old-server to new-server using rsync
+     http://www.jveweb.net/en/archives/2011/01/running-rsync-as-a-daemon.html
+
+     On the server I'm copying FROM I created /etc/rsyncd.conf
+     and put the INTERNAL ip address of the machine I'm copying TO in the hosts-allow
+
+     lock file = /var/run/rsync.lock
+     log file = /var/log/rsyncd.log
+     pid file = /var/run/rsyncd.pid
+     [katas]
+         path = /var/www/cyber-dojo/katas
+         comment = cyber-dojo katas
+         uid = 19661
+         gid = 19661
+         read only = yes
+         list = yes
+         auth users = jj
+         secrets file = /etc/rsyncd.secrets
+         hosts allow = 10.240.0.5/255.255.255.0
+
+     Then I created an /etc/rsyncd.secrets file
+     jj:password-goes-here
+
+     Then I started the server
+     $ sudo rsync --daemon
+
+     Then on the server I'm copying to, cd to the folder where I want all the katas (00,01,etc)
+     $ cd ~/katas
+     $ rsync -rtv jj@104.199.4.146::katas .
+     $ enter password
+
+     Note jj is not a real user.
+     Note :: has two colons
+     Note katas is the [katas] from the rsyncd.conf file

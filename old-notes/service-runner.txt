@@ -1,0 +1,25 @@
+
+This will need docker installed.
+This will also need sudo installed.
+It would free the main web image
+from having to have docker installed.
+
+Is the runner coupled to the storer?
+Not necessarily.
+I could have a separate data-container just for running
+which does not have a git repo per animal (or a sandbox folder).
+This would free the storer from needing to save non
+visible-files (.class .o etc).
+I could also have a separate runner-container *PER* animal.
+This will mean I don't need to tar-pipe.
+Remember to be careful about deleting files. If they are
+deleted on the browser they have to be deleted in the container too.
+
+The katas storer data-container can remain a single data-container
+for *ALL* katas.
+
+A further benefit of this approach is that the downloader
+would create much smaller tar files since it would also
+volume-mount the shared katas-data-container which would contain
+only visible files.
+

@@ -1,0 +1,73 @@
+
+manifest.json currently holds this...
+
+  "red_amber_green" : [
+    "lambda { |output|",
+    "  ruby_pattern = Regexp.new('^(\\d*) runs, (\\d*) assertions, (\\d*) failures, (\\d*) errors')",
+    "  if match = ruby_pattern.match(output)",
+    "    return :amber if match[4] != '0'",
+    "    return :red   if match[3] != '0'",
+    "    return :green",
+    "  else",
+    "    return :amber",
+    "  end",
+    "}"
+  ]
+
+this is stored inside the kata's manifest and thus cannot be edited.
+This is a potential problem. Suppose you create a kata by forking from
+a well-known kata+avatar+tag. Then the test-framework gets upgraded
+and the regex has changed. This change will not be seen when you fork.
+And you won't be able to edit it.
+
+I really need to remove the red_amber_green and put it into a named
+visible_file. This file then partners cyber-dojo.sh and must always
+be present. Thus if you now fork, you get the new lambda and can
+edit it if need be. Or better still, you can edit the lambda in the
+kata being forked from, and use -1 as the fork tag (which means last tag)
+Have to be very careful that this file is never read by cyber-dojo.sh
+Thus, even though it is a ruby file, I don't want to put it into a file
+whose extension is .rb  Safer to call it, eg, colour.lambda
+which appears at the bottom of the file-knave, next to cyber-dojo.sh
+and output.
+
+Note that if this lambda is run directly by the web server
+it would be very insecure. But it can be run inside a new container!
+which could even be based on web!
+
+Note also that colour.lambda does not actually need to be
+saved to the katas sandbox. And it would be better if it was not.
+In fact, if it is not then it could be named a .rb file again.
+No. The javascript on the browser wouldn't know that .rb file is
+special. And so you would not be able to create a file with that name.
+Which would be illogical, since it would not actually be saved into
+the test container. If the result of the lambda call on the output is not
+one of :red :amber :green then ignore it and use :amber.
+How would it work if you re-loaded a kata from before this?
+How would it work if you forked from a kata before this?
+It could easily detect there was no colour.lambda file.
+How would it get the lambda? A kata created after the start-points
+re-archtecture has the lambda in its manifest.json file.
+Before the start-point re-architecture I need to map from
+unit_test_framework entry.
+
+Are there other entries in the manifest.json file (like rag) which
+could be exposed as a 'visible file'? Expose it simply as manifest
+(with no extension) like output is. Make it editable!
+
+progress_regexs. Yes. Could be subject to test-framework upgrades
+red_amber_green. Yes. Could be subject to test-framework upgrades
+highlight_filenames. Yes
+filename_extension. Yes
+tab_size. Yes
+display_name. Yes
+image_name. Yes! This would remove all the mapping cruft test code.
+            Security though... I would only allow image_names that
+            are cyberdojo/... or cyberdojofoundation/...
+
+version. No (for migrater)
+lowlight_filenames. Create this? No. Hard-wired to [cyber-dojo.sh, output, manifest]
+
+
+This would go a LONG way towards making it easy to create a new start-point
+from a kata.

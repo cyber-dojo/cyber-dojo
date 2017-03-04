@@ -1,0 +1,115 @@
+
+Also change the traffic-light number being displayed from
+18 to 17 -> 18
+with both 17 and 18 in their correct colour.
+Review has a diff-mode. Only show 17->18
+when diff is checked.
+Perhaps just show ->18 and the -> is shown
+in the colour of 17.
+
+- - - - - - - - - - - - - - - - - - - - -
+
+cyber-dojo shell script is a bit of a mess.
+It's because of three commands
+1. cyber-dojo up
+2. cyber-dojo down
+3. cyber-dojo start-point create name --dir=...
+
+I have been assuming that 1 and 2 require a local docker-compose.yml
+file. However, what if there was a web_cli image which held the
+docker-compose.yml file (as well as the cyber-dojo.sh file)
+I have also been assuming 3 requires access to the local disk.
+But that is not necessarily true either. I could volume mount the named
+dir into the web_cli container.
+
+- - - - - - - - - - - - - - - - - - - - -
+
+add tool-tip for keyboard short-cuts.
+
+- - - - - - - - - - - - - - - - - - - - -
+
+have some way of choosing which setup page gets shown when
+you click the [setup a new practice session] button.
+Default will be languages.
+
+- - - - - - - - - - - - - - - - - - - - -
+
+an output file is actually stored in the sandbox of an avatar.
+this is not right. it means the avatar cant create an output file
+for itself. The output 'file' should only be in the manifest.
+
+- - - - - - - - - - - - - - - - - - - - -
+
+for tests I have to put red_amber_green lambdas (such as bash_unit)
+into the output.colour_of. Can this dependency be broken?
+
+lib/unit_test_framework_lookup.rb is used only by tests.
+it maps from display_name to unit_test_framework which is then
+used to determine output.colour_of method.
+
+- - - - - - - - - - - - - - - - - - - - -
+
+Storing the red_amber_green lambda inside the kata's manifest.json
+file seems to be essential now that setup start-points can be customized.
+However, it creates duplication, and it means that if you find
+a fault in the lambda and want to upgrade it, you can't fix it for past katas.
+Eg suppose you fork from an existing kata and its unit-test framework has
+been upgraded. You cannot edit the lambda.
+If could refactor lib/unit_test_framework_lookup.rb so it mapped
+from image_name to lamda-src. Then when forking I could see if there was
+a (new) master in the lookup.
+
+- - - - - - - - - - - - - - - - - - - - -
+
+Would be good to have a [cyber-dojo] cli command to export
+a specific kata to a given folder. This would make it easier
+to create custom exercises. Must not export to default VM
+on Mac/Windows quickstart-terminal.
+
+- - - - - - - - - - - - - - - - - - - - -
+
+Note that upgrading Dockerfiles and images might break cyber-dojo.sh
+files since paths can be different...
+Does the cyber-dojo.sh file belong to the image rather than the start-point?
+
+- - - - - - - - - - - - - - - - - - - - -
+
+un-hardwire setting of 2 core env-vars in cyber-dojo script.
+  export CYBER_DOJO_DATA_ROOT="/home/docker/data"
+  export CYBER_DOJO_KATAS_ROOT="/home/docker/data/katas"
+
+- - - - - - - - - - - - - - - - - - - - -
+
+cyber-dojo.rb failure messages are
+FAILED: ....
+Check what [docker] does and mimic that.
+$ docker images --ssss
+flag provided but not defined: --ssss
+See 'docker images --help'.
+Test these with shunit2 tests.
+
+- - - - - - - - - - - - - - - - - - - - -
+
+Occasional test failures (when run locally)...
+  ForkerControllerTest#test_'EAE021',
+    when language no longer exists, the fork fails, and the reason given is language
+  SetupControllerTest#test_'EB77D9',
+    show_exercises page uses cached exercises that are runnable
+
+  Tests are defintely not unit-tests and almost certainly have order
+  dependencies. State of cache files. How to resolve?
+
+  I could reinstate FakeDisk, leave env-vars for data ROOTs, then
+  fill FakeDisk with known content, then do access to dojo methods
+  such as dojo.exercises
+
+  For now, deleting caches at start of app_controller tests.
+
+- - - - - - - - - - - - - - - - - - - - -
+
+Note: need a check that each docker image has a user in it called nobody
+      (I don't think it's uid is important)
+
+- - - - - - - - - - - - - - - - - - - - -
+
+add confirmation diagnostic to each [cyber-dojo] command?

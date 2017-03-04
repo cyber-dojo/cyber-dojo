@@ -1,0 +1,7 @@
+
+Provides dashboard view.
+
+Now the differ service has been split off I should think
+about storing extra information in the increments.json file
+so that I do not have to do any diffing to show the dashboard
+traffic-light tool-tips.

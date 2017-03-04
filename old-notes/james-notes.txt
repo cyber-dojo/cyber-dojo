@@ -1,0 +1,29 @@
+
+Features James mentioned during our chat
+- - - - - - - - - - - - - - - - - - - -
+
+feature: only one error in C/C++ projects
+
+feature: replace duration on dashboard with time-ticks on top of minute columns.
+
+feature: sed in the editor (search and replace)
+
+feature: on enter page, when kata id is entered and buttons become enabled
+         it would be nice to see the display_name in the footer.
+
+feature: copy one animal to a new one (keeping whole traffic-light history)
+
+feature: fork giving two options, viz create new kata and create start-point
+
+feature: hovering over a traffic-light gives more detail, viz for changed files (not output)
+         name of file, no of deleted lines, no of added lines
+
+feature: traffic-lights have some visual indication if there is a
+         "suspiciously large change"
+         eg more than 1 file changed
+         eg more than 3 lines changed in a non-test file
+
+feature: hyperlink of compiler error on output to file and line number
+
+feature: colour syntax?
+

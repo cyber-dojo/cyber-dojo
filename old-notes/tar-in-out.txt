@@ -1,0 +1,18 @@
+
+This example assumes
+o) the katas on the local disk live in a folder called /home/jrbjagger/katas
+   which have the correct owner(cyber-dojo)
+o) they are being tar-piped into a running container called cyber-dojo-web
+   into a folder called /usr/src/cyber-dojo/katas
+o) the sub-folder being copied is B4
+
+
+GET FILES OUT
+-------------
+sudo docker exec cyber-dojo-web tar -c -f - -C /usr/src/cyber-dojo/katas B4
+   | tar -x -f - -C /home/jrbjagger/katas
+
+GET FILES IN
+------------
+tar -c -f - -C /home/jrbjagger/katas B4
+   | sudo docker exec -i cyber-dojo-web tar -x -f - -C /usr/src/cyber-dojo/katas

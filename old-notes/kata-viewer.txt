@@ -1,0 +1,40 @@
+
+Idea is to allow all katas to be viewable, even ones happening now.
+But view is read-only.
+With this comes need for katas to have an 'end'.
+Eg after 1 hour/day/week they become read-only.
+
+
+Design for existing katas
+-------------------------
+Suppose current id is 4268E30476
+Calculate new hash of it as (say) 58DD615CCE
+Now storer moves dir, katas/42/68E30476 to katas/58/DD615CCE
+Kata's manifest now has original-kata-id which does _not_
+correspond to katas dir.
+
+When kata_id is comes into storer/runner ...
+if kata_exists?(hash(id)) you have read-only access
+if kata_exists?(id) you have read-write access
+Thus all ids for existing katas become read-only
+
+Alternative. Don't do hash of original kata-id, instead create
+brand new unrelated kata-id. In original kata-id dir put a
+redirect.json file giving the new kata-id, which has its
+own katas/... dir. This is more secure but slower.
+
+Alternative. Don't move the dir, instead alter the id stored
+inside the kata's manifest.json file.
+
+
+Design for new katas
+--------------------
+Generate new kata-id eg 6C722C5F48
+Generate a hash of it eg 17985C5B10
+
+People participating in the kata get 2nd hash.
+Anyone viewing the kata gets 1st hash.
+
+Problem with this is you've "lost" the 1st hash.
+Suppose you store the kata-id in the kata's manifest using 1st hash
+but store it in dir corresponding to 2nd hash.

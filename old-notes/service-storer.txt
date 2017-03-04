@@ -1,0 +1,40 @@
+
+But for now the simplest is to simply create one 'storer' than still uses
+git and behave exactly the same as the current host_disk_katas.rb
+This is also the simplest step to get a migrater service running.
+
+Main issue with katas-data-container is that you cannot rsync from one server
+to another. Check how this affects backups too.
+
+------------------------------------------------------------
+
+currently the katas/ID subfolder has a manifest.json file which records
+visible_files, viz names and contents.
+This is the manifest for the kata not for the animal.
+The idea is you can start a new animal without having to go back
+to the start-points (which may have changed).
+
+------------------------------------------------------------
+
+Tests that uses host_disk_storer's
+kata_path, avatar_path, sandbox_path methods...
+
+test/app_controllers
+  download_test.rb:    src_folder = "#{storer.kata_path(@id)}"
+  kata_test.rb: 55
+    test 'E77261',
+    'run_tests does NOT save non-visible files back to storer' do
+      path = storer.sandbox_path(@kata.id, @avatar.name)
+    end
+  kata_test.rb:193
+    def assert_file(...)
+      path = storer.sandbox_path(@kata.id, @avatar.name)
+    end
+
+test/app_lib
+  host_disk_storer_test.rb
+
+test/app_models
+  kata_test.rb:    filename = storer.kata_path(kata.id) + '/manifest.json'
+  kata_test.rb:    filename = storer.kata_path(kata.id) + '/manifest.json'
+  kata_test.rb:    filename = storer.kata_path(kata.id) + '/manifest.json'
