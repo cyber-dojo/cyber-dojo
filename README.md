@@ -24,6 +24,6 @@ Each repo in the github cyber-dojo organization builds a single docker image:
   * [runner](https://github.com/cyber-dojo/runner)
   * [sinatra](https://github.com/cyber-dojo/sinatra)
   * [storer](https://github.com/cyber-dojo/storer)
-  * [web](https://github.com/cyber-dojo/web)
+  * [![Build Status](https://travis-ci.org/cyber-dojo/web.svg?branch=master)](https://travis-ci.org/cyber-dojo/web) [web](https://github.com/cyber-dojo/web)
   * [web_base](https://github.com/cyber-dojo/web_base)
-  * [zipper](https://github.com/cyber-dojo/zipper)
+  * [![Build Status](https://travis-ci.org/cyber-dojo/zipper.svg?branch=master)](https://travis-ci.org/cyber-dojo/zipper) [zipper](https://github.com/cyber-dojo/zipper)
