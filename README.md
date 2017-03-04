@@ -13,17 +13,21 @@ Home repo for [cyber-dojo](http://cyber-dojo.org).<br/>
   * [cyber-dojo foundation](http://blog.cyber-dojo.org/2015/08/cyber-dojo-foundation.html) is a registered Scottish Charitable Incorporated Organisation
   * [learn more](http://blog.cyber-dojo.org/p/learn-more.html)
 
-Each repo in the github cyber-dojo organization builds a single docker image:
-  * [![Build Status](https://travis-ci.org/cyber-dojo/collector.svg?branch=master)](https://travis-ci.org/cyber-dojo/collector) [collector](https://github.com/cyber-dojo/collector)
-  * [![Build Status](https://travis-ci.org/cyber-dojo/commander.svg?branch=master)](https://travis-ci.org/cyber-dojo/commander) [commander](https://github.com/cyber-dojo/commander)
-  * [![Build Status](https://travis-ci.org/cyber-dojo/differ.svg?branch=master)](https://travis-ci.org/cyber-dojo/differ) [differ](https://github.com/cyber-dojo/differ)
-  * [![Build Status](https://travis-ci.org/cyber-dojo/docker.svg?branch=master)](https://travis-ci.org/cyber-dojo/docker) [docker](https://github.com/cyber-dojo/docker)
-  * [![Build Status](https://travis-ci.org/cyber-dojo/nginx.svg?branch=master)](https://travis-ci.org/cyber-dojo/nginx) [nginx](https://github.com/cyber-dojo/nginx)
-  * [![Build Status](https://travis-ci.org/cyber-dojo/puller.svg?branch=master)](https://travis-ci.org/cyber-dojo/puller) [puller](https://github.com/cyber-dojo/puller)
-  * [![Build Status](https://travis-ci.org/cyber-dojo/ruby.svg?branch=master)](https://travis-ci.org/cyber-dojo/ruby) [ruby](https://github.com/cyber-dojo/ruby)
-  * [![Build Status](https://travis-ci.org/cyber-dojo/runner.svg?branch=master)](https://travis-ci.org/cyber-dojo/runner) [runner](https://github.com/cyber-dojo/runner)
-  * [![Build Status](https://travis-ci.org/cyber-dojo/sinatra.svg?branch=master)](https://travis-ci.org/cyber-dojo/sinatra) [sinatra](https://github.com/cyber-dojo/sinatra)
-  * [![Build Status](https://travis-ci.org/cyber-dojo/storer.svg?branch=master)](https://travis-ci.org/cyber-dojo/storer) [storer](https://github.com/cyber-dojo/storer)
-  * [![Build Status](https://travis-ci.org/cyber-dojo/web.svg?branch=master)](https://travis-ci.org/cyber-dojo/web) [web](https://github.com/cyber-dojo/web)
-  * [![Build Status](https://travis-ci.org/cyber-dojo/web_base.svg?branch=master)](https://travis-ci.org/cyber-dojo/web_base) [web_base](https://github.com/cyber-dojo/web_base)
-  * [![Build Status](https://travis-ci.org/cyber-dojo/zipper.svg?branch=master)](https://travis-ci.org/cyber-dojo/zipper) [zipper](https://github.com/cyber-dojo/zipper)
+Each repo in the github cyber-dojo organization builds a single docker image.
+
+These are the main service images:
+  * [![Build Status](https://travis-ci.org/cyber-dojo/commander.svg?branch=master)](https://travis-ci.org/cyber-dojo/commander) [commander](https://github.com/cyber-dojo/commander) receives commands the [cyber-dojo](https://github.com/cyber-dojo/commander/blob/master/cyber-dojo) shell script
+  * [![Build Status](https://travis-ci.org/cyber-dojo/nginx.svg?branch=master)](https://travis-ci.org/cyber-dojo/nginx) [nginx](https://github.com/cyber-dojo/nginx) - static image cache front end
+  * [![Build Status](https://travis-ci.org/cyber-dojo/web.svg?branch=master)](https://travis-ci.org/cyber-dojo/web) [web](https://github.com/cyber-dojo/web) - main web server
+  * [![Build Status](https://travis-ci.org/cyber-dojo/runner.svg?branch=master)](https://travis-ci.org/cyber-dojo/runner) [runner](https://github.com/cyber-dojo/runner) - runs an avatar's code/tests
+  * [![Build Status](https://travis-ci.org/cyber-dojo/puller.svg?branch=master)](https://travis-ci.org/cyber-dojo/puller) [puller](https://github.com/cyber-dojo/puller) - pulls docker images required by runner
+  * [![Build Status](https://travis-ci.org/cyber-dojo/collector.svg?branch=master)](https://travis-ci.org/cyber-dojo/collector) [collector](https://github.com/cyber-dojo/collector) - collects old docker volumes created by runner
+  * [![Build Status](https://travis-ci.org/cyber-dojo/storer.svg?branch=master)](https://travis-ci.org/cyber-dojo/storer) [storer](https://github.com/cyber-dojo/storer) - stores an avatar's code/test files
+  * [![Build Status](https://travis-ci.org/cyber-dojo/differ.svg?branch=master)](https://travis-ci.org/cyber-dojo/differ) [differ](https://github.com/cyber-dojo/differ) diffs an avatar's code/test files
+  * [![Build Status](https://travis-ci.org/cyber-dojo/zipper.svg?branch=master)](https://travis-ci.org/cyber-dojo/zipper) [zipper](https://github.com/cyber-dojo/zipper) - creates tgz files for download
+
+These are base images:
+  * [![Build Status](https://travis-ci.org/cyber-dojo/docker.svg?branch=master)](https://travis-ci.org/cyber-dojo/docker) [docker](https://github.com/cyber-dojo/docker) base for commander, runner, collector
+  * [![Build Status](https://travis-ci.org/cyber-dojo/ruby.svg?branch=master)](https://travis-ci.org/cyber-dojo/ruby) [ruby](https://github.com/cyber-dojo/ruby) base for sinatra, web_base
+  * [![Build Status](https://travis-ci.org/cyber-dojo/sinatra.svg?branch=master)](https://travis-ci.org/cyber-dojo/sinatra) [sinatra](https://github.com/cyber-dojo/sinatra) base for storer, zipper, differ, docker
+  * [![Build Status](https://travis-ci.org/cyber-dojo/web_base.svg?branch=master)](https://travis-ci.org/cyber-dojo/web_base) [web_base](https://github.com/cyber-dojo/web_base) base for web
