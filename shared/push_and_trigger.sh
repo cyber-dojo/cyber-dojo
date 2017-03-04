@@ -33,6 +33,6 @@ if [ "${BRANCH}" == "master" ]; then
   echo "PUSHED cyberdojo/${TAG_NAME} to dockerhub"
   npm install travis-ci
   script=trigger-build.js
-  curl -O https://raw.githubusercontent.com/cyber-dojo/ruby/master/${script}
+  curl -O https://raw.githubusercontent.com/cyber-dojo/home/master/shared/${script}
   node ${script} ${*}
 fi
