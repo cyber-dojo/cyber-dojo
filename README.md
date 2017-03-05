@@ -32,3 +32,7 @@ These are base images:
   * [![Build Status](https://travis-ci.org/cyber-dojo/sinatra.svg?branch=master)](https://travis-ci.org/cyber-dojo/sinatra) [sinatra](https://github.com/cyber-dojo/sinatra) - base for storer, zipper, differ, docker
   * [![Build Status](https://travis-ci.org/cyber-dojo/web_base.svg?branch=master)](https://travis-ci.org/cyber-dojo/web_base) [web_base](https://github.com/cyber-dojo/web_base) - base for web
 
+- - - -
+
+![Alt text](image_dependency_graph.pdf?raw=true "title")
+
