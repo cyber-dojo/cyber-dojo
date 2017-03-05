@@ -40,3 +40,9 @@ Image dependencies
 
 ![Image Dependency Graph](image_dependency_graph.png?raw=true "image dependency graph")
 
+- - - -
+
+Domain model
+
+![Domain model](domain_model.png?raw=true "domain model")
+
