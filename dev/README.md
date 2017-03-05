@@ -10,8 +10,10 @@ git clone https://github.com/cyber-dojo/home.git
 ./commander/cyber-dojo up
 ```
 
-This will create the following directory structure off your current working directly.
-Each directory holds a git repo. Each git repo has its issues list on github.
+- This will create the following directory structure off your current working directly.
+- Each directory holds a git repo.
+- Each git repo has its issues list on github.
+
 ```
 cyber-dojo/collector
 cyber-dojo/commander
@@ -29,7 +31,7 @@ cyber-dojo/web
 cyber-dojo/zipper
 ```
 
-The main service repos contain a `pipe_build_up_test.sh` script which:
+The main service repos each contain a `pipe_build_up_test.sh` script which:
 - rebuilds the service's docker image
 - starts a container from this server image
 - shells into the server container
