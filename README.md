@@ -13,6 +13,8 @@ Home repo for [cyber-dojo](http://cyber-dojo.org).<br/>
   * [cyber-dojo foundation](http://blog.cyber-dojo.org/2015/08/cyber-dojo-foundation.html) is a registered Scottish Charitable Incorporated Organisation
   * [learn more](http://blog.cyber-dojo.org/p/learn-more.html)
 
+- - - -
+
 Each repo in the github cyber-dojo organization builds a single docker image.
 
 These are the main service images:
@@ -34,5 +36,7 @@ These are base images:
 
 - - - -
 
-![Alt text](image_dependency_graph.png?raw=true "title")
+Image dependencies
+
+![Image Dependency Graph](image_dependency_graph.png?raw=true "image dependency graph")
 
