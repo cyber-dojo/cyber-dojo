@@ -34,5 +34,5 @@ These are base images:
 
 - - - -
 
-![Alt text](image_dependency_graph.pdf?raw=true "title")
+![Alt text](image_dependency_graph.png?raw=true "title")
 
