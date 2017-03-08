@@ -6,7 +6,7 @@ To get all the source:
 ```
 mkdir cyber-dojo
 cd cyber-dojo
-git clone https://github.com/cyber-dojo/home.git
+git clone https://github.com/cyber-dojo/cyber-dojo.git
 ./home/dev/git-clone-all.sh
 ```
 
