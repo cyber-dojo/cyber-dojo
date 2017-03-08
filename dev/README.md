@@ -10,7 +10,7 @@ git clone https://github.com/cyber-dojo/home.git
 ./home/dev/git-clone-all.sh
 ```
 
-- This will create the following directory structure:
+This will create the following directory structure (each directory holds a git repo):
 
 ```
 cyber-dojo/collector
@@ -29,16 +29,14 @@ cyber-dojo/web
 cyber-dojo/zipper
 ```
 
-- Each directory holds a git repo.
-- Each git repo has its own issues list on github.
-
 To build your server from these repos, ensure docker is installed, then:
 
 ```
 ./cyber-dojo/home/dev/build-all.sh
 ```
 
-- To bring up your server:
+To bring up your server:
+
 ```
 ./cyber-dojo/commander/cyber-dojo up
 ```
