@@ -1,18 +1,16 @@
 
-To build your own cyber-dojo server from scratch, first ensure docker is installed then:
+# Building your own cyber-dojo server from source
+
+To get all the source:
 
 ```
 mkdir cyber-dojo
 cd cyber-dojo
 git clone https://github.com/cyber-dojo/home.git
 ./home/dev/git-clone-all.sh
-./home/dev/build-all.sh
-./commander/cyber-dojo up
 ```
 
-- This will create the following directory structure off your current working directly.
-- Each directory holds a git repo.
-- Each git repo has its issues list on github.
+- This will create the following directory structure:
 
 ```
 cyber-dojo/collector
@@ -29,6 +27,20 @@ cyber-dojo/storer
 cyber-dojo/web_base
 cyber-dojo/web
 cyber-dojo/zipper
+```
+
+- Each directory holds a git repo.
+- Each git repo has its own issues list on github.
+
+To build your server from these repos, ensure docker is installed, then:
+
+```
+./cyber-dojo/home/dev/build-all.sh
+```
+
+- To bring up your server:
+```
+./cyber-dojo/commander/cyber-dojo up
 ```
 
 - - - -
