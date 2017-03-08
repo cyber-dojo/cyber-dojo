@@ -31,6 +31,8 @@ cyber-dojo/web
 cyber-dojo/zipper
 ```
 
+- - - -
+
 The main service repos each contain a `pipe_build_up_test.sh` script which:
 - rebuilds the service's docker image
 - starts a container from this server image
@@ -39,3 +41,4 @@ The main service repos each contain a `pipe_build_up_test.sh` script which:
 - starts a client container
 - shells into the client container
 - runs the client tests (with coverage)
+
