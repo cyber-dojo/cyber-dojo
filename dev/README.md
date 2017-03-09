@@ -18,7 +18,9 @@ cyber-dojo/cyber-dojo
 cyber-dojo/commander
 cyber-dojo/differ
 cyber-dojo/docker
+cyber-dojo/grafana
 cyber-dojo/nginx
+cyber-dojo/prometheus
 cyber-dojo/puller
 cyber-dojo/ruby
 cyber-dojo/runner
