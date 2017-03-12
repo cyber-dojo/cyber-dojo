@@ -21,7 +21,6 @@ cyber-dojo/docker
 cyber-dojo/grafana
 cyber-dojo/nginx
 cyber-dojo/prometheus
-cyber-dojo/puller
 cyber-dojo/ruby
 cyber-dojo/runner
 cyber-dojo/sinatra
@@ -52,7 +51,6 @@ These are the main service images:
   * [![Build Status](https://travis-ci.org/cyber-dojo/nginx.svg?branch=master)](https://travis-ci.org/cyber-dojo/nginx) [nginx](https://github.com/cyber-dojo/nginx) - fancy internet-facing web-server
   * [![Build Status](https://travis-ci.org/cyber-dojo/web.svg?branch=master)](https://travis-ci.org/cyber-dojo/web) [web](https://github.com/cyber-dojo/web) - simple rails web-server
   * [![Build Status](https://travis-ci.org/cyber-dojo/runner.svg?branch=master)](https://travis-ci.org/cyber-dojo/runner) [runner](https://github.com/cyber-dojo/runner) - runs an avatar's code/tests
-  * [![Build Status](https://travis-ci.org/cyber-dojo/puller.svg?branch=master)](https://travis-ci.org/cyber-dojo/puller) [puller](https://github.com/cyber-dojo/puller) - pulls docker images required by runner
   * [![Build Status](https://travis-ci.org/cyber-dojo/collector.svg?branch=master)](https://travis-ci.org/cyber-dojo/collector) [collector](https://github.com/cyber-dojo/collector) - collects old docker volumes created by runner
   * [![Build Status](https://travis-ci.org/cyber-dojo/storer.svg?branch=master)](https://travis-ci.org/cyber-dojo/storer) [storer](https://github.com/cyber-dojo/storer) - stores an avatar's code/test files
   * [![Build Status](https://travis-ci.org/cyber-dojo/differ.svg?branch=master)](https://travis-ci.org/cyber-dojo/differ) [differ](https://github.com/cyber-dojo/differ) - diffs an avatar's code/test files
