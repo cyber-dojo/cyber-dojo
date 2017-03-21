@@ -16,6 +16,6 @@ run quicker.
 
 3) The [Dockerfiles](https://github.com/cyber-dojo/Dockerfiles) used
 to create the language start-point images are based on either
-[Alpine Linux](https://alpinelinux.org/)
+[Alpine Linux](https://alpinelinux.org/) or
 [Ubuntu](https://www.ubuntu.com/).
 Converting Ubuntu based images to Alpine based images would be a big help.
