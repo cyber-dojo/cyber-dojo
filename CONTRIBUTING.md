@@ -1,7 +1,7 @@
 
 Things that would help:
 
-1) If you've tried to build your own cyber-dojo from the source
+1) If you've tried to build your own cyber-dojo from the github source repos
 (and maybe do some development) I'd really appreciate knowing what
 was easy, what was hard, and what I could do to make it easier for you.
 
@@ -18,4 +18,6 @@ run quicker.
 to create the language start-point images are based on either
 [Alpine Linux](https://alpinelinux.org/) or
 [Ubuntu](https://www.ubuntu.com/).
-Converting Ubuntu based images to Alpine based images would be a big help.
+For example, the [C,assert] Alpine based image is 96MB.
+For example, the [C++ (clang),assert] Ubuntu based image is 1.7GB.
+Converting Ubuntu based images to smaller Alpine based images would be a big help.
