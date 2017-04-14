@@ -23,6 +23,7 @@ cyber-dojo/nginx
 cyber-dojo/prometheus
 cyber-dojo/ruby
 cyber-dojo/runner
+cyber-dojo/runner_stateless
 cyber-dojo/sinatra
 cyber-dojo/storer
 cyber-dojo/web_base
