@@ -1,0 +1,71 @@
+
+First on the cyber-dojo server you are copying from,
+get all the kata files out of the data-container
+
+$ docker cp cyber-dojo-storer:/usr/src/cyber-dojo/katas/. /tmp/katas
+
+Now all the files are in /tmp/katas with a directory structure like this
+/tmp/katas/02/...
+/tmp/katas/EF/...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Now put them somewhere you can get them from.
+Eg create github repo, eg https://github.com/JonJagger/accu2017
+and push files to that repo
+
+$ cd /tmp/katas
+$ git init
+$ git config --global user.email "jon@jaggersoft.com"
+$ git config --global user.name "Jon Jagger"
+$ git add .
+$ git commit -m "katas from accu-2017 conference"
+$ git remote add origin https://github.com/JonJagger/accu2017.git
+$ git push -u origin master
+
+The git repo will now have a directory structure like this
+accu2017/02/...
+accu2017/EF/...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Now from the cyber-dojo server you want to copy the files to,
+get a copy of the files...
+
+$ cd /tmp
+$ git clone https://github.com/JonJagger/accu2017.git
+
+Will create /tmp/accu2017 with a directory structure like this
+/tmp/accu2017/02/...
+/tmp/accu2017/EF/...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Now make sure they are owned by the cyber-dojo user
+First check the uid:gid
+
+$ sudo docker exec -t cyber-dojo-storer sh -c 'id cyber-dojo'
+This should return
+uid=19661(cyber-dojo) gid=19661(cyber-dojo) groups=19661(cyber-dojo)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Then do the chown
+$ cd /tmp/accu2017
+$ sudo chown -R 19661:19661 *
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Finally, get the files in.
+I do not use [docker cp] to do this since that does not respect the
+files ownership. Viz, if the docker cp command is run as root then
+all the copied files will be owned by root.
+Instead I use a tar-pipe
+
+$ cd /tmp/accu2017
+$ tar --owner=19661 --group=19661 -zcf - . | \
+   sudo docker exec --user 19661:19661 -i cyber-dojo-storer \
+     sh -c 'cd /usr/src/cyber-dojo/katas && tar -zxf - -C .'
+
+
+
