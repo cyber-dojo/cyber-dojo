@@ -1,0 +1,26 @@
+
+There is a repo that maintains a master list of
+all the language+TF repos, their docker image name,
+and the docker image they are built FROM in the first
+line of their Dockerfiles.
+
+Each language+TF repo as part of its .travis.yml script
+checks that the docker image it is built FROM 
+(which is reads directly from the first line of its own
+Dockerfile) is recorded correctly in this master list.
+
+Each language+TF repo, as part of its .travis.yml script
+uses this master-list (eg curls it) and uses it to find
+what other language+TF repos it needs to notify 
+(since they depend on it and it has just changed and
+successfully built a new image and pushed it to dockerhub).
+
+This functionality could be baked into a simple docker image
+that the .travis.yml script uses directly.
+
+This means I can stick with the javascript based notification
+I'm using although I should upgrade to using a POST which
+the travis API v3 now allows. See
+https://docs.travis-ci.com/user/triggering-builds/
+
+
