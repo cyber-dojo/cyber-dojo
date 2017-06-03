@@ -45,6 +45,7 @@ Now make sure they are owned by the cyber-dojo user
 First check the uid:gid
 
 $ sudo docker exec -t cyber-dojo-storer sh -c 'id cyber-dojo'
+
 This should return
 uid=19661(cyber-dojo) gid=19661(cyber-dojo) groups=19661(cyber-dojo)
 
