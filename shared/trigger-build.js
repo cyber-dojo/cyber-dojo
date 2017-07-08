@@ -33,6 +33,12 @@
 // http://kamranicus.com/blog/2015/03/29/triggering-a-travis-build-programmatically/
 // http://kamranicus.com/blog/2015/02/26/continuous-deployment-with-travis-ci/
 
+// Use: node trigger-build.js [REPO]
+// eg
+//      $ npm install travis-ci
+//      $ export NODE_PATH=$(npm config get prefix)
+//      $ node trigger-build.js cyber-dojo-languages/python-3.3.5
+
 var Travis = require('travis-ci');
 
 var travis = new Travis({
