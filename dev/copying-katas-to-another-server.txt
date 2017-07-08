@@ -22,6 +22,8 @@ $ git add .
 $ git commit -m "katas from accu-2017 conference"
 $ git remote add origin https://github.com/JonJagger/accu2017.git
 $ git push -u origin master
+username: jonjagger
+password: ...
 
 The git repo will now have a directory structure like this
 accu2017/02/...
