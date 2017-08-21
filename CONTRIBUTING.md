@@ -6,7 +6,7 @@ Things that would help:
 what didn't, was easy, what was hard, and what I could do to make it easier
 for you.
 
-2) The [Dockerfiles](https://github.com/cyber-dojo/Dockerfiles) used
+2) The [Dockerfiles](https://docs.docker.com/engine/reference/builder/) used
 to create the language start-point images are based on either
 [Alpine Linux](https://alpinelinux.org/) or
 [Ubuntu](https://www.ubuntu.com/).
