@@ -37,7 +37,7 @@
 // eg
 //      $ npm install travis-ci
 //      $ export NODE_PATH=$(npm config get prefix)
-//      $ node trigger-build.js cyber-dojo-languages/python-3.3.5
+//      $ node trigger-build.js cyber-dojo-languages/python-3.6.1
 
 var Travis = require('travis-ci');
 

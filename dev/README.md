@@ -4,43 +4,44 @@
 To get all the source:
 
 ```
-mkdir cyber-dojo
-cd cyber-dojo
+mkdir src
+cd src
 git clone https://github.com/cyber-dojo/cyber-dojo.git
 ./cyber-dojo/dev/git-clone-all.sh
+cd ..
 ```
 
 This will create the following directory structure (each directory holds a git repo):
 
 ```
-cyber-dojo/collector
-cyber-dojo/cyber-dojo
-cyber-dojo/commander
-cyber-dojo/differ
-cyber-dojo/docker
-cyber-dojo/grafana
-cyber-dojo/nginx
-cyber-dojo/prometheus
-cyber-dojo/ruby
-cyber-dojo/runner
-cyber-dojo/runner_stateless
-cyber-dojo/sinatra
-cyber-dojo/storer
-cyber-dojo/web_base
-cyber-dojo/web
-cyber-dojo/zipper
+src/collector
+src/cyber-dojo
+src/commander
+src/differ
+src/docker
+src/grafana
+src/nginx
+src/prometheus
+src/ruby
+src/runner
+src/runner_stateless
+src/sinatra
+src/storer
+src/web_base
+src/web
+src/zipper
 ```
 
-To build your server from these repos, ensure docker is installed, then:
+To build your server from these repos, ensure docker and docker-compose are installed, then:
 
 ```
-./cyber-dojo/dev/build-all.sh
+src/cyber-dojo/dev/build-all.sh
 ```
 
 To bring up your server:
 
 ```
-./commander/cyber-dojo up
+src/commander/cyber-dojo up
 ```
 
 - - - -

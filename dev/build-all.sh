@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-my_dir="$( cd "$( dirname "${0}" )" && pwd )"
-. ${my_dir}/env-var-repos.sh
+readonly MY_DIR="$( cd "$( dirname "${0}" )" && pwd )"
+. ${MY_DIR}/env-var-repos.sh
 
 for repo in ${CYBER_DOJO_REPOS[@]}; do
-  cd ${my_dir}/../../${repo} # [1]
+  cd ${MY_DIR}/../../${repo} # [1]
   ./build.sh
 done
 
