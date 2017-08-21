@@ -25,3 +25,6 @@ run quicker.
 
 4) [New exercises](https://github.com/cyber-dojo/start-points-exercises)
 
+5) Figure out how to fix the broken Dockerfile for
+[javascript+cucumber](https://github.com/cyber-dojo-languages/javascript-cucumber)
+
