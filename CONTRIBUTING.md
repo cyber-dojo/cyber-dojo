@@ -17,12 +17,17 @@ Converting Ubuntu based images to smaller Alpine based images would be a big hel
 3) Many of the language+testFramework's cyber-dojo.sh file could be improved.
 For example, some of the C/C++ test-frameworks, eg
 [C++ (clang),GoogleMock](https://github.com/cyber-dojo-languages/clangplusplus-googlemock)
-do a crude [make --always-make] when running make from their
+do a crude [make --always-make] in their
 [cyber-dojo.sh file](https://github.com/cyber-dojo-languages/clangplusplus-googlemock/blob/master/start_point/cyber-dojo.sh).
 This is because when the makefiles were written the runner was stateless.
 But the [runner](https://github.com/cyber-dojo/runner) can now be stateful
 so dropping the --always-make and editing the makefiles might make the tests
 run quicker.
+Similarly, the Java based test-frameworks, eg
+[Java,JUnit](https://github.com/cyber-dojo-languages/java-junit)
+have a crude
+[cyber-dojo.sh] file](https://github.com/cyber-dojo-languages/java-junit/blob/master/start_point/cyber-dojo.sh)
+which could surely be improved.
 
 4) [New exercises](https://github.com/cyber-dojo/start-points-exercises)
 
