@@ -14,13 +14,13 @@ For example, the [C,assert] Alpine based image is 96MB.
 For example, the [C++ (clang),assert] Ubuntu based image is 1.7GB.
 Converting Ubuntu based images to smaller Alpine based images would be a big help.
 
-3) Many cyber-dojo.sh files are ripe for improvement.
-For example, some of the C/C++ test-framework, eg
+3) Many of the language+testFramework's cyber-dojo.sh file could be improved.
+For example, some of the C/C++ test-frameworks, eg
 [C++ (clang),GoogleMock](https://github.com/cyber-dojo-languages/clangplusplus-googlemock)
 do a crude [make --always-make] when running make from their
 [cyber-dojo.sh file](https://github.com/cyber-dojo-languages/clangplusplus-googlemock/blob/master/start_point/cyber-dojo.sh).
 This is because when the makefiles were written the runner was stateless.
-But the [runner](https://github.com/cyber-dojo/runner_stateful) can now be stateful
+But the [runner](https://github.com/cyber-dojo/runner) can now be stateful
 so dropping the --always-make and editing the makefiles might make the tests
 run quicker.
 
