@@ -27,7 +27,7 @@ so dropping the --always-make, and editing the makefile appropriately should hel
 For example,
 [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit)
 has a crude
-[cyber-dojo.sh] file](https://github.com/cyber-dojo-languages/java-junit/blob/master/start_point/cyber-dojo.sh)
+[cyber-dojo.sh file](https://github.com/cyber-dojo-languages/java-junit/blob/master/start_point/cyber-dojo.sh)
 which could surely be improved.
 
 5) [New exercises](https://github.com/cyber-dojo/start-points-exercises)
