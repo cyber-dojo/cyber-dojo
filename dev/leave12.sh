@@ -10,6 +10,7 @@
 #    koala lion panda raccoon snake tiger wolf
 # Must be called from _inside_ the storer docker container
 # docker exec -it cyber-dojo-storer sh
+
 cd /usr/src/cyber-dojo/katas
 cd ${1}
 cd ${2}
