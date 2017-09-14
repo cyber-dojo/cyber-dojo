@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # This is a file assumes all 64 avatars have started
 # in the given kata. It removes 54 named avatars so
 # that only the 12 you want are left.

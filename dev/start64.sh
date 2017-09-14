@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Script to start all 64 avatars in a kata
 # with the given ID.
 # enter/start should be a post request but its not.
@@ -10,3 +11,4 @@ do
     -H "Content-Type: application/json" \
     --get \
     http://localhost/enter/start?id=${1}
+done
