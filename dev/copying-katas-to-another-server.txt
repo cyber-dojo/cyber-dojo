@@ -2,7 +2,7 @@
 First on the cyber-dojo server you are copying from,
 get all the kata files out of the data-container
 
-$ docker cp cyber-dojo-storer:/usr/src/cyber-dojo/katas/. /tmp/katas
+$ sudo docker cp cyber-dojo-storer:/usr/src/cyber-dojo/katas/. /tmp/katas
 
 Now all the files are in /tmp/katas with a directory structure like this
 /tmp/katas/02/...
@@ -15,13 +15,13 @@ Eg create github repo, eg https://github.com/JonJagger/accu2017
 and push files to that repo
 
 $ cd /tmp/katas
-$ git init
-$ git config --global user.email "jon@jaggersoft.com"
-$ git config --global user.name "Jon Jagger"
-$ git add .
-$ git commit -m "katas from accu-2017 conference"
-$ git remote add origin https://github.com/JonJagger/accu2017.git
-$ git push -u origin master
+$ sudo git init
+$ sudo git config --global user.email "jon@jaggersoft.com"
+$ sudo git config --global user.name "Jon Jagger"
+$ sudo git add .
+$ sudo git commit -m "katas from accu-2017 conference"
+$ sudo git remote add origin https://github.com/JonJagger/accu2017.git
+$ sudo git push -u origin master
 username: jonjagger
 password: ...
 
