@@ -29,7 +29,7 @@ src/zipper
 ```
 
 To build your server from these repos, ensure docker and docker-compose are installed
-[See](http://blog.cyber-dojo.org/2017/09/running-your-own-cyber-dojo-server.html),
+[See blog](http://blog.cyber-dojo.org/2017/09/running-your-own-cyber-dojo-server.html),
 then:
 
 ```
