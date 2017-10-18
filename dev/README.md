@@ -23,7 +23,7 @@ src/grafana
 src/nginx
 src/prometheus
 src/ruby
-src/runner
+src/runner_stateful
 src/runner_stateless
 src/sinatra
 src/storer
@@ -52,7 +52,7 @@ These are the main service images:
   * [![Build Status](https://travis-ci.org/cyber-dojo/commander.svg?branch=master)](https://travis-ci.org/cyber-dojo/commander) [commander](https://github.com/cyber-dojo/commander) - receives commands from the [cyber-dojo](https://github.com/cyber-dojo/commander/blob/master/cyber-dojo) shell script
   * [![Build Status](https://travis-ci.org/cyber-dojo/nginx.svg?branch=master)](https://travis-ci.org/cyber-dojo/nginx) [nginx](https://github.com/cyber-dojo/nginx) - fancy internet-facing web-server
   * [![Build Status](https://travis-ci.org/cyber-dojo/web.svg?branch=master)](https://travis-ci.org/cyber-dojo/web) [web](https://github.com/cyber-dojo/web) - simple rails web-server
-  * [![Build Status](https://travis-ci.org/cyber-dojo/runner.svg?branch=master)](https://travis-ci.org/cyber-dojo/runner) [runner](https://github.com/cyber-dojo/runner) - runs an avatar's code/tests statefully
+  * [![Build Status](https://travis-ci.org/cyber-dojo/runner_stateful.svg?branch=master)](https://travis-ci.org/cyber-dojo/runner) [runner](https://github.com/cyber-dojo/runner_stateful) - runs an avatar's code/tests statefully
   * [![Build Status](https://travis-ci.org/cyber-dojo/runner_stateless.svg?branch=master)](https://travis-ci.org/cyber-dojo/runner) [runner_stateless](https://github.com/cyber-dojo/runner_stateless) - runs an avatar's code/tests statelessly
   * [![Build Status](https://travis-ci.org/cyber-dojo/collector.svg?branch=master)](https://travis-ci.org/cyber-dojo/collector) [collector](https://github.com/cyber-dojo/collector) - collects old docker volumes created by stateful runner
   * [![Build Status](https://travis-ci.org/cyber-dojo/storer.svg?branch=master)](https://travis-ci.org/cyber-dojo/storer) [storer](https://github.com/cyber-dojo/storer) - stores an avatar's code/test files
