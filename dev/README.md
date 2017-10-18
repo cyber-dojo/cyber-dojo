@@ -59,11 +59,6 @@ These are the main service images:
   * [![Build Status](https://travis-ci.org/cyber-dojo/differ.svg?branch=master)](https://travis-ci.org/cyber-dojo/differ) [differ](https://github.com/cyber-dojo/differ) - diffs an avatar's code/test files
   * [![Build Status](https://travis-ci.org/cyber-dojo/zipper.svg?branch=master)](https://travis-ci.org/cyber-dojo/zipper) [zipper](https://github.com/cyber-dojo/zipper) - creates tgz files for download
 
-These are base images:
-  * [![Build Status](https://travis-ci.org/cyber-dojo/docker.svg?branch=master)](https://travis-ci.org/cyber-dojo/docker) [docker](https://github.com/cyber-dojo/docker) - base for commander, runner, collector
-  * [![Build Status](https://travis-ci.org/cyber-dojo/ruby.svg?branch=master)](https://travis-ci.org/cyber-dojo/ruby) [ruby](https://github.com/cyber-dojo/ruby) - base for sinatra, web_base
-  * [![Build Status](https://travis-ci.org/cyber-dojo/sinatra.svg?branch=master)](https://travis-ci.org/cyber-dojo/sinatra) [sinatra](https://github.com/cyber-dojo/sinatra) - base for storer, zipper, differ, docker
-  * [![Build Status](https://travis-ci.org/cyber-dojo/web_base.svg?branch=master)](https://travis-ci.org/cyber-dojo/web_base) [web_base](https://github.com/cyber-dojo/web_base) - base for web
 
 The main service repos each contain a `pipe_build_up_test.sh` script which:
 - rebuilds the service's docker image

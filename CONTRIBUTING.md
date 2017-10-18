@@ -28,10 +28,13 @@ to create the language start-point images are based on either
 [Ubuntu](https://www.ubuntu.com/).
 For example, the [C,assert] Alpine based image is 96MB.
 For example, the [C++ (clang),assert] Ubuntu based image is 1.7GB.
-Converting Ubuntu based images to smaller Alpine based images would be a big help.
+Converting Ubuntu based images to smaller Alpine based images would be nice.
 
 5) [New exercises](https://github.com/cyber-dojo/start-points-exercises)
 
 6) Figure out how to fix the broken Dockerfile for
 [javascript+cucumber](https://github.com/cyber-dojo-languages/javascript-cucumber)
+
+7) Figure out how to fix the broken Dockerfile for
+[elm+test](https://github.com/cyber-dojo-languages/elm-test)
 
