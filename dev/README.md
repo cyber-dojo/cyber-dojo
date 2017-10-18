@@ -18,21 +18,19 @@ src/collector
 src/cyber-dojo
 src/commander
 src/differ
-src/docker
 src/grafana
 src/nginx
 src/prometheus
-src/ruby
 src/runner_stateful
 src/runner_stateless
-src/sinatra
 src/storer
-src/web_base
 src/web
 src/zipper
 ```
 
-To build your server from these repos, ensure docker and docker-compose are installed, then:
+To build your server from these repos, ensure docker and docker-compose are installed
+[See](http://blog.cyber-dojo.org/2017/09/running-your-own-cyber-dojo-server.html),
+then:
 
 ```
 src/cyber-dojo/dev/build-all.sh
