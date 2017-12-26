@@ -26,6 +26,7 @@ src/nginx
 src/prometheus
 src/runner_stateful
 src/runner_stateless
+src/starter
 src/storer
 src/web
 src/zipper
