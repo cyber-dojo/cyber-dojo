@@ -46,10 +46,10 @@ Will create /tmp/accu2017 with a directory structure like this
 Now make sure they are owned by the cyber-dojo user
 First check the uid:gid
 
-$ sudo docker exec -t cyber-dojo-storer sh -c 'id cyber-dojo'
+$ sudo docker exec -t cyber-dojo-storer sh -c 'id storer'
 
 This should return
-uid=19661(cyber-dojo) gid=19661(cyber-dojo) groups=19661(cyber-dojo)
+uid=19661(storer) gid=19661(storer) groups=19661(storer)
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
