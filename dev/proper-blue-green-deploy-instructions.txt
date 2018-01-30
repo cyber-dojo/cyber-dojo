@@ -54,6 +54,9 @@ $ sudo ./cyber-dojo up
 $ sudo ./cyber-dojo start-point pull languages
 $ exit
 
+Note: 35.205.247.80 is the IP address of the ssd-storer server
+which holds the katas and exposes its API on port 4577
+
 
 3. POINT THE LOAD-BALANCER TO THE NEW INSTANCE
 ==============================================
