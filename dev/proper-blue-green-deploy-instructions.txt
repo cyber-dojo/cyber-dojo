@@ -1,0 +1,76 @@
+
+From https://console.cloud.google.com/compute/instances?project=cyber-dojo
+
+Click [VM instances] menu option on the left.
+It will list two instances, eg
+  ssd-server-blue
+  ssd-storer
+
+If it lists ssd-server-blue  then create a new instance called ssd-server-green
+If it lists ssd-server-green then create a new instance called ssd-server-blue
+
+1. CREATE THE SSD-SERVER-GREEN INSTANCE
+=======================================
+From https://console.cloud.google.com/compute/instances?project=cyber-dojo
+
+Click the [CREATE INSTANCE] button at the top
+
+In the [Name] field enter ssd-server-green
+
+In the [Zone] field select europe-west1-b
+
+For the [Machine type] click [Customise]
+  Leave the Cores at 1
+  Slide Memory to its max
+
+Scroll down to the [Boot disk] section and click [Change]
+  Select [Ubuntu 16.04 LTS] from the radio list
+Click the [Boot disk type] dropdown
+  Select [SSD persistent disk]
+In the [Size (GB)] text field
+  Enter 50
+Click the [Select] button at the bottom left
+
+In the [Firewall] section
+set [Allow HTTP traffic] to ticked
+
+Click the [Create] button on the bottom left
+
+
+2. INSTALL CYBER_DOJO ON THE NEW INSTANCE
+=========================================
+From https://console.cloud.google.com/compute/instances?project=cyber-dojo
+
+From the [VM instances] list
+Click [SSH] for ssd-server-green
+An ssh terminal will open
+Enter the following commands
+$ wget -qO- https://get.docker.com/ | sh
+$ curl -O https://raw.githubusercontent.com/cyber-dojo/commander/master/cyber-dojo
+$ chmod +x cyber-dojo
+$ echo "STORER_HOSTNAME=35.205.247.80" > web.env
+$ echo "STORER_PORT=4577" >> web.env
+$ sudo ./cyber-dojo up
+$ sudo ./cyber-dojo start-point pull languages
+$ exit
+
+
+3. POINT THE LOAD-BALANCER TO THE NEW INSTANCE
+==============================================
+From https://console.cloud.google.com/compute/instances?project=cyber-dojo
+
+Click [instance groups] menu option on the left.
+Click ssd-instance-group
+Click [EDIT GROUP] at the top
+In the [VM instances] section
+  One VM instance will be listed, eg ssd-server-blue
+  Click the [Add an instance] dropdown
+  Select ssd-server-green
+  There will now be two vm instances listed
+  Click the [x] to the right of ssd-server-blue
+  One VM instance will be listed, eg ssd-server-green
+  Click the [Save] button at the bottom
+
+
+
+
