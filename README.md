@@ -1,10 +1,3 @@
-
-![cyber-dojo.org home page](https://github.com/cyber-dojo/cyber-dojo/blob/master/shared/home_page_snaphot.png)
-
-[Take me to http://cyber-dojo.org](http://cyber-dojo.org).
-
-- - - -
-
 <img src="https://raw.githubusercontent.com/cyber-dojo/nginx/master/images/home_page_logo.png" alt="cyber-dojo yin/yang logo" width="50px" height="50px"/>
 
   * Hi. I'm [Jon Jagger](http://jonjagger.blogspot.co.uk/). Welcome to cyber-dojo :-)
@@ -21,3 +14,9 @@
   * How do I [practice programming in cyber-dojo](http://blog.cyber-dojo.org/2014/08/getting-started.html)?
   * How do I [install my own cyber-dojo server](http://blog.cyber-dojo.org/2014/09/setting-up-your-own-cyber-dojo-server.html)?
   * How do I [do some development of cyber-dojo](https://github.com/cyber-dojo/cyber-dojo/tree/master/dev)?
+
+- - - -
+
+![cyber-dojo.org home page](https://github.com/cyber-dojo/cyber-dojo/blob/master/shared/home_page_snaphot.png)
+
+[Take me to http://cyber-dojo.org](http://cyber-dojo.org).
