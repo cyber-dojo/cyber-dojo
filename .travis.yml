@@ -1,0 +1,10 @@
+sudo: false
+services: docker
+language: node_js
+
+before_script:
+    - curl -O https://raw.githubusercontent.com/cyber-dojo/cyber-dojo/master/shared/push_and_trigger.sh
+    - chmod +x push_and_trigger.sh
+
+script:
+    - ./dev/build-all.sh
