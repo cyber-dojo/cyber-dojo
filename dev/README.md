@@ -1,8 +1,7 @@
 
 # Building your own cyber-dojo server from source
 
-Ensure docker is installed.
-[(see blog)](http://blog.cyber-dojo.org/2017/09/running-your-own-cyber-dojo-server.html).
+[Ensure docker is installed](http://blog.cyber-dojo.org/2017/09/running-your-own-cyber-dojo-server.html).
 If you are on a Windows/Mac note that these instructions specify to
 install DockerToolbox.
 
