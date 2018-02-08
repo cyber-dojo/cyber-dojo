@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/cyber-dojo/nginx/master/images/home_page_logo.png" alt="cyber-dojo yin/yang logo" width="50px" height="50px"/>
 
-  * Hi. I'm [Jon Jagger](http://jonjagger.blogspot.co.uk/). Welcome to cyber-dojo :-)
+  * Hi. Welcome to cyber-dojo :-)
   * a [dojo](http://en.wikipedia.org/wiki/Dojo) is a place where martial artists meet to practice their martial art
   * a cyber-dojo is where programmers meet to [practice](http://jonjagger.blogspot.co.uk/2013/10/practice.html) programming!
   * a cyber-dojo is <em>not</em> an Individual Development Environment
@@ -14,9 +14,9 @@
   * How do I [practice programming in cyber-dojo](http://blog.cyber-dojo.org/2014/08/getting-started.html)?
   * How do I [install my own cyber-dojo server](http://blog.cyber-dojo.org/2014/09/setting-up-your-own-cyber-dojo-server.html)?
   * How do I [do some development of cyber-dojo](https://github.com/cyber-dojo/cyber-dojo/tree/master/dev)?
+  * Try it now at [http://cyber-dojo.org](http://cyber-dojo.org).
 
 - - - -
 
 ![cyber-dojo.org home page](https://github.com/cyber-dojo/cyber-dojo/blob/master/shared/home_page_snaphot.png)
 
-[Take me to http://cyber-dojo.org](http://cyber-dojo.org).
