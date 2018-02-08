@@ -7,4 +7,5 @@ before_script:
     - chmod +x push_and_trigger.sh
 
 script:
+    - ./dev/git-clone-all.sh
     - ./dev/build-all.sh
