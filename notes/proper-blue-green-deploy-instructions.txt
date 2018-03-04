@@ -50,8 +50,9 @@ $ curl -O https://raw.githubusercontent.com/cyber-dojo/commander/master/cyber-do
 $ chmod +x cyber-dojo
 $ echo "STORER_HOSTNAME=35.205.247.80" > web.env
 $ echo "STORER_PORT=4577" >> web.env
+$ echo "STORER_HOSTNAME=35.205.247.80" > zipper.env
+$ echo "STORER_PORT=4577" >> zipper.env
 $ sudo ./cyber-dojo up
-$ sudo ./cyber-dojo start-point pull languages
 $ exit
 
 Note: 35.205.247.80 is the IP address of the ssd-storer server
