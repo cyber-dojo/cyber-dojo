@@ -48,14 +48,14 @@ Enter the following commands
 $ wget -qO- https://get.docker.com/ | sh
 $ curl -O https://raw.githubusercontent.com/cyber-dojo/commander/master/cyber-dojo
 $ chmod +x cyber-dojo
-$ echo "STORER_HOSTNAME=35.205.247.80" > web.env
+$ echo "STORER_HOSTNAME=A.B.C.D" > web.env
 $ echo "STORER_PORT=4577" >> web.env
-$ echo "STORER_HOSTNAME=35.205.247.80" > zipper.env
+$ echo "STORER_HOSTNAME=A.B.C.D" > zipper.env
 $ echo "STORER_PORT=4577" >> zipper.env
 $ sudo ./cyber-dojo up
 $ exit
 
-Note: 35.205.247.80 is the IP address of the ssd-storer server
+Note: change A.B.C.D to the IP address of the storer server
 which holds the katas and exposes its API on port 4577
 
 
