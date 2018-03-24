@@ -1,0 +1,6 @@
+
+Issue: Add most common display_names to top of list (as repeats, like font-selection)
+when setting up a session.
+
+Issue: Add display_name, exercise to long-footer.
+

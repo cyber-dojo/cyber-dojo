@@ -1,0 +1,24 @@
+
+Make storer id-completion methods part of a separate helper class.
+
+incoming partial_id is always 6 chars.
+if it completes to 10 chars its for an old base16 ID
+if it completes to 6 chars its for a new base58 ID
+
+Dont like this because at the moment there are always 10 digits.
+Better if I can keep it to always 10 digits.
+So keep 10 digits. But put directory structure barrier at 6 digits.
+Yes. This is much better. Keeps the format of URLs.
+
+So, incoming partial_id is always 6 chars.
+It always completes to 10 digits on success.
+But, this completion will have to work with two different dir structures.
+New-structure: b8/LYDy/Jt3C
+  this is a glob like this
+      Dir.glob("b8/LYDy/*") and it must have 1 completion
+      exact structure to be determined based on speed tests,
+      eg could be (would prefer it to be)
+      Dir.glob("b8/LY/Dy/*")
+Old-structure: 12/34567890
+  this is a glob like this
+      Dir.glob("12/3456*") and it must have 1 completion
