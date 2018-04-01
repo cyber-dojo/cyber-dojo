@@ -1,18 +1,11 @@
 
 Make storer id-completion methods part of a separate helper class.
 
-incoming partial_id is always 6 chars.
-if it completes to 10 chars its for an old base16 ID
-if it completes to 6 chars its for a new base58 ID
+incoming partial_id is always 6 digits.
+It always completes to 10 digits to keep the format of URLs.
+But put a new directory structure barrier at 6 digits.
 
-Dont like this because at the moment there are always 10 digits.
-Better if I can keep it to always 10 digits.
-So keep 10 digits. But put directory structure barrier at 6 digits.
-Yes. This is much better. Keeps the format of URLs.
-
-So, incoming partial_id is always 6 chars.
-It always completes to 10 digits on success.
-But, this completion will have to work with two different dir structures.
+The completion will have to work with two different dir structures.
 New-structure: b8/LYDy/Jt3C
   this is a glob like this
       Dir.glob("b8/LYDy/*") and it must have 1 completion
@@ -22,3 +15,17 @@ New-structure: b8/LYDy/Jt3C
 Old-structure: 12/34567890
   this is a glob like this
       Dir.glob("12/3456*") and it must have 1 completion
+
+Now, there is a still a problem that storer does not know
+whether the 10 digit ID is in the old-dir structure
+or the new-dir structure. All I can think here is that
+it tries the new-dir structure first, and if that exists
+it uses that, if not it drops back to the old structure.
+
+
+
+Also want to collapse the duplication between Storer and StorerFake.
+Have an inner StorerCommon class that accepts its PfA externals.
+Storer delegates to StorerCommon with the real externals.
+StorerFake delegates to StorerCommon with fake externals.
+

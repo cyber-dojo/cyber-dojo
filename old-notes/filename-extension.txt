@@ -1,13 +1,12 @@
 Issue: javascript has dot files appearing at the top of the file-list.
 Would be nice to have just the source files appearing in the top section.
-And instructions too.
-Design idea:
-Use filename_extension (from manifest) to select files appearing in top section.
+Idea: Use filename_extension (from manifest) to select files appearing in top section.
 Problem: C/C++ have more than one filename extension.
 Solution? extend filename_extension in the manifest so it can be an array of strings.
-Make kata.filename_extension (in models) into filename_extensions and it returns an array.
+Make kata.filename_extension (in models) return an array.
 
-C/C++ have specific makefiles.
+C/C++ have specific makefiles which controls specific extensions.
+Viz they are .cpp and not .C
 
 So for C
 [ ".c", ".h" ]
@@ -15,5 +14,4 @@ So for C
 And for C++
 [ ".cpp", ".hpp" ]
 
-Or, add custom hack into source directly?
-Yes. I think initially, this is ok.
+DONE.
