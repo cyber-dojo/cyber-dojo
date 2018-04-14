@@ -25,5 +25,3 @@ feature: traffic-lights have some visual indication if there is a
 
 feature: hyperlink of compiler error on output to file and line number
 
-feature: colour syntax?
-

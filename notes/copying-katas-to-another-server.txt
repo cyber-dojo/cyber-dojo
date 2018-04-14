@@ -32,6 +32,7 @@ accu2017/EF/...
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 Now from the cyber-dojo server you want to copy the files to,
+(which is the storer node for the main)
 get a copy of the files...
 
 $ cd /tmp

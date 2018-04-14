@@ -6,8 +6,8 @@ It will list two instances, eg
   ssd-server-blue
   ssd-storer
 
-If it lists ssd-server-blue  then create a new instance called ssd-server-green
-If it lists ssd-server-green then create a new instance called ssd-server-blue
+If it lists server-blue  then create a new instance called ssd-server-green
+If it lists server-green then create a new instance called ssd-server-blue
 
 1. CREATE THE SSD-SERVER-GREEN INSTANCE
 =======================================
@@ -15,7 +15,7 @@ From https://console.cloud.google.com/compute/instances?project=cyber-dojo
 
 Click the [CREATE INSTANCE] button at the top
 
-In the [Name] field enter ssd-server-green
+In the [Name] field enter server-green
 
 In the [Zone] field select europe-west1-b
 
@@ -42,7 +42,7 @@ Click the [Create] button on the bottom left
 From https://console.cloud.google.com/compute/instances?project=cyber-dojo
 
 From the [VM instances] list
-Click [SSH] for ssd-server-green
+Click [SSH] for server-green
 An ssh terminal will open
 Enter the following commands
 $ wget -qO- https://get.docker.com/ | sh
@@ -50,8 +50,7 @@ $ curl -O https://raw.githubusercontent.com/cyber-dojo/commander/master/cyber-do
 $ chmod +x cyber-dojo
 $ echo "STORER_HOSTNAME=A.B.C.D" > web.env
 $ echo "STORER_PORT=4577" >> web.env
-$ echo "STORER_HOSTNAME=A.B.C.D" > zipper.env
-$ echo "STORER_PORT=4577" >> zipper.env
+$ cp web.env zipper.env
 $ sudo ./cyber-dojo up
 $ exit
 
@@ -67,12 +66,12 @@ Click [instance groups] menu option on the left.
 Click ssd-instance-group
 Click [EDIT GROUP] at the top
 In the [VM instances] section
-  One VM instance will be listed, eg ssd-server-blue
+  One VM instance will be listed, eg server-blue
   Click the [Add an instance] dropdown
-  Select ssd-server-green
+  Select server-green
   There will now be two vm instances listed
-  Click the [x] to the right of ssd-server-blue
-  One VM instance will be listed, eg ssd-server-green
+  Click the [x] to the right of server-blue
+  One VM instance will be listed, eg server-green
   Click the [Save] button at the bottom
 
 
