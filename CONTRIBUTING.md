@@ -19,7 +19,7 @@ has a crude
 [cyber-dojo.sh file](https://github.com/cyber-dojo-languages/java-junit/blob/master/start_point/cyber-dojo.sh)
 which starts with [rm -f *.class] and can surely be improved.
 
-- figure out how to fix the broken Dockerfile for
+- fix the broken Dockerfile for
 [elm+test](https://github.com/cyber-dojo-languages/elm-test)
 
 - add Scala. I tried this ages ago; the response time was so long it was not useable (~15 seconds).
@@ -30,10 +30,17 @@ Someone smarter than me can surely get this down to something reasonable.
 - the [Dockerfiles](https://docs.docker.com/engine/reference/builder/) used
 to create the language start-point images are based on either
 [Alpine Linux](https://alpinelinux.org/) or
-[Ubuntu](https://www.ubuntu.com/).
-For example, the [C,assert] Alpine based image is 96MB.
-For example, the [C++ (clang),assert] Ubuntu based image is 1.7GB.
-Converting Ubuntu based images to smaller Alpine based images would be nice.
+[Ubuntu](https://www.ubuntu.com/) or
+[Debian](https://www.debian.org/).
+For example, the [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit)
+Alpine based image is 114MB.
+For example, the [C++ (clang),GoogleMock](https://github.com/cyber-dojo-languages/clangplusplus-googlemock)
+Ubuntu based image is 903MB.
+For example, the [Python,pytest](https://github.com/cyber-dojo-languages/python-pytest)
+Debian based image is 1.05GB.
+Converting Ubuntu/Debian based images to smaller Alpine based images
+where appropriate would be nice.
+
 
 - [new exercises](https://github.com/cyber-dojo/start-points-exercises)
 
