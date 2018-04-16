@@ -1,5 +1,6 @@
 
-Things that would help:
+
+[Instructions for downloading the git repos and building everything from source](https://github.com/cyber-dojo/cyber-dojo/tree/master/dev)?
 
 1) If you've tried to build your own cyber-dojo from the github source repos
 (and maybe do some development) I'd really appreciate knowing what worked,
@@ -22,7 +23,10 @@ has a crude
 [cyber-dojo.sh file](https://github.com/cyber-dojo-languages/java-junit/blob/master/start_point/cyber-dojo.sh)
 which starts with [rm -f *.class] and can surely be improved.
 
-4) The [Dockerfiles](https://docs.docker.com/engine/reference/builder/) used
+4) Figure out how to fix the broken Dockerfile for
+[elm+test](https://github.com/cyber-dojo-languages/elm-test)
+
+5) The [Dockerfiles](https://docs.docker.com/engine/reference/builder/) used
 to create the language start-point images are based on either
 [Alpine Linux](https://alpinelinux.org/) or
 [Ubuntu](https://www.ubuntu.com/).
@@ -30,11 +34,6 @@ For example, the [C,assert] Alpine based image is 96MB.
 For example, the [C++ (clang),assert] Ubuntu based image is 1.7GB.
 Converting Ubuntu based images to smaller Alpine based images would be nice.
 
-5) [New exercises](https://github.com/cyber-dojo/start-points-exercises)
+6) [New exercises](https://github.com/cyber-dojo/start-points-exercises)
 
-6) Figure out how to fix the broken Dockerfile for
-[javascript+cucumber](https://github.com/cyber-dojo-languages/javascript-cucumber)
-
-7) Figure out how to fix the broken Dockerfile for
-[elm+test](https://github.com/cyber-dojo-languages/elm-test)
 
