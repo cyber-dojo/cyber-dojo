@@ -5,7 +5,7 @@
 If you fancy helping with a specific issue please add a comment to it.
 
 - if you've tried to build your own cyber-dojo from the github source repos
-I'd really appreciate knowing what worked, what didn't, was easy, what was hard,
+I'd really appreciate knowing what was easy, what was hard,
 and what I could do to make it easier for you.
 
 - help reduce the [test] response time for some of the C/C++ test-frameworks.
