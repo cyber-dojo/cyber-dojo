@@ -22,8 +22,7 @@ Someone smarter than me can surely get this down to something reasonable.
 
 - [new exercises](https://github.com/cyber-dojo/start-points-exercises)
 
-- the [Dockerfiles](https://docs.docker.com/engine/reference/builder/) used
-to create the language start-point images are based on either
+- the language+testFramework images are based on either
 [Alpine Linux](https://alpinelinux.org/) or
 [Ubuntu](https://www.ubuntu.com/) or
 [Debian](https://www.debian.org/).
