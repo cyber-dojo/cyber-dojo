@@ -8,16 +8,10 @@ If you fancy helping with a specific issue please add a comment to it.
 I'd really appreciate knowing what was easy, what was hard,
 and what I could do to make it easier for you.
 
-- help reduce the [test] response time for some of the C/C++ test-frameworks.
+- help reduce the [test] response time for some of the test-frameworks.
 For example,
-[C++ (clang),GoogleMock](https://github.com/cyber-dojo-languages/clangplusplus-googlemock)
-
-- help reduce the [test] response time for Java test-frameworks.
-For example,
+[C++ (clang),GoogleMock](https://github.com/cyber-dojo-languages/clangplusplus-googlemock),
 [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit)
-has a crude
-[cyber-dojo.sh file](https://github.com/cyber-dojo-languages/java-junit/blob/master/start_point/cyber-dojo.sh)
-which starts with [rm -f *.class] and can surely be improved.
 
 - fix the broken Dockerfile for
 [elm+test](https://github.com/cyber-dojo-languages/elm-test)
@@ -25,7 +19,7 @@ which starts with [rm -f *.class] and can surely be improved.
 - add Scala. I tried this ages ago; the response time was so long it was not useable (~15 seconds).
 Someone smarter than me can surely get this down to something reasonable.
 
-- add new language+testFrameworks, Prolog, Lisp, ...
+- add new language+testFrameworks, Prolog, Lisp, SQL, ...
 
 - the [Dockerfiles](https://docs.docker.com/engine/reference/builder/) used
 to create the language start-point images are based on either
@@ -40,7 +34,6 @@ For example, the [Python,pytest](https://github.com/cyber-dojo-languages/python-
 Debian based image is 1.05GB.
 Converting Ubuntu/Debian based images to smaller Alpine based images
 where appropriate would be nice.
-
 
 - [new exercises](https://github.com/cyber-dojo/start-points-exercises)
 
