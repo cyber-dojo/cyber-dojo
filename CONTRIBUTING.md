@@ -8,11 +8,6 @@ If you fancy helping with a specific issue please add a comment to it.
 I'd really appreciate knowing what was easy, what was hard,
 and what I could do to make it easier for you.
 
-- help reduce the [test] response time for some of the test-frameworks.
-For example,
-[C++ (clang),GoogleMock](https://github.com/cyber-dojo-languages/clangplusplus-googlemock),
-[Java,JUnit](https://github.com/cyber-dojo-languages/java-junit)
-
 - fix the broken Dockerfile for
 [elm+test](https://github.com/cyber-dojo-languages/elm-test)
 
@@ -21,20 +16,20 @@ Someone smarter than me can surely get this down to something reasonable.
 
 - add new language+testFrameworks, Prolog, Lisp, SQL, ...
 
+- help reduce the [test] response time for the test-framework runs, eg
+  - [C++ (clang),GoogleMock](https://github.com/cyber-dojo-languages/clangplusplus-googlemock)
+  - [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit)
+
+- [new exercises](https://github.com/cyber-dojo/start-points-exercises)
+
 - the [Dockerfiles](https://docs.docker.com/engine/reference/builder/) used
 to create the language start-point images are based on either
 [Alpine Linux](https://alpinelinux.org/) or
 [Ubuntu](https://www.ubuntu.com/) or
 [Debian](https://www.debian.org/).
-For example, the [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit)
-Alpine based image is 114MB.
-For example, the [C++ (clang),GoogleMock](https://github.com/cyber-dojo-languages/clangplusplus-googlemock)
-Ubuntu based image is 903MB.
-For example, the [Python,pytest](https://github.com/cyber-dojo-languages/python-pytest)
-Debian based image is 1.05GB.
+For example
+  - the [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit) Alpine based image is 114MB.
+  - the [C++ (clang),GoogleMock](https://github.com/cyber-dojo-languages/clangplusplus-googlemock) Ubuntu based image is 903MB.
+  - the [Python,pytest](https://github.com/cyber-dojo-languages/python-pytest) Debian based image is 1.05GB.
 Converting Ubuntu/Debian based images to smaller Alpine based images
 where appropriate would be nice.
-
-- [new exercises](https://github.com/cyber-dojo/start-points-exercises)
-
-
