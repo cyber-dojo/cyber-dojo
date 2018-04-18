@@ -18,9 +18,9 @@ This is the simplest way to contribute and a good way to start.
   - [Windows](http://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on_68.html)
 - git clone the repository for your chosen language,testFramework, eg
 [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit).
-Here is a
+Here's a
 [complete list](https://github.com/cyber-dojo/start-points-languages/blob/master/languages_list)
-of all 100+.
+of all 100+
 - git clone the [image_builder](https://github.com/cyber-dojo-languages/image_builder) repository.
 This automates the building and testing and must be in a sibling directory.
 - open a Docker Quickstart Terminal
@@ -39,7 +39,7 @@ cd java-junit
 You can now improve the Java,JUnit docker image or use it as a start-point for a
 new language+testFramework.
 
-Here's a list of specific ways you can contribute to cyber-dojo-languages.
+Specific ways you can contribute to cyber-dojo-languages.
 
 - fix the broken Dockerfile for
 [elm,test](https://github.com/cyber-dojo-languages/elm-test)
