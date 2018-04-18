@@ -5,8 +5,8 @@ alt="cyber-dojo yin/yang logo" width="50px" height="50px"/>
 The cyber-dojo source code is split across two github organizations.
 - [cyber-dojo](https://github.com/cyber-dojo) contains 10+ repositories, one for
 each dockerized microservice that together comprise the server.
-- [cyber-dojo-languages](https://github.com/cyber-dojo-languages) contains over 100
-respositories, one for each language+testFramework (eg Java,JUnit).
+- [cyber-dojo-languages](https://github.com/cyber-dojo-languages) contains 100+
+repositories, one for each language+testFramework (eg Java,JUnit).
 
 - - - -
 
