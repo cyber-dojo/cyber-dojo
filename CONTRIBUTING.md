@@ -64,8 +64,7 @@ The language+testFramework images are based on either
 [Alpine Linux](https://alpinelinux.org/) or
 [Ubuntu](https://www.ubuntu.com/) or
 [Debian](https://www.debian.org/).
-
-If the official dockerhub image for a language is Ubuntu/Debian
+However, if the official dockerhub image for a language is Ubuntu/Debian
 then experience has shown it's typically best to use that so the nightly Travis build
 gets the :latest image.
   - the [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit) Alpine based image is 114MB.
