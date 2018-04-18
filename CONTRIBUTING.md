@@ -26,9 +26,10 @@ Someone smarter than me can surely get this down to something reasonable.
 [Alpine Linux](https://alpinelinux.org/) or
 [Ubuntu](https://www.ubuntu.com/) or
 [Debian](https://www.debian.org/).
+Converting Ubuntu/Debian based images to smaller Alpine based images
+where appropriate would be nice.
 For example
   - the [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit) Alpine based image is 114MB.
   - the [C++ (clang),GoogleMock](https://github.com/cyber-dojo-languages/clangplusplus-googlemock) Ubuntu based image is 903MB.
   - the [Python,pytest](https://github.com/cyber-dojo-languages/python-pytest) Debian based image is 1.05GB.
-Converting Ubuntu/Debian based images to smaller Alpine based images
-where appropriate would be nice.
+
