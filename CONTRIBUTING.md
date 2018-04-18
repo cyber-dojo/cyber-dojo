@@ -3,26 +3,30 @@
 alt="cyber-dojo yin/yang logo" width="50px" height="50px"/>
 
 The cyber-dojo source code is split across two github organizations.
-- [cyber-dojo](https://github.com/cyber-dojo) This contains ~10 repositories, one for
-each of the dockerized microservices that together comprise the main web server.
+- [cyber-dojo](https://github.com/cyber-dojo) This contains 10+ repositories, one for
+each of the dockerized microservices that together comprise the server.
 - [cyber-dojo-languages](https://github.com/cyber-dojo-languages) This contains over 100
-respositories, one for each dockerized microservice for a given language+testFramework.
+respositories, one for each dockerized microservice for a given language+testFramework (eg Java,JUnit).
 
 # contributing to cyber-dojo-languages
 This is the simplest way to contribute and a good way to start.
-- install docker as detailed [here](http://blog.cyber-dojo.org/2017/09/running-your-own-cyber-dojo-server.html).
-On Windows/Mac note that these instructions specify to install DockerToolbox.
+- install docker by following the instructions at the top of...
+  - [Linux](http://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on.html)
+  - [Mac](http://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on_15.html)
+  - [Windows](http://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on_68.html)
 - git clone the [image_builder](https://github.com/cyber-dojo-languages/image_builder) repository.
 This automates the building and testing.
 - git clone the repository for the language,testFramework, eg
 [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit).
+This must be a sibling directory to image_builder.
+- open a Docker Quickstart Terminal
 - build and test the docker image for Java,JUnit by running its pipe_build_up_test.sh file.
-The first time you run this it will need to docker pull dependent images.
+The first time you run this docker will pull dependent images.
 
 ```
 mkdir cdlang
 cd cdlang
-git clone https://github.com/cyber-dojo-languages/image_builder
+git clone https://github.com/cyber-dojo-languages/image_builder.git
 git clone https://github.com/cyber-dojo-languages/java-junit.git
 cd java-junit
 ./pipe_build_up_test.sh
@@ -30,6 +34,8 @@ cd java-junit
 
 You can now improve the Java,JUnit docker image or use it as a start-point for a
 new language+testFramework.
+
+- - - -
 
 Here's a list of specific ways you can contribute to cyber-dojo-languages.
 
