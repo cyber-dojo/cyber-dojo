@@ -14,7 +14,7 @@
 
 - - - - -
 
-  * How can I help [contribute to developing cyber-dojo](https://github.com/cyber-dojo/cyber-dojo/blob/master/CONTRIBUTING.md)?
+  * How can I [contribute to developing cyber-dojo](https://github.com/cyber-dojo/cyber-dojo/blob/master/CONTRIBUTING.md)?
 
 - - - -
 
