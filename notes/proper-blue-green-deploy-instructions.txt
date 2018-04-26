@@ -49,7 +49,6 @@ $ wget -qO- https://get.docker.com/ | sh
 $ curl -O https://raw.githubusercontent.com/cyber-dojo/commander/master/cyber-dojo
 $ chmod +x cyber-dojo
 $ echo "STORER_HOSTNAME=A.B.C.D" > web.env
-$ echo "STORER_PORT=4577" >> web.env
 $ cp web.env zipper.env
 $ sudo ./cyber-dojo up
 $ exit
