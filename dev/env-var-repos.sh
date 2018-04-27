@@ -4,7 +4,7 @@ CD_SERVICE_REPOS=(starter \
                   zipper \
                   differ \
                   runner_stateful \
-                  runner_stateless \
+                  runner-stateless \
                   collector \
                   commander \
                   web \
