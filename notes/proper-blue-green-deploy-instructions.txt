@@ -73,6 +73,12 @@ In the [VM instances] section
   One VM instance will be listed, eg server-green
   Click the [Save] button at the bottom
 
+  The bell-icon at the top right will start 'spinning'
+  It usually takes about 3-4 minutes for the new server to
+  be added to the load-balancer and for the old server to
+  be removed from the load-balancer. One it has completed
+  you can delete the old server.
+
 
 
 Setup a down server
@@ -86,7 +92,6 @@ $ sudo apt-get update --yes git
 $ git clone https://github.com/cyber-dojo/down.git
 $ sudo ./pipe_build_up.sh
 
-Point the load-balancer at it.
 
 
 
