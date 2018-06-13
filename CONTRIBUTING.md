@@ -16,24 +16,39 @@ This is the simplest way to contribute and a good way to start.
   - [Linux](http://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on.html)
   - [Mac](http://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on_15.html)
   - [Windows](http://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on_68.html)
+- open a Docker Quickstart Terminal
+- git clone the [image_builder](https://github.com/cyber-dojo-languages/image_builder) repository.
+This automates the building and testing of a cyber-dojo-language repo.
+```
+git clone https://github.com/cyber-dojo-languages/image_builder.git
+```
 - git clone the repository for your chosen language,testFramework, eg
-[Java,JUnit](https://github.com/cyber-dojo-languages/java-junit).
+[Java,JUnit](https://github.com/cyber-dojo-languages/java-junit). This must be in a
+sibling directory to image_builder directory.
+```
+git clone https://github.com/cyber-dojo-languages/java-junit.git
+```
 Here's a
 [complete list](https://github.com/cyber-dojo/start-points-languages/blob/master/languages_list)
-of all 100+
-- git clone the [image_builder](https://github.com/cyber-dojo-languages/image_builder) repository.
-This automates the building and testing and must be in a sibling directory.
-- open a Docker Quickstart Terminal
+of all 100+ language+testFramework repos in cyber-dojo-languages.
 - build and test the docker image for Java,JUnit by running its pipe_build_up_test.sh file.
 The first time you run this docker will pull dependent images.
 
 ```
-mkdir cdlang
-cd cdlang
-git clone https://github.com/cyber-dojo-languages/java-junit.git
-git clone https://github.com/cyber-dojo-languages/image_builder.git
 cd java-junit
 ./pipe_build_up_test.sh
+...
+# assert_create_start_point
+...
+# build_image
+...
+# show_avatar_users_sample
+...
+# check_red_amber_green
+# using runner-stateless, max_seconds=10
+# red: OK (~2.45 seconds)
+# amber: OK (~1.46 seconds)
+# green: OK (~1.86 seconds)
 ```
 
 You can now improve the Java,JUnit docker image or use it as a start-point for a
