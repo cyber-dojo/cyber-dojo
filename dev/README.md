@@ -34,15 +34,20 @@ src/zipper
 ```
 
 To build your server from these repos:
-
 ```
 src/cyber-dojo/dev/build-all.sh
 ```
 
 To bring up your server:
-
 ```
-src/commander/cyber-dojo up
+URL=https://raw.githubusercontent.com/cyber-dojo/start-points-languages/master/languages_list_common
+src/commander/cyber-dojo start-point create common --list=${URL}
+src/commander/cyber-dojo up --languages=common
+```
+
+To bring down your server:
+```
+src/commander/cyber-dojo down
 ```
 
 - - - -
