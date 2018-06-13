@@ -37,22 +37,32 @@ The first time you run this docker will pull dependent images.
 ```
 cd java-junit
 ./pipe_build_up_test.sh
+```
+will produce output like this:
+```
 ...
+# ------------------------------------------
 # assert_create_start_point
 ...
+# ------------------------------------------
 # build_image
 ...
+# ------------------------------------------
 # show_avatar_users_sample
 ...
+# ------------------------------------------
 # check_red_amber_green
 # using runner-stateless, max_seconds=10
 # red: OK (~2.45 seconds)
 # amber: OK (~1.46 seconds)
 # green: OK (~1.86 seconds)
+# ------------------------------------------
+...
 ```
 
-You can now improve the Java,JUnit docker image or use it as a start-point for a
-new language+testFramework.
+You can now improve the Java,JUnit docker image (built from java-junit/docker/)
+or the Java-JUnit starting files (which live in java-junit/start_point/)
+ or use it as a start-point for a new language+testFramework.
 
 Specific ways you can contribute to cyber-dojo-languages.
 
@@ -66,11 +76,11 @@ Can someone smart get this down to something reasonable?
 
 - add a new language, Prolog, Lisp, SQL, ...
 
-- add a new test-framework
+- add a new test-framework, [testNG](https://testng.org/doc/index.html) anyone?
 
 - reduce the [test] response time for your favourite language,test-framework
 
-- make the starting files for you favourite language,test-framework more idiomatic
+- read the starting files for you favourite language,test-framework and make them more idiomatic
 
 - suggest a [new exercise](https://github.com/cyber-dojo/start-points-exercises)
 
