@@ -1,4 +1,20 @@
 
+
+========================
+0. Setup a down server?
+========================
+Create a small server. Install git, docker, docker-compose, clone the repo, build it.
+See below...
+SSH into it the server.
+$ wget -qO- https://get.docker.com/ | sh
+$ sudo curl -L https://github.com/docker/compose/releases/download/1.20.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+$ sudo chmod +x /usr/local/bin/docker-compose
+$ sudo apt-get install --yes git
+$ git clone https://github.com/cyber-dojo/down.git
+$ cd down
+$ sudo ./pipe_build_up.sh
+
+
 From https://console.cloud.google.com/compute/instances?project=cyber-dojo
 
 Click [VM instances] menu option on the left.
@@ -9,6 +25,10 @@ It will list two instances, eg
 If it lists server-blue  then create a new instance called ssd-server-green
 If it lists server-green then create a new instance called ssd-server-blue
 
+
+
+
+=======================================
 1. CREATE THE SSD-SERVER-GREEN INSTANCE
 =======================================
 From https://console.cloud.google.com/compute/instances?project=cyber-dojo
@@ -17,6 +37,7 @@ Click the [CREATE INSTANCE] button at the top
 
 In the [Name] field enter server-green
 
+In the [Region] field select europe-west1 (Belgium)
 In the [Zone] field select europe-west1-b
 
 For the [Machine type] click [Customise]
@@ -37,7 +58,21 @@ set [Allow HTTP traffic] to ticked
 Click the [Create] button on the bottom left
 
 
-2. INSTALL CYBER_DOJO ON THE NEW INSTANCE
+
+=========================================
+2. UPDATE storer?
+=========================================
+Shell into the storer node
+$ mv storer old_storer
+$ git clone https://github.com/cyber-dojo/storer.git
+$ cd storer
+Kill all the existing containers, but not the katas-data-container
+$ ./start_stand_alone_server.sh
+
+
+
+=========================================
+3. INSTALL CYBER_DOJO ON THE NEW INSTANCE
 =========================================
 From https://console.cloud.google.com/compute/instances?project=cyber-dojo
 
@@ -48,7 +83,8 @@ Enter the following commands
 $ wget -qO- https://get.docker.com/ | sh
 $ curl -O https://raw.githubusercontent.com/cyber-dojo/commander/master/cyber-dojo
 $ chmod +x cyber-dojo
-$ echo "STORER_HOSTNAME=A.B.C.D" > web.env
+$ echo "STORER_SERVICE_NAME=A.B.C.D" > web.env
+$ echo "STORER_SERVICE_PORT=4577" >> web.env
 $ cp web.env zipper.env
 $ sudo ./cyber-dojo up
 $ exit
@@ -78,22 +114,4 @@ In the [VM instances] section
   be added to the load-balancer and for the old server to
   be removed from the load-balancer. One it has completed
   you can delete the old server.
-
-
-
-Setup a down server
-===================
-Create a small server. Install git, docker, docker-compose, clone the repo, build it.
-SSH into it the server.
-$ wget -qO- https://get.docker.com/ | sh
-$ sudo curl -L https://github.com/docker/compose/releases/download/1.20.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-$ sudo chmod +x /usr/local/bin/docker-compose
-$ sudo apt-get update --yes git
-$ git clone https://github.com/cyber-dojo/down.git
-$ sudo ./pipe_build_up.sh
-
-
-
-
-
 
