@@ -8,4 +8,4 @@ before_script:
 
 script:
     - ./dev/git-clone-all.sh
-    - ./dev/build-all.sh
+    - travis_retry ./dev/build-all.sh
