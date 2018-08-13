@@ -4,7 +4,8 @@ set -e
 # Script used in .travis.yml files to [docker push] a
 # successfully built docker image to dockerhub followed,
 # if pushed successfully, by triggering the .travis.yml
-# files in dependent git repos.
+# files in dependent git repos, whose names are passed
+# on the command line.
 
 # I do NOT run this in .travis.yml's after_success: section
 # because when commands in the after_success: section fail
@@ -20,6 +21,31 @@ set -e
 # environment variables set for the dockerhub repo the
 # docker image is being pushed to.
 
+# -----------------------------------------------------------------------
+# docker login
+# -----------------------------------------------------------------------
+# if you docker login like this...
+#
+# docker login \
+#   --username "${DOCKER_USERNAME}" \
+#   --password "${DOCKER_PASSWORD}"
+#
+# ...then you get this warning...
+#
+# WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+#
+# However, if you docker login like this...
+#
+# echo "${DOCKER_PASSWORD}" | docker login \
+#   --username "${DOCKER_USERNAME}" \
+#   --password-stdin
+#
+# ...then you get this warning...
+#
+# WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+# -----------------------------------------------------------------------
+
+
 if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
   BRANCH=${TRAVIS_BRANCH}
 else
@@ -27,7 +53,7 @@ else
 fi
 
 if [ "${BRANCH}" == "master" ]; then
-  echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
+  docker login --username "${DOCKER_USERNAME}" --password "${DOCKER_PASSWORD}"
   TAG_NAME=$(basename ${TRAVIS_REPO_SLUG})
   docker push cyberdojo/${TAG_NAME}
   echo "PUSHED cyberdojo/${TAG_NAME} to dockerhub"
