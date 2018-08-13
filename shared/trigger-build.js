@@ -37,16 +37,16 @@
 // eg
 //      $ npm install travis-ci
 //      $ export NODE_PATH=$(npm config get prefix)
-//      $ node trigger-build.js cyber-dojo-languages/python-3.6.1
+//      $ node trigger-build.js cyber-dojo-languages/python
 
-var Travis = require('travis-ci');
+const Travis = require('travis-ci');
 
-var travis = new Travis({
+const travis = new Travis({
   version: '2.0.0',
   headers: { 'User-Agent': 'Travis/1.0' }
 });
 
-var exit = function(call,error,response) {
+const exit = function(call,error,response) {
   console.error('ERROR:travis.' + call + 'function(error,response) { ...');
   console.error('   error:' + error);
   console.error('response:' + JSON.stringify(response, null, '\t'));
@@ -54,17 +54,26 @@ var exit = function(call,error,response) {
 };
 
 travis.authenticate({ github_token: process.env.GITHUB_TOKEN }, function(error,response) {
-  var repos = process.argv.slice(2);
-  if (error) { exit('authenticate({...}, ', error, response); }
+  const repos = process.argv.slice(2);
+  if (error) {
+    const call = 'authenticate({...}, ';
+    exit(call, error, response);
+  }
   repos.forEach(function(repo) {
-    var parts = repo.split('/');
-    var name = parts[0];
-    var tag = parts[1];
+    const parts = repo.split('/');
+    const name = parts[0];
+    const tag = parts[1];
     console.log('TRIGGERING dependent repo ' + repo);
     travis.repos(name, tag).builds.get(function(error,response) {
-      if (error) { exit('repos(' + name + ',' + tag + ').builds.get(', error, response); }
+      if (error) {
+        const call = 'repos(' + name + ',' + tag + ').builds.get(';
+        exit(call, error, response);
+      }
       travis.requests.post({ build_id: response.builds[0].id }, function(error,response) {
-        if (error) { exit('requests.post({...}, ', error, response); }
+        if (error) {
+          const call = 'requests.post({...}, ';
+          exit(call, error, response);
+        }
         console.log(repo + ':' + response.flash[0].notice);
       });
     });
