@@ -27,7 +27,7 @@ else
 fi
 
 if [ "${BRANCH}" == "master" ]; then
-  docker login --username "${DOCKER_USERNAME}" --password "${DOCKER_PASSWORD}"
+  echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
   TAG_NAME=$(basename ${TRAVIS_REPO_SLUG})
   docker push cyberdojo/${TAG_NAME}
   echo "PUSHED cyberdojo/${TAG_NAME} to dockerhub"
