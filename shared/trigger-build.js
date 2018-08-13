@@ -54,15 +54,15 @@ const exit = function(call,error,response) {
 };
 
 travis.authenticate({ github_token: process.env.GITHUB_TOKEN }, function(error,response) {
-  const repos = process.argv.slice(2);
   if (error) {
     const call = 'authenticate({...}, ';
     exit(call, error, response);
   }
-  repos.forEach(function(repo) {
+  const repos = process.argv.slice(2);
+  repos.forEach(function(repo) {     // 'cyber-dojo/web'
     const parts = repo.split('/');
-    const name = parts[0];
-    const tag = parts[1];
+    const name = parts[0];           // 'cyber-dojo'
+    const tag = parts[1];            // 'web'
     console.log('TRIGGERING dependent repo ' + repo);
     travis.repos(name, tag).builds.get(function(error,response) {
       if (error) {
