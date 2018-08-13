@@ -1,0 +1,100 @@
+
+...It would be nice to decouple the runner from the avatar abstraction...
+(and also, make it easier to select different avatars)
+
+Suppose there was a service called 'grouper'
+Its job would be to group individual participants into a group.
+So, suppose there was a practice session (PS) with id 456
+
+-- I join 456 and the grouper assigns me a
+   new uid 789 and associates it with 456
+
+-- I can ask the grouper for my parent-group,
+   passing it 789 and it
+   tells me 456,3
+   because I am the third participant in 456
+
+How will this play out with the avatar-name?
+If grouper assigns indexes incrementally then how
+will the avatar names be random?
+The grouper could simple store a shuffled array of [0..64]
+It still allocates internal indexes incrementally, but
+if the index is 3 it gives me back shuffle[3]
+
+My "identity" which was previously {456,lion} is now 789
+
+This is the id which is used by the system, for me.
+
+- - - - - - - - - - - - - - - - - - - - - - - -
+
+There is a new service called 'avatarer' (need a better name)
+Its for group sessions only.
+Your id is 789. From the grouper you get {456,3}
+You give 3 to the avatarer and it gives you back {lion}
+
+This lion is used for group display only.
+Note that there is really 2 items of information
+"lion" and the image. They are coupled.
+
+Inside the system, there is uniqueness for 789.
+
+This opens up the ability to have individual "portfolios"
+which are simply collections of ids. "lion" is simply a
+UI thing.
+
+
+Note that there is a coupling to nginx too, since it has to hold
+the images for the named avatars.
+
+Could this work 'retrospectively'?
+What about all the information stored in storer?
+I think there is nothing inside the json files.
+I think the avatars are only in the folder/ names.
+So I think this could be done on-the-fly
+
+- - - - - - - - - - - - - - - - - - - - - - - -
+
+Backward compatibility - reverse lookup
+=======================================
+
+Some URLs include avatar names....
+eg
+http://www.cyber-dojo.org/kata/edit/JXYASC17PD?avatar=toucan
+
+I would need to trap those, perhaps in an error handler
+and reroute to the new, simpler, URL, eg
+http://www.cyber-dojo.org/kata/edit/vX4DQqhwvx
+
+This means I will need reverse lookup...
+
+I need avatarer to convert "toucan" -> 4
+I need grouper to do children("JXYASC17PD") -> [cid0,cid1,cid2,cid3,cid4,...]
+Then I find the cid by using index 4 in this array => cid4
+
+What about going from the cid alone to the gid?
+That feels like something that would be better stored in the storer...
+But that feels wrong since it introduces coupling.
+Better for the grouper to store this info too..
+
+It has folders for _all_ IDs.
+If an ID is a group id the folder will store a children.json file
+If an ID is a child id the folder will store a parent.json file
+Raises the possibility of Composite, where it will store both.
+
+- - - - - - - - - - - - - - - - - - - - - - - -
+
+Grouper API
+-----------
+
+join(gid) --> {cid,index}
+  gid = PS group-id
+  cid = PS child-id
+  index = random (but consistent) index of cid in gid
+
+children(gid) --> [cid,cid,cid,cid]
+  gid = PS group-id
+  cid = PS child-id,
+  where the index of cid in the array is not relevant
+
+
+

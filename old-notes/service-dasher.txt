@@ -1,7 +1,27 @@
 
 Provides dashboard view.
 
-Now the differ service has been split off I should think
-about storing extra information in the increments.json file
-so that I do not have to do any diffing to show the dashboard
-traffic-light tool-tips.
+The dashboard refreshes every 10 seconds...
+
+The vast majority of the time it shows very few new traffic lights.
+It's pretty fast because of the structure of the files on the SSD drive.
+eg increments.json
+
+Could caching speed this up?
+
+How about if each test event result was sent not only to the storer but
+also to the cacher...
+
+The cacher could keep in memory copies on the most-recent N practice-sessions
+holding all their avatar and traffic-light info.
+I'd need a recently used list!
+
+What else could do with caching?
+Only really the diff view I think.
+That could be cached too...
+Again plan to hold a full cache of the most recent N practice-sessions
+This means the test info, the source files (as well as the result)
+needs to be sent to the cacher.
+The cacher then has a choice of whether to cache the file-sets
+and create the diffs on demand, or to diff the file-sets and
+cache the diffs. Later is faster...
