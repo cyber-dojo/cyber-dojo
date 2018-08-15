@@ -83,6 +83,13 @@ Raises the possibility of Composite, where it will store both.
 
 - - - - - - - - - - - - - - - - - - - - - - - -
 
+One effect of creating a flat ID structure in the storer could be
+there will be to no longer have easily collected caches of the increments.
+I think a better design is to have explicit cachers for the dashboard
+and differ, and to simplify the data stored in storer as much as possible.
+
+- - - - - - - - - - - - - - - - - - - - - - - -
+
 Grouper API
 -----------
 

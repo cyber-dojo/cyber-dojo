@@ -13,7 +13,7 @@ How about if each test event result was sent not only to the storer but
 also to the cacher...
 
 The cacher could keep in memory copies on the most-recent N practice-sessions
-holding all their avatar and traffic-light info.
+holding _all_ their avatar and traffic-light info.
 I'd need a recently used list!
 
 What else could do with caching?
