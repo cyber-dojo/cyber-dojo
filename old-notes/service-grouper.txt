@@ -4,6 +4,18 @@
 
 Suppose there was a service called 'grouper'
 Its job would be to group individual participants into a group.
+Or to record that a practice-session (PS) was for an individual.
+The storer would know absolutely nothing about individual/group
+or avatars. The storer would simply record increments against the ID.
+The grouper would, I think, also need to record the choice
+of "icons" for the group. Eg "animals". If new icon lists are introduced
+it should not (necessarily) change the appearance of existing icons.
+The grouper would also need to record the index of the icon (in its list)
+for each participant in a group PS.
+Eg if the first animal in is randomly selected to be lion, and the lion
+is the 23rd animal in its list, then the first animals index is 23.
+There is an assumption here that I won't change the icon set for an existing PS.
+
 So, suppose there was a practice session (PS) with id 456
 
 -- I join 456 and the grouper assigns me a
@@ -93,15 +105,42 @@ and differ, and to simplify the data stored in storer as much as possible.
 Grouper API
 -----------
 
-join(gid) --> {cid,index}
-  gid = PS group-id
-  cid = PS child-id
-  index = random (but consistent) index of cid in gid
+create_group_ps(icons,manifest) -> gid
+  - icons = name of the icon-list, eg "animals", what you look like
+  - manifest = information currently in storer. storer really does become just increments.
+               maybe rename to that? storer was always too general, too vague
+  - maybe this could be the full list, eg ["antelope","bat",...]
+  - how does that play with changes, eg in the number of avatars
+  - for example, we went from 16 to 64 before...
+  - how does the grouper create the id? needs to be unique in storer...
+    no it doesn't. Its not held in the storer at all. Stores only holds "actual" IDs.
+    grouper's job is to map from its group ID to the storer-IDs
+    So gid has to be unique in the grouper. The child IDs it records will be
+    IDs in the storer.
 
-children(gid) --> [cid,cid,cid,cid]
-  gid = PS group-id
-  cid = PS child-id,
-  where the index of cid in the array is not relevant
+create_alone_ps(manifest) -> aid
+  - what about a lone PS?
+  - IS this is the same as a group PS limited to one "entrant"?
+  - I think it is.
+
+join(gid) --> {cid,index}
+  - gid = PS group-id
+  - cid = PS child-id
+  - index = random (but consistent) index of cid in gid
+
+children(gid) --> [{cid,index},{cid,index},{cid,index},{cid,index}]
+  - gid = PS group-id
+  - cid = PS child-id,
+  - where the index of cid in the array is not relevant
+
+
+
+So one effect of the storer is to increase "security".
+The UX display will be in terms of gid,aid and icons.
+But the grouper will map these to storer IDs (sid)s.
+So the sids will never be "revealed".
+This affects backward compatibility.
+How are current URls going to be affected?
 
 
 
