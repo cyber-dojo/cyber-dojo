@@ -14,19 +14,20 @@
 #    amount of free disk space.
 # o) does not ensure the copied files inside the
 #    cyber-dojo-web data container have the correct rights. You may need to
-#    add a [chown -R cyber-dojo] docker command
+#    add a [chown -R storer] from a docker-exec
 # o) assumes a cyber-dojo server is running and hence there
-#    is an alive cyber-dojo-web container.
+#    is an alive cyber-dojo-storer container.
 # o) sleeps each time round the loop so as not to hog the cpu if
 #    you are running this on a live cyber-dojo server.
 
 src_path=/home/jrbjagger/katas
 dst_path=/usr/src/cyber-dojo/katas
 
+#for hex in '6C' '70' '89' 'B2' 'D7';
 for i in {0..255}
 do
   hex=`printf '%02X' ${i}`
   echo ${hex} # eg 3F
-  tar -c -f - -C ${src_path} ${hex} | sudo docker exec -i cyber-dojo-web tar -x -f - -C ${dst_path}
+  tar -c -f - -C ${src_path} ${hex} | sudo docker exec -i cyber-dojo-storer tar -x -f - -C ${dst_path}
   sleep 5s
 done
