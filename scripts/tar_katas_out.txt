@@ -1,0 +1,40 @@
+
+I would like to move the katas/ out of its data-container and into
+a regular host directory (which can be NFS mounted).
+This will be important for k8s I think.
+
+Perhaps the simplest way to get them out, which does not worry about upgrade
+of format at all, is to simply to tar pipe them out into a tgz file.
+Then cp the tgz file into a dir that has been bind-mounted to a persistent disk.
+This should be doable on the storer VM which is 37% full, 47% inode-full
+
+See scripts/tar_katas_out.bash
+
+Then untar this into the dir that has been bind-mounted to a persistent disk, eg /persistent-disk
+See https://cloud.google.com/compute/docs/disks/add-persistent-disk
+
+tar -C /persistent-disk -xvf backup.tar.gz
+
+This will create
+/persistent-disk/usr/src/cyber-dojo/katas/...
+
+Then, storer will need to volume mount that dir to the dir it uses internally...
+
+In a docker-compose.yml file...
+
+BECOMES...
+  storer:
+    volumes:
+      - /persistent-disk/usr/src/cyber-dojo/katas:/usr/src/cyber-dojo/katas:rw
+
+WAS...
+  storer:
+    volumes_from:
+      - container:${CYBER_DOJO_KATAS_DATA_CONTAINER}:rw
+
+Note that the storer container runs as the storer user (19661) so
+you will also need...
+
+$ chown -R 19661:19661 /persistent-disk
+
+

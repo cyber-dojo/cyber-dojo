@@ -19,11 +19,15 @@ tar -c -f - -C /home/jrbjagger/katas B4
 
 =====================================
 
+Copying the whole katas/ dir out of the container into current dir...
 OUT
+---
 docker exec cyber-dojo-storer tar -c -f - -C /usr/src/cyber-dojo katas
    | tar -x -f - -C .
 
+Copying the while katas/ dir (off /tmp) into the container...
 IN
+--
 tar -c -f - -C /tmp katas
    | docker exec -i cyber-dojo-storer tar -x -f - -C /usr/src/cyber-dojo
 
