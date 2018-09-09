@@ -16,3 +16,14 @@ GET FILES IN
 ------------
 tar -c -f - -C /home/jrbjagger/katas B4
    | sudo docker exec -i cyber-dojo-web tar -x -f - -C /usr/src/cyber-dojo/katas
+
+=====================================
+
+OUT
+docker exec cyber-dojo-storer tar -c -f - -C /usr/src/cyber-dojo katas
+   | tar -x -f - -C .
+
+IN
+tar -c -f - -C /tmp katas
+   | docker exec -i cyber-dojo-storer tar -x -f - -C /usr/src/cyber-dojo
+
