@@ -10,9 +10,6 @@
   * [cyber-dojo foundation](http://blog.cyber-dojo.org/2015/08/cyber-dojo-foundation.html) is a registered Scottish Charitable Incorporated Organisation
   * How do I [practice programming in cyber-dojo](http://blog.cyber-dojo.org/2014/08/getting-started.html)?
   * Try it now at [http://cyber-dojo.org](http://cyber-dojo.org).
-
-- - - - -
-
   * How can I [contribute to developing cyber-dojo](https://github.com/cyber-dojo/cyber-dojo/blob/master/CONTRIBUTING.md)?
 
 - - - -

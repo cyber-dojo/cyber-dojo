@@ -1,6 +1,6 @@
 # These have a dependency order
 CD_SERVICE_REPOS=(starter \
-                  storer \
+                  saver \
                   zipper \
                   differ \
                   runner-stateful \
