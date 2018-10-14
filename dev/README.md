@@ -80,7 +80,7 @@ The main service repos each contain a `pipe_build_up_test.sh` script which:
 
 Image dependencies
 
-![Image Dependency Graph](image_dependency_graph.pdf?raw=true "image dependency graph")
+![Image Dependency Graph](image_dependency_graph.png?raw=true "image dependency graph")
 
 - - - -
 
