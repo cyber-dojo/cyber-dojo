@@ -1,16 +1,18 @@
 # These have a dependency order
-CD_SERVICE_REPOS=(starter \
-                  saver \
+CYBER_DOJO_REPOS=(rack-base \
+                  docker-base \
+                  web-base \
+                  prometheus \
+                  grafana \
+                  starter \
+                  storer \
                   zipper \
                   differ \
+                  saver \
+                  porter \
                   runner-stateful \
                   runner-stateless \
                   collector \
                   commander \
                   web \
                   nginx)
-
-
-CD_MONITORING_REPOS=(prometheus grafana)
-
-CYBER_DOJO_REPOS=("${CD_SERVICE_REPOS[@]}" "${CD_MONITORING_REPOS[@]}")
