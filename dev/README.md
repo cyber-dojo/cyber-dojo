@@ -18,17 +18,17 @@ cd ..
 This will create the following directory structure (each directory holds a git repo):
 
 ```
-src/collector
 src/cyber-dojo
 src/commander
 src/differ
 src/grafana
 src/nginx
 src/prometheus
-src/runner-stateful
 src/runner-stateless
 src/starter
 src/saver
+src/storer
+src/porter
 src/web
 src/zipper
 ```
@@ -58,9 +58,7 @@ These are the main service images:
   * [![Build Status](https://travis-ci.org/cyber-dojo/commander.svg?branch=master)](https://travis-ci.org/cyber-dojo/commander) [commander](https://github.com/cyber-dojo/commander) - receives commands from the [cyber-dojo](https://github.com/cyber-dojo/commander/blob/master/cyber-dojo) shell script
   * [![Build Status](https://travis-ci.org/cyber-dojo/nginx.svg?branch=master)](https://travis-ci.org/cyber-dojo/nginx) [nginx](https://github.com/cyber-dojo/nginx) - fancy internet-facing web-server
   * [![Build Status](https://travis-ci.org/cyber-dojo/web.svg?branch=master)](https://travis-ci.org/cyber-dojo/web) [web](https://github.com/cyber-dojo/web) - simple rails web-server
-  * [![Build Status](https://travis-ci.org/cyber-dojo/runner-stateful.svg?branch=master)](https://travis-ci.org/cyber-dojo/runner-stateful) [runner-stateful](https://github.com/cyber-dojo/runner-stateful) - runs an avatar's code/tests statefully
-  * [![Build Status](https://travis-ci.org/cyber-dojo/runner-stateless.svg?branch=master)](https://travis-ci.org/cyber-dojo/runner-stateless) [runner-stateless](https://github.com/cyber-dojo/runner-stateless) - runs an avatar's code/tests statelessly
-  * [![Build Status](https://travis-ci.org/cyber-dojo/collector.svg?branch=master)](https://travis-ci.org/cyber-dojo/collector) [collector](https://github.com/cyber-dojo/collector) - collects old docker volumes created by stateful runner
+  * [![Build Status](https://travis-ci.org/cyber-dojo/runner-stateless.svg?branch=master)](https://travis-ci.org/cyber-dojo/runner-stateless) [runner-stateless](https://github.com/cyber-dojo/runner-stateless) - runs an avatar's code/tests
   * [![Build Status](https://travis-ci.org/cyber-dojo/starter.svg?branch=master)](https://travis-ci.org/cyber-dojo/starter) [starter](https://github.com/cyber-dojo/starter) - serves the language+testFramework/exercise start-points
   * [![Build Status](https://travis-ci.org/cyber-dojo/saver.svg?branch=master)](https://travis-ci.org/cyber-dojo/storer) [storer](https://github.com/cyber-dojo/saver) - saves groups/katas and code/test files
   * [![Build Status](https://travis-ci.org/cyber-dojo/differ.svg?branch=master)](https://travis-ci.org/cyber-dojo/differ) [differ](https://github.com/cyber-dojo/differ) - diffs two sets of files
@@ -87,4 +85,3 @@ Image dependencies
 Domain model
 
 ![Domain model](domain_model.png?raw=true "domain model")
-

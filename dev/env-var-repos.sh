@@ -10,9 +10,7 @@ CYBER_DOJO_REPOS=(rack-base \
                   differ \
                   saver \
                   porter \
-                  runner-stateful \
                   runner-stateless \
-                  collector \
                   commander \
                   web \
                   nginx)
