@@ -27,8 +27,6 @@ src/prometheus
 src/runner-stateless
 src/starter
 src/saver
-src/storer
-src/porter
 src/web
 src/zipper
 ```
@@ -63,10 +61,6 @@ These are the main service images:
   * [![Build Status](https://travis-ci.org/cyber-dojo/saver.svg?branch=master)](https://travis-ci.org/cyber-dojo/storer) [storer](https://github.com/cyber-dojo/saver) - saves groups/katas and code/test files in dirs volume-mounted from the host
   * [![Build Status](https://travis-ci.org/cyber-dojo/differ.svg?branch=master)](https://travis-ci.org/cyber-dojo/differ) [differ](https://github.com/cyber-dojo/differ) - diffs two sets of files
   * [![Build Status](https://travis-ci.org/cyber-dojo/zipper.svg?branch=master)](https://travis-ci.org/cyber-dojo/zipper) [zipper](https://github.com/cyber-dojo/zipper) - creates tgz files for download
-  * [![Build Status](https://travis-ci.org/cyber-dojo/porter.svg?branch=master)](https://travis-ci.org/cyber-dojo/porter) [porter](https://github.com/cyber-dojo/porter) - on demand, ports old practice-sessions from storer to saver
-  * [![Build Status](https://travis-ci.org/cyber-dojo/storer.svg?branch=master)](https://travis-ci.org/cyber-dojo/storer) [storer](https://github.com/cyber-dojo/storer) - stores code/test files inside a data-container - obsolete, see porter
-
-
 
 
 The main service repos each contain a `pipe_build_up_test.sh` script which:

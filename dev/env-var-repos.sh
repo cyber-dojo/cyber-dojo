@@ -5,11 +5,9 @@ CYBER_DOJO_REPOS=(rack-base \
                   prometheus \
                   grafana \
                   starter \
-                  storer \
                   zipper \
                   differ \
                   saver \
-                  porter \
                   runner-stateless \
                   commander \
                   web \
