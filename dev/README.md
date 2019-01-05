@@ -22,6 +22,7 @@ src/cyber-dojo
 src/commander
 src/differ
 src/grafana
+src/mapper
 src/nginx
 src/prometheus
 src/runner-stateless
@@ -54,11 +55,12 @@ Each repo in the github cyber-dojo organization builds a single docker image.
 
 These are the main service images:
   * [![Build Status](https://travis-ci.org/cyber-dojo/commander.svg?branch=master)](https://travis-ci.org/cyber-dojo/commander) [commander](https://github.com/cyber-dojo/commander) - receives commands from the [cyber-dojo](https://github.com/cyber-dojo/commander/blob/master/cyber-dojo) shell script
-  * [![Build Status](https://travis-ci.org/cyber-dojo/nginx.svg?branch=master)](https://travis-ci.org/cyber-dojo/nginx) [nginx](https://github.com/cyber-dojo/nginx) - fancy internet-facing web-server
+  * [![Build Status](https://travis-ci.org/cyber-dojo/nginx.svg?branch=master)](https://travis-ci.org/cyber-dojo/nginx) [nginx](https://github.com/cyber-dojo/nginx) - internet-facing web-server
   * [![Build Status](https://travis-ci.org/cyber-dojo/web.svg?branch=master)](https://travis-ci.org/cyber-dojo/web) [web](https://github.com/cyber-dojo/web) - simple rails web-server
   * [![Build Status](https://travis-ci.org/cyber-dojo/runner-stateless.svg?branch=master)](https://travis-ci.org/cyber-dojo/runner-stateless) [runner-stateless](https://github.com/cyber-dojo/runner-stateless) - runs an avatar's code/tests
   * [![Build Status](https://travis-ci.org/cyber-dojo/starter.svg?branch=master)](https://travis-ci.org/cyber-dojo/starter) [starter](https://github.com/cyber-dojo/starter) - serves the language+testFramework/exercise start-points
   * [![Build Status](https://travis-ci.org/cyber-dojo/saver.svg?branch=master)](https://travis-ci.org/cyber-dojo/saver) [saver](https://github.com/cyber-dojo/saver) - saves groups/katas and code/test files in a host dir volume-mounted to /cyber-dojo
+  * [![Build Status](https://travis-ci.org/cyber-dojo/mapper.svg?branch=master)](https://travis-ci.org/cyber-dojo/mapper) [mapper](https://github.com/cyber-dojo/mapper) - maps session ids ported from old architecture (storer) to new architecture (saver) by porter service.
   * [![Build Status](https://travis-ci.org/cyber-dojo/differ.svg?branch=master)](https://travis-ci.org/cyber-dojo/differ) [differ](https://github.com/cyber-dojo/differ) - diffs two sets of files
   * [![Build Status](https://travis-ci.org/cyber-dojo/zipper.svg?branch=master)](https://travis-ci.org/cyber-dojo/zipper) [zipper](https://github.com/cyber-dojo/zipper) - creates tgz files for download
 

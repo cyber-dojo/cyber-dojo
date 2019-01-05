@@ -1,4 +1,4 @@
-# These have a dependency order
+# Some of these have a dependency order
 CYBER_DOJO_REPOS=(rack-base \
                   docker-base \
                   web-base \
@@ -8,6 +8,7 @@ CYBER_DOJO_REPOS=(rack-base \
                   zipper \
                   differ \
                   saver \
+                  mapper \
                   runner-stateless \
                   commander \
                   web \
