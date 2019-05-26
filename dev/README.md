@@ -18,15 +18,17 @@ cd ..
 This will create the following directory structure (each directory holds a git repo):
 
 ```
+src/custom
 src/cyber-dojo
 src/commander
 src/differ
+src/exercises
 src/grafana
+src/languages
 src/mapper
 src/nginx
 src/prometheus
 src/runner-stateless
-src/starter
 src/saver
 src/web
 src/zipper
@@ -40,8 +42,10 @@ src/cyber-dojo/dev/build-all.sh
 To bring up your server:
 ```
 URL=https://raw.githubusercontent.com/cyber-dojo/start-points-languages/master/languages_list_common
-src/commander/cyber-dojo start-point create common --list=${URL}
-src/commander/cyber-dojo up --languages=common
+docker pull cyberdojo/custom
+docker pull cyberdojo/exercises
+docker pull cyberdojo/languages-common
+src/commander/cyber-dojo start-point up
 ```
 
 To bring down your server:
@@ -58,7 +62,9 @@ These are the main service images:
   * [![Build Status](https://travis-ci.org/cyber-dojo/nginx.svg?branch=master)](https://travis-ci.org/cyber-dojo/nginx) [nginx](https://github.com/cyber-dojo/nginx) - internet-facing web-server
   * [![Build Status](https://travis-ci.org/cyber-dojo/web.svg?branch=master)](https://travis-ci.org/cyber-dojo/web) [web](https://github.com/cyber-dojo/web) - simple rails web-server
   * [![Build Status](https://travis-ci.org/cyber-dojo/runner-stateless.svg?branch=master)](https://travis-ci.org/cyber-dojo/runner-stateless) [runner-stateless](https://github.com/cyber-dojo/runner-stateless) - runs an avatar's code/tests
-  * [![Build Status](https://travis-ci.org/cyber-dojo/starter.svg?branch=master)](https://travis-ci.org/cyber-dojo/starter) [starter](https://github.com/cyber-dojo/starter) - serves the language+testFramework/exercise start-points
+  * [![Build Status](https://travis-ci.org/cyber-dojo/custom.svg?branch=master)](https://travis-ci.org/cyber-dojo/custom) [custom](https://github.com/cyber-dojo/custom) - serves the custom start-points
+  * [![Build Status](https://travis-ci.org/cyber-dojo/exercises.svg?branch=master)](https://travis-ci.org/cyber-dojo/exercises) [exercises](https://github.com/cyber-dojo/exercises) - serves the exercises start-points
+  * [![Build Status](https://travis-ci.org/cyber-dojo/languages.svg?branch=master)](https://travis-ci.org/cyber-dojo/languages) [languages](https://github.com/cyber-dojo/languages) - serves the languages start-points
   * [![Build Status](https://travis-ci.org/cyber-dojo/saver.svg?branch=master)](https://travis-ci.org/cyber-dojo/saver) [saver](https://github.com/cyber-dojo/saver) - saves groups/katas and code/test files in a host dir volume-mounted to /cyber-dojo
   * [![Build Status](https://travis-ci.org/cyber-dojo/mapper.svg?branch=master)](https://travis-ci.org/cyber-dojo/mapper) [mapper](https://github.com/cyber-dojo/mapper) - maps session ids ported from old architecture (storer) to new architecture (saver) by porter service.
   * [![Build Status](https://travis-ci.org/cyber-dojo/differ.svg?branch=master)](https://travis-ci.org/cyber-dojo/differ) [differ](https://github.com/cyber-dojo/differ) - diffs two sets of files

@@ -4,7 +4,10 @@ CYBER_DOJO_REPOS=(rack-base \
                   web-base \
                   prometheus \
                   grafana \
-                  starter \
+                  starter-base \
+                  custom \
+                  exercises \
+                  languages \
                   zipper \
                   differ \
                   saver \
