@@ -41,7 +41,6 @@ src/cyber-dojo/dev/build-all.sh
 
 To bring up your server:
 ```
-URL=https://raw.githubusercontent.com/cyber-dojo/start-points-languages/master/languages_list_common
 docker pull cyberdojo/custom
 docker pull cyberdojo/exercises
 docker pull cyberdojo/languages-common
