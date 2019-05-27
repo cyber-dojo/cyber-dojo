@@ -41,9 +41,6 @@ src/cyber-dojo/dev/build-all.sh
 
 To bring up your server:
 ```
-docker pull cyberdojo/custom
-docker pull cyberdojo/exercises
-docker pull cyberdojo/languages-common
 src/commander/cyber-dojo start-point up
 ```
 
