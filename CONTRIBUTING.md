@@ -13,9 +13,9 @@ repositories, one for each language+testFramework (eg Java,JUnit).
 # contributing to cyber-dojo-languages
 This is the simplest way to contribute and a good way to start.
 - install docker by following the instructions at the top of...
-  - [Linux](http://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on.html)
-  - [Mac](http://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on_15.html)
-  - [Windows](http://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on_68.html)
+  - [Linux](https://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on.html)
+  - [Mac](https://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on_15.html)
+  - [Windows](https://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on_34.html)
 - open a Docker Quickstart Terminal
 - git clone the [image_builder](https://github.com/cyber-dojo-languages/image_builder) repository.
 This automates the building and testing of a cyber-dojo-language repo.
