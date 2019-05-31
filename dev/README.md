@@ -56,17 +56,17 @@ Each repo in the github cyber-dojo organization builds a single docker image.
 
 These are the main service images:
   * [![Build Status](https://travis-ci.org/cyber-dojo/commander.svg?branch=master)](https://travis-ci.org/cyber-dojo/commander) [commander](https://github.com/cyber-dojo/commander) - receives commands from the [cyber-dojo](https://github.com/cyber-dojo/commander/blob/master/cyber-dojo) shell script
-  * [![Build Status](https://travis-ci.org/cyber-dojo/custom.svg?branch=master)](https://travis-ci.org/cyber-dojo/custom) [custom](https://github.com/cyber-dojo/custom) - serves the custom start-points
-  * [![Build Status](https://travis-ci.org/cyber-dojo/differ.svg?branch=master)](https://travis-ci.org/cyber-dojo/differ) [differ](https://github.com/cyber-dojo/differ) - diffs two sets of files  
-  * [![Build Status](https://travis-ci.org/cyber-dojo/exercises.svg?branch=master)](https://travis-ci.org/cyber-dojo/exercises) [exercises](https://github.com/cyber-dojo/exercises) - serves the exercises start-points  
-  * [![Build Status](https://travis-ci.org/cyber-dojo/languages.svg?branch=master)](https://travis-ci.org/cyber-dojo/languages) [languages](https://github.com/cyber-dojo/languages) - serves the languages start-points  
-  * [![Build Status](https://travis-ci.org/cyber-dojo/mapper.svg?branch=master)](https://travis-ci.org/cyber-dojo/mapper) [mapper](https://github.com/cyber-dojo/mapper) - maps session ids ported from old architecture (storer) to new architecture (saver) by porter service.  
-  * [![Build Status](https://travis-ci.org/cyber-dojo/nginx.svg?branch=master)](https://travis-ci.org/cyber-dojo/nginx) [nginx](https://github.com/cyber-dojo/nginx) - internet-facing web-server
-  * [![Build Status](https://travis-ci.org/cyber-dojo/ragger.svg?branch=master)](https://travis-ci.org/cyber-dojo/ragger) [ragger](https://github.com/cyber-dojo/ragger) - determines the traffic-light colour of [stdout,stderr,status] Red/Amber/Green
-  * [![Build Status](https://travis-ci.org/cyber-dojo/runner.svg?branch=master)](https://travis-ci.org/cyber-dojo/runner) [runner](https://github.com/cyber-dojo/runner) - runs an avatar's tests and returns [stdout,stderr,status]  
-  * [![Build Status](https://travis-ci.org/cyber-dojo/saver.svg?branch=master)](https://travis-ci.org/cyber-dojo/saver) [saver](https://github.com/cyber-dojo/saver) - saves groups/katas and code/test files in a host dir volume-mounted to /cyber-dojo
-  * [web](https://github.com/cyber-dojo/web) [![CircleCI](https://circleci.com/gh/cyber-dojo/web.svg?style=svg)](https://circleci.com/gh/cyber-dojo/web) - simple rails web-server  
-  * [![Build Status](https://travis-ci.org/cyber-dojo/zipper.svg?branch=master)](https://travis-ci.org/cyber-dojo/zipper) [zipper](https://github.com/cyber-dojo/zipper) - creates tgz files for download
+  * [![CircleCI](https://circleci.com/gh/cyber-dojo/custom.svg?style=svg)](https://circleci.com/gh/cyber-dojo/custom) [custom](https://github.com/cyber-dojo/custom) - serves the custom start-points
+  * [![CircleCI](https://circleci.com/gh/cyber-dojo/differ.svg?style=svg)](https://circleci.com/gh/cyber-dojo/differ) [differ](https://github.com/cyber-dojo/differ) - diffs two sets of files
+  * [![CircleCI](https://circleci.com/gh/cyber-dojo/exercises.svg?style=svg)](https://circleci.com/gh/cyber-dojo/exercises) [exercises](https://github.com/cyber-dojo/exercises) - serves the exercises start-points
+  * [![CircleCI](https://circleci.com/gh/cyber-dojo/languages.svg?style=svg)](https://circleci.com/gh/cyber-dojo/languages) [languages](https://github.com/cyber-dojo/languages) - serves the languages start-points
+  * [![CircleCI](https://circleci.com/gh/cyber-dojo/mapper.svg?style=svg)](https://circleci.com/gh/cyber-dojo/mapper) [mapper](https://github.com/cyber-dojo/mapper) - maps session ids ported from old architecture (storer) to new architecture (saver) by porter service.
+  * [![CircleCI](https://circleci.com/gh/cyber-dojo/nginx.svg?style=svg)](https://circleci.com/gh/cyber-dojo/nginx) [nginx](https://github.com/cyber-dojo/nginx) - internet-facing web-server
+  * [![CircleCI](https://circleci.com/gh/cyber-dojo/ragger.svg?style=svg)](https://circleci.com/gh/cyber-dojo/ragger) [ragger](https://github.com/cyber-dojo/ragger) -  determines the traffic-light colour of [stdout,stderr,status] Red/Amber/Green
+  * [![CircleCI](https://circleci.com/gh/cyber-dojo/runner.svg?style=svg)](https://circleci.com/gh/cyber-dojo/runner) [runner](https://github.com/cyber-dojo/runner) - runs an avatar's tests and returns [stdout,stderr,status]  
+  * [![CircleCI](https://circleci.com/gh/cyber-dojo/saver.svg?style=svg)](https://circleci.com/gh/cyber-dojo/saver) [saver](https://github.com/cyber-dojo/saver) - - saves groups/katas and code/test files in a host dir volume-mounted to /cyber-dojo  
+  * [![CircleCI](https://circleci.com/gh/cyber-dojo/web.svg?style=svg)](https://circleci.com/gh/cyber-dojo/web) [web](https://github.com/cyber-dojo/web) - rails web-server
+  * [![CircleCI](https://circleci.com/gh/cyber-dojo/zipper.svg?style=svg)](https://circleci.com/gh/cyber-dojo/zipper) [zipper](https://github.com/cyber-dojo/zipper) - creates tgz files for download
 
 
 
