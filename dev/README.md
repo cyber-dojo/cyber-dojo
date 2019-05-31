@@ -65,7 +65,7 @@ These are the main service images:
   * [![Build Status](https://travis-ci.org/cyber-dojo/ragger.svg?branch=master)](https://travis-ci.org/cyber-dojo/ragger) [ragger](https://github.com/cyber-dojo/ragger) - determines the traffic-light colour of [stdout,stderr,status] Red/Amber/Green
   * [![Build Status](https://travis-ci.org/cyber-dojo/runner.svg?branch=master)](https://travis-ci.org/cyber-dojo/runner) [runner](https://github.com/cyber-dojo/runner) - runs an avatar's tests and returns [stdout,stderr,status]  
   * [![Build Status](https://travis-ci.org/cyber-dojo/saver.svg?branch=master)](https://travis-ci.org/cyber-dojo/saver) [saver](https://github.com/cyber-dojo/saver) - saves groups/katas and code/test files in a host dir volume-mounted to /cyber-dojo
-  * [![Build Status](https://travis-ci.org/cyber-dojo/web.svg?branch=master)](https://travis-ci.org/cyber-dojo/web) [web](https://github.com/cyber-dojo/web) - simple rails web-server
+  * [web](https://github.com/cyber-dojo/web) [![CircleCI](https://circleci.com/gh/cyber-dojo/web.svg?style=svg)](https://circleci.com/gh/cyber-dojo/web) - simple rails web-server  
   * [![Build Status](https://travis-ci.org/cyber-dojo/zipper.svg?branch=master)](https://travis-ci.org/cyber-dojo/zipper) [zipper](https://github.com/cyber-dojo/zipper) - creates tgz files for download
 
 
