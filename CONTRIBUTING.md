@@ -52,7 +52,6 @@ will produce output like this:
 ...
 # ------------------------------------------
 # check_red_amber_green
-# using runner-stateless, max_seconds=10
 # red: OK (~2.45 seconds)
 # amber: OK (~1.46 seconds)
 # green: OK (~1.86 seconds)
