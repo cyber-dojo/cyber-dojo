@@ -1,16 +1,14 @@
 
-<img src="https://raw.githubusercontent.com/cyber-dojo/nginx/master/images/home_page_logo.png"
-alt="cyber-dojo yin/yang logo" width="50px" height="50px"/>
 
 The cyber-dojo source code is split across two github organizations.
-- [cyber-dojo](https://github.com/cyber-dojo) contains 10+ repositories, one for
+- [cyber-dojo](https://github.com/cyber-dojo) contains 20+ repositories, one for
 each dockerized microservice that together comprise the server.
 - [cyber-dojo-languages](https://github.com/cyber-dojo-languages) contains 100+
 repositories, one for each language+testFramework (eg Java,JUnit).
 
 - - - -
-
 # contributing to cyber-dojo-languages
+
 This is the simplest way to contribute and a good way to start.
 - install docker by following the instructions at the top of...
   - [Linux](https://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on.html)
@@ -29,7 +27,7 @@ sibling directory to image_builder directory.
 git clone https://github.com/cyber-dojo-languages/java-junit.git
 ```
 Here's a
-[complete list](https://github.com/cyber-dojo/start-points-languages/blob/master/languages_list)
+[complete list](https://github.com/cyber-dojo/languages/blob/master/url_list/all)
 of all 100+ language+testFramework repos in cyber-dojo-languages.
 - build and test the docker image for Java,JUnit by running its pipe_build_up_test.sh file.
 The first time you run this docker will pull dependent images.
@@ -97,7 +95,6 @@ gets the :latest image.
 
 
 - - - -
-
 # contributing to cyber-dojo
 
 [Instructions for downloading the git repos and building everything from source](https://github.com/cyber-dojo/cyber-dojo/tree/master/dev)
