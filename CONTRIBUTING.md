@@ -97,8 +97,6 @@ gets the :latest image.
 - - - -
 # contributing to cyber-dojo
 
-[Instructions for downloading the git repos and building everything from source](https://github.com/cyber-dojo/cyber-dojo/tree/master/dev)
-
 - the [github issues list](https://github.com/cyber-dojo/web/issues) lives on the main web service repo.
 If you fancy helping with a specific issue please add a comment to it.
 
