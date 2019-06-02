@@ -1,5 +1,0 @@
-
-If the manifest is exposed as a 'meta' visible-file
-(see expose-manifest.txt)
-then I will need to run the red/amber/green lambda
-inside a docker container (for security).

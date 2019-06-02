@@ -30,4 +30,3 @@ IN
 --
 tar -c -f - -C /tmp katas
    | docker exec -i cyber-dojo-storer tar -x -f - -C /usr/src/cyber-dojo
-

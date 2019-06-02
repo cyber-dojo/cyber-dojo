@@ -7,20 +7,20 @@ install DockerToolbox.
 
 To get all the source:
 
-```
+```bash
 mkdir src
 cd src
 git clone https://github.com/cyber-dojo/cyber-dojo.git
-./cyber-dojo/dev/git-clone-all.sh
+./cyber-dojo/sh/git-clone-all.sh
 cd ..
 ```
 
 This will create the following directory structure (each directory holds a git repo):
 
 ```
+src/commander
 src/custom
 src/cyber-dojo
-src/commander
 src/differ
 src/exercises
 src/grafana
@@ -37,7 +37,7 @@ src/zipper
 
 To build your server from these repos:
 ```
-src/cyber-dojo/dev/build-all.sh
+src/cyber-dojo/sh/build-all.sh
 ```
 
 To bring up your server:
@@ -71,7 +71,6 @@ These are the main services:
   * [![CircleCI](https://circleci.com/gh/cyber-dojo/zipper.svg?style=svg)](https://circleci.com/gh/cyber-dojo/zipper) [zipper](https://github.com/cyber-dojo/zipper) - creates tgz files for download
 
 
-
 The main service repos each contain a `pipe_build_up_test.sh` script which:
 - rebuilds the service's docker image
 - starts a container from this server image
@@ -83,13 +82,11 @@ The main service repos each contain a `pipe_build_up_test.sh` script which:
 - runs the client tests (with coverage)
 
 - - - -
-
 Image dependencies
 
 ![Image Dependency Graph](image_dependency_graph.png?raw=true "image dependency graph")
 
 - - - -
-
 Domain model
 
 ![Domain model](domain_model.png?raw=true "domain model")

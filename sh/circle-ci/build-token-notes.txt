@@ -1,0 +1,9 @@
+
+CIRCLECI_BUILD_TOKEN is an env-var setup in the cyberdojo-context
+
+Its value is an API token. To create an API token
+At the page for the CircleCI cyber-dojo organization
+Click your user icon (top right)
+Click [User settings] from the drop-down
+Click [Personal API Tokens] from menu on rhs
+Click [Create New Token] button on rhs.

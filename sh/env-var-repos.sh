@@ -1,4 +1,5 @@
 # Some of these have a dependency order
+
 CYBER_DOJO_REPOS=(rack-base \
                   docker-base \
                   web-base \
@@ -14,6 +15,6 @@ CYBER_DOJO_REPOS=(rack-base \
                   mapper \
                   runner \
                   ragger \
-                  commander \
                   web \
-                  nginx)
+                  nginx \
+                  commander)

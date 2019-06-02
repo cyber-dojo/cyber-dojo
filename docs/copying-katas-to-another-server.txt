@@ -70,6 +70,3 @@ $ cd /tmp/accu2017
 $ tar --owner=19661 --group=19661 -zcf - . | \
    docker exec --user 19661:19661 -i cyber-dojo-storer \
      sh -c 'cd /usr/src/cyber-dojo/katas && tar -zxf - -C .'
-
-
-
