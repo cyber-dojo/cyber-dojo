@@ -3,9 +3,9 @@ set -ev
 
 # Service repos curl and run this script in their CI pipelines.
 
-declare -r FROM="${1}"          # eg web-base
-declare -r SHA="${2}"           # eg a9334c964f81800a910dc3d301543262161fbbff
-declare -r REPO_NAMES="${@:3}"  # eg saver ragger ...
+declare -r FROM="${CIRCLE_PROJECT_REPONAME}" # eg runner
+declare -r SHA="${CIRCLE_SHA1}"              # eg a9334c964f81800a910dc3d301543262161fbbff
+declare -r REPO_NAMES="${@:1}"               # eg saver ragger ...
 
 declare -r COMMIT_URL="https://github.com/cyber-dojo/${FROM}/commit/${SHA}"
 
