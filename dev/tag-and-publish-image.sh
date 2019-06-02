@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -ev
 
 # Service repos curl and run this script in their CI pipelines.
 
