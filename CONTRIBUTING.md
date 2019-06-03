@@ -36,26 +36,6 @@ The first time you run this docker will pull dependent images.
 cd java-junit
 ./pipe_build_up_test.sh
 ```
-will produce output like this:
-```
-...
-# ------------------------------------------
-# assert_create_start_point
-...
-# ------------------------------------------
-# build_image
-...
-# ------------------------------------------
-# show_avatar_users_sample
-...
-# ------------------------------------------
-# check_red_amber_green
-# red: OK (~2.45 seconds)
-# amber: OK (~1.46 seconds)
-# green: OK (~1.86 seconds)
-# ------------------------------------------
-...
-```
 
 You can now improve the Java,JUnit docker image (built from java-junit/docker/)
 or the Java-JUnit starting files (which live in java-junit/start_point/)
