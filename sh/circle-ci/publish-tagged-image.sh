@@ -6,7 +6,6 @@ set -ex
 declare -r NAME="${CIRCLE_PROJECT_REPONAME}" # eg runner
 declare -r SHA="${CIRCLE_SHA1}"              # eg a9334c964f81800a910dc3d301543262161fbbff
 
-echo "${DOCKER_PASS}" | docker login -u "${DOCKER_USER}" --password-stdin
 docker push cyberdojo/${NAME}:${SHA:0:7}
 docker push cyberdojo/${NAME}:beta
 docker push cyberdojo/${NAME}:latest
