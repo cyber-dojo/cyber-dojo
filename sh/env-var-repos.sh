@@ -17,4 +17,5 @@ CYBER_DOJO_REPOS=(rack-base \
                   ragger \
                   web \
                   nginx \
+                  versioner \
                   commander)
