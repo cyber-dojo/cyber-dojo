@@ -70,7 +70,7 @@ This will create the following directory structure (each directory holds a git r
 
 ```
 src/commander
-src/crom
+src/cron
 src/custom
 src/cyber-dojo
 src/differ
