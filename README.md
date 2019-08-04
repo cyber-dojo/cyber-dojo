@@ -17,7 +17,7 @@
 Each repo in the github cyber-dojo organization builds a single docker image.
 The main kubernetes backed https://cyber-dojo.org uses:
 
-* [![CircleCI](https://circleci.com/gh/cyber-dojo/cron.svg?style=svg)](https://circleci.com/gh/cyber-dojo/cron) [cron](https://github.com/cyber-dojo/cron) - prods the [puller](https://github.com/cyber-dojo/puller) service every 24 hours.
+* [![CircleCI](https://circleci.com/gh/cyber-dojo/avatars.svg?style=svg)](https://circleci.com/gh/cyber-dojo/avatars) [avatars](https://github.com/cyber-dojo/avatars) - serves the avatar names and images.
 * [![CircleCI](https://circleci.com/gh/cyber-dojo/custom.svg?style=svg)](https://circleci.com/gh/cyber-dojo/custom) [custom](https://github.com/cyber-dojo/custom) - serves the custom start-points
 * [![CircleCI](https://circleci.com/gh/cyber-dojo/differ.svg?style=svg)](https://circleci.com/gh/cyber-dojo/differ) [differ](https://github.com/cyber-dojo/differ) - diffs two sets of files
 * [![CircleCI](https://circleci.com/gh/cyber-dojo/exercises.svg?style=svg)](https://circleci.com/gh/cyber-dojo/exercises) [exercises](https://github.com/cyber-dojo/exercises) - serves the exercises start-points

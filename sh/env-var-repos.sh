@@ -6,7 +6,7 @@ CYBER_DOJO_REPOS=(rack-base \
                   starter-base \
                   prometheus \
                   grafana \
-                  cron \
+                  avatars \
                   custom \
                   differ \
                   exercises \
