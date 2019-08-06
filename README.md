@@ -69,8 +69,8 @@ cd ..
 This will create the following directory structure (each directory holds a git repo):
 
 ```
+src/avatars
 src/commander
-src/cron
 src/custom
 src/cyber-dojo
 src/differ
@@ -84,6 +84,7 @@ src/prometheus
 src/ragger
 src/runner
 src/saver
+src/versioner
 src/web
 src/zipper
 ```
