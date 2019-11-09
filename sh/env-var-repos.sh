@@ -11,7 +11,6 @@ CYBER_DOJO_REPOS=(rack-base \
                   differ \
                   exercises \
                   languages \
-                  mapper \
                   nginx \
                   puller \
                   ragger \
