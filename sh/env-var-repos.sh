@@ -4,8 +4,6 @@ CYBER_DOJO_REPOS=(rack-base \
                   docker-base \
                   web-base \
                   starter-base \
-                  prometheus \
-                  grafana \
                   avatars \
                   custom \
                   differ \

@@ -72,11 +72,9 @@ src/custom
 src/cyber-dojo
 src/differ
 src/exercises
-src/grafana
 src/languages
 src/nginx
 src/puller
-src/prometheus
 src/ragger
 src/runner
 src/saver
