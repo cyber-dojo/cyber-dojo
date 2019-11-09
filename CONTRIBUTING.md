@@ -43,6 +43,17 @@ or the Java-JUnit starting files (which live in java-junit/start_point/)
 
 Specific ways you can contribute to cyber-dojo-languages.
 
+- convert large docker images to smaller Alpine based images.
+The language+testFramework images are based on either
+[Alpine Linux](https://alpinelinux.org/) or
+[Ubuntu](https://www.ubuntu.com/) or
+[Debian](https://www.debian.org/).
+However, if the official dockerhub image for a language is Ubuntu/Debian
+then it's typically best to use that so the nightly build gets the :latest image.
+  - the [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit) Alpine based image is 114MB.
+  - the [C++ (clang),GoogleMock](https://github.com/cyber-dojo-languages/clangplusplus-googlemock) Ubuntu based image is 903MB.
+  - the [Python,pytest](https://github.com/cyber-dojo-languages/python-pytest) Debian based image is 1.05GB.
+
 - fix the broken Dockerfile for
 [elm,test](https://github.com/cyber-dojo-languages/elm-test)
 
@@ -60,18 +71,6 @@ Can someone smart get this down to something reasonable?
 - read the starting files for you favourite language,test-framework and make them more idiomatic
 
 - suggest a [new exercise](https://github.com/cyber-dojo/start-points-exercises)
-
-- convert large docker images to smaller Alpine based images.
-The language+testFramework images are based on either
-[Alpine Linux](https://alpinelinux.org/) or
-[Ubuntu](https://www.ubuntu.com/) or
-[Debian](https://www.debian.org/).
-However, if the official dockerhub image for a language is Ubuntu/Debian
-then experience has shown it's typically best to use that so the nightly Travis build
-gets the :latest image.
-  - the [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit) Alpine based image is 114MB.
-  - the [C++ (clang),GoogleMock](https://github.com/cyber-dojo-languages/clangplusplus-googlemock) Ubuntu based image is 903MB.
-  - the [Python,pytest](https://github.com/cyber-dojo-languages/python-pytest) Debian based image is 1.05GB.
 
 
 - - - -
