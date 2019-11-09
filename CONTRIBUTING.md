@@ -1,10 +1,13 @@
 
+# Contributing
+
+:+1::tada: First off, thanks for thinking about contributing! :tada::+1:
 
 The cyber-dojo source code is split across two github organizations.
-- [cyber-dojo-languages](https://github.com/cyber-dojo-languages) contains 100+
-repositories, one for each language+testFramework (eg Java,JUnit).
 - [cyber-dojo](https://github.com/cyber-dojo) contains 20+ repositories, one for
 each dockerized microservice that together comprise the server.
+- [cyber-dojo-languages](https://github.com/cyber-dojo-languages) contains 100+
+repositories, one for each language+testFramework (eg Java,JUnit).
 
 - - - -
 # contributing to cyber-dojo-languages
@@ -53,32 +56,14 @@ then it's typically best to use that so the nightly build gets the :latest image
   - the [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit) Alpine based image is 114MB.
   - the [C++ (clang),GoogleMock](https://github.com/cyber-dojo-languages/clangplusplus-googlemock) Ubuntu based image is 903MB.
   - the [Python,pytest](https://github.com/cyber-dojo-languages/python-pytest) Debian based image is 1.05GB.
-
+- add a new test-framework, [testNG](https://testng.org/doc/index.html) anyone?
+- reduce the [test] response time for your favourite language,test-framework
+- read the starting files for you favourite language,test-framework and make them more idiomatic
 - fix the broken Dockerfile for
 [elm,test](https://github.com/cyber-dojo-languages/elm-test)
-
 - make Scala fast enough to be usable. See
 [scala-test](https://github.com/cyber-dojo-languages/scala-test)
 which is built on [scala](https://github.com/cyber-dojo-languages/scala).
 Can someone smart get this down to something reasonable?
-
 - add a new language, Prolog, Lisp, SQL, ...
-
-- add a new test-framework, [testNG](https://testng.org/doc/index.html) anyone?
-
-- reduce the [test] response time for your favourite language,test-framework
-
-- read the starting files for you favourite language,test-framework and make them more idiomatic
-
 - suggest a [new exercise](https://github.com/cyber-dojo/start-points-exercises)
-
-
-- - - -
-# contributing to cyber-dojo
-
-- the [github issues list](https://github.com/cyber-dojo/web/issues) lives on the main web service repo.
-If you fancy helping with a specific issue please add a comment to it.
-
-- if you've tried building your own cyber-dojo from the github source repos I'd
-really appreciate knowing what was easy, what was hard, and what I could do to
-make it easier for you.
