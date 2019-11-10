@@ -18,14 +18,16 @@ This is the simplest way to contribute and a good way to start.
   - [Mac](https://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on_15.html)
   - [Windows](https://blog.cyber-dojo.org/2016/10/running-your-own-cyber-dojo-server-on_34.html)
 - open a Docker Quickstart Terminal
-- git clone the [image_builder](https://github.com/cyber-dojo-languages/image_builder) repository.
-This automates the building and testing of a cyber-dojo-language repo.
+- git clone the [commander](https://github.com/cyber-dojo/commander) repo and the
+[image_builder](https://github.com/cyber-dojo-languages/image_builder) repo.
+These help automate the building and testing of a cyber-dojo-language repo.
 ```
+git clone https://github.com/cyber-dojo/commander.git
 git clone https://github.com/cyber-dojo-languages/image_builder.git
 ```
 - git clone the repository for your chosen language,testFramework, eg
 [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit). This must be in a
-sibling directory to image_builder directory.
+sibling directory to image_builder and commander directories.
 ```
 git clone https://github.com/cyber-dojo-languages/java-junit.git
 ```
