@@ -1,7 +1,7 @@
 
 # Contributing
 
-:+1::tada: First off, thanks for thinking about contributing! :tada::+1:
+:+1::tada: Thanks for thinking about contributing! :tada::+1:
 
 The cyber-dojo source code is split across two github organizations.
 - [cyber-dojo](https://github.com/cyber-dojo) contains 20+ repositories, one for
