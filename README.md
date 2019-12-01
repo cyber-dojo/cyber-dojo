@@ -67,13 +67,13 @@ cd ..
 This will create the following directory structure (each directory holds a git repo):
 
 ```
+src/cyber-dojo
 src/avatars
 src/commander
-src/custom
-src/cyber-dojo
+src/custom-start-points
+src/exercises-start-points
+src/languages-start-points
 src/differ
-src/exercises
-src/languages
 src/nginx
 src/puller
 src/ragger
