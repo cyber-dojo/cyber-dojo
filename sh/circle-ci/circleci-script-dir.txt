@@ -3,4 +3,4 @@ CircleCI has a cyber-dojo context which contains some ENV-vars.
 One of them points to this directory.
 The service's curl .sh files from this dir in their CI scripts.
 
-CIRCLECI_SCRIPT_DIR=https://raw.githubusercontent.com/cyber-dojo/cyber-dojo/master/sh/circle-ci
+CIRCLECI_SCRIPT_DIR=https://raw.githubusercontent.com/cyber-dojo-languages/image_builder/master
