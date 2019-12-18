@@ -29,7 +29,7 @@ for TO_REPO_NAME in ${TO_REPO_NAMES}; do
   git clone "${TO_REPO_URL}"
   cd "${TO_REPO_NAME}"
   declare MESSAGE="Automated build trigger from ${FROM_COMMIT}"
-  echo "${MESSAGE}" > ${FROM_REPO}.trigger
+  echo "${MESSAGE}" > .circleci/${FROM_REPO}.trigger
   git add .
   git config --global user.email "cyber-dojo-machine-user@cyber-dojo.org"
   git config --global user.name "CyberDojoMachineUser"
