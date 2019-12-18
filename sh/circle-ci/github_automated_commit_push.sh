@@ -6,11 +6,14 @@ set -e
 # NB:1 This script does NOT trigger a CircleCI API POST request. See below.
 # NB:2 This script cannot (easily) be run from such a trigger. See below.
 #
-# A CircleCI context must set these two env-vars:
+# In a CircleCI pipeline, a script-context must set these two env-vars:
 #   CYBER_DOJO_MACHINE_USER_USERNAME=cyber-dojo-machine-user
 #   CYBER_DOJO_MACHINE_USER_PASSWORD=...Github_Personal_access_Token...
-# And that context must be set in the .circleci/config.yml file
-# using this script.
+# And that script-context must be set in the .circleci/config.yml file.
+
+readonly TMP_DIR=$(mktemp -d /tmp/XXXXXX)
+remove_tmp_dir() { rm -rf "${TMP_DIR}" > /dev/null; }
+trap remove_tmp_dir INT EXIT
 
 # The repo whose CI pipeline is running...
 declare -r FROM_ORG="${1}"  # eg cyber-dojo
@@ -25,7 +28,7 @@ declare -r FROM_COMMIT="https://github.com/${FROM_ORG}/${FROM_REPO}/commit/${FRO
 
 for TO_REPO_NAME in ${TO_REPO_NAMES}; do
   declare TO_REPO_URL="https://github.com/${TO_ORG}/${TO_REPO_NAME}.git"
-  cd /tmp
+  cd "${TMP_DIR}"
   git clone "${TO_REPO_URL}"
   cd "${TO_REPO_NAME}"
   declare MESSAGE="Automated build trigger from ${FROM_COMMIT}"
@@ -45,6 +48,7 @@ done
 # Triggering a CircleCI workflow via a CircleCI API POST request
 # means the latest git-commit sha (CIRCLE_SHA1) is _NOT_ unique
 # and Helm (Kubernetes) will NOT deploy unless it sees a SHA change.
+# Doing a [git commit] + [git push] causes a SHA change.
 #
 # NB:2
 # <quote>
