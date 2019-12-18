@@ -34,8 +34,9 @@ for TO_REPO_NAME in ${TO_REPO_NAMES}; do
   declare MESSAGE="Automated build trigger from ${FROM_COMMIT}"
   echo "${MESSAGE}" > .circleci/${FROM_REPO}.trigger
   git add .
-  git config --global user.email "cyber-dojo-machine-user@cyber-dojo.org"
-  git config --global user.name "CyberDojoMachineUser"
+  # Don't use --global so you can test the script locally.
+  git config user.email "cyber-dojo-machine-user@cyber-dojo.org"
+  git config user.name "CyberDojoMachineUser"
   git commit -m "${MESSAGE}"
   declare ORIGIN="https://${CYBER_DOJO_MACHINE_USER_USERNAME}:${CYBER_DOJO_MACHINE_USER_PASSWORD}@github.com/${TO_ORG}/${TO_REPO_NAME}.git"
   git push "${ORIGIN}" master
