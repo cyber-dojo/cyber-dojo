@@ -1,19 +1,18 @@
-#!/bin/bash
-set -e
+#!/bin/bash -Eeu
 
 # CI pipeline scripts curl and run this script.
 #
 # NB:1 This script does NOT trigger a CircleCI API POST request. See below.
 # NB:2 This script cannot (easily) be run from such a trigger. See below.
 #
-# In a CircleCI pipeline, a script-context must set these two env-vars:
-#   CYBER_DOJO_MACHINE_USER_USERNAME=cyber-dojo-machine-user
+# In a CircleCI pipeline, a context must set these two env-vars:
+#   CYBER_DOJO_MACHINE_USER_USERNAME=...username...
 #   CYBER_DOJO_MACHINE_USER_PASSWORD=...Github_Personal_access_Token...
-# And that script-context must be set in the .circleci/config.yml file.
+# And that context must be set in the .circleci/config.yml file.
 
 readonly TMP_DIR=$(mktemp -d /tmp/XXXXXX)
 remove_tmp_dir() { rm -rf "${TMP_DIR}" > /dev/null; }
-trap remove_tmp_dir INT EXIT
+trap remove_tmp_dir EXIT
 
 # The repo whose CI pipeline is running...
 declare -r FROM_ORG="${1}"  # eg cyber-dojo
