@@ -3,7 +3,7 @@
 CYBER_DOJO_REPOS=(rack-base \
                   docker-base \
                   web-base \
-                  starter-base \
+                  start-points-base \
                   custom-start-points \
                   exercises-start-points \
                   languages-start-points \
