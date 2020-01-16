@@ -75,7 +75,6 @@ src/languages-start-points
 src/differ
 src/nginx
 src/puller
-src/ragger
 src/runner
 src/saver
 src/versioner
