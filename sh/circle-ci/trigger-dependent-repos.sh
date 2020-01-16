@@ -1,5 +1,4 @@
-#!/bin/bash
-set -ex
+#!/bin/bash -Ee
 
 # Service repos curl and run this script in their CI pipelines.
 #
@@ -17,7 +16,7 @@ set -ex
 
 declare -r FROM="${CIRCLE_PROJECT_REPONAME}" # eg runner
 declare -r SHA="${CIRCLE_SHA1}"              # eg a9334c964f81800a910dc3d301543262161fbbff
-declare -r REPO_NAMES="${@:1}"               # eg saver ragger ...
+declare -r REPO_NAMES="${@:1}"               # eg saver runner ...
 declare -r ORG=cyber-dojo
 
 declare -r COMMIT_URL="https://github.com/${ORG}/${FROM}/commit/${SHA}"

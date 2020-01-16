@@ -21,7 +21,7 @@ declare -r FROM_SHA="${3}"  # CIRCLE_SHA1 # eg a9334c964f81800a910dc3d3015432621
 
 # The dependent repos, each being triggered via an automated git commit+push
 declare -r TO_ORG="${4}"          # eg cyber-dojo
-declare -r TO_REPO_NAMES="${@:5}" # eg saver ragger ...
+declare -r TO_REPO_NAMES="${@:5}" # eg saver runner ...
 
 declare -r FROM_COMMIT="https://github.com/${FROM_ORG}/${FROM_REPO}/commit/${FROM_SHA}"
 

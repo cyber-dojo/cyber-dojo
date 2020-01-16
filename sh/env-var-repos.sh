@@ -11,7 +11,6 @@ CYBER_DOJO_REPOS=(rack-base \
                   differ \
                   nginx \
                   puller \
-                  ragger \
                   runner \
                   saver \
                   web \
