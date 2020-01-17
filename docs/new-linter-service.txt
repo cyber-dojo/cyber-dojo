@@ -1,0 +1,37 @@
+
+Thinking about the customizations like James does, eg
+  - detecting printf's in the source
+  - detecting lack of coverage
+  - a lot of ambers in a row
+  - that was a big change!
+
+Best as a SEPARATE service I think.
+A linter/adviser/helper service.
+It would expose a function, maybe a lambda in the browser.
+Initially in Ruby, later in any language? eg Python
+It would be passed much more information than the ragger,
+probably in a hash arg, eg, stdin ==> args['stdin']
+
+  - stdout,stderr,status
+  - timed_out (true/false)
+  - traffic-light-colour  :red,:amber,:green,:faulty
+  - previous traffic-light sequence
+  - duration  (secs.msecs)
+  - all new_files
+  - all old_files
+  - created filenames
+  - changed filenames
+  - deleted filenames
+  - diff from previous files
+
+Possible names like linter...
+  advisor
+  helper - simple. Could output to a new std file, eg stdhlp
+  mentor
+  marker
+  evaluator
+  grader
+  assessor
+  appraiser
+  feedbacker
+  signaller
