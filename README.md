@@ -48,7 +48,7 @@ Locally running servers also use:
 ![Domain model](dev/domain_model.png?raw=true "domain model")
 
 - - - -
-# Building your own cyber-dojo server from source
+# Building your own cyber-dojo services from source
 
 [Ensure docker is installed](http://blog.cyber-dojo.org/2017/09/running-your-own-cyber-dojo-server.html). If you are on a Windows/Mac note that these instructions specify to
 install Docker**Toolbox** (and <em>not</em> Docker for Windows/Mac).
@@ -63,7 +63,8 @@ git clone https://github.com/cyber-dojo/cyber-dojo.git
 cd ..
 ```
 
-This will create the following directory structure (each directory holds a git repo):
+This will create the following directory structure
+(each directory holds a git repo with a build_test_tag_publish.sh script):
 
 ```
 src/cyber-dojo
@@ -84,11 +85,6 @@ src/saver
 src/web
 src/commander
 src/versioner
-```
-
-To build and test from these repos:
-```
-src/cyber-dojo/sh/test-all.sh
 ```
 
 To bring up your server:

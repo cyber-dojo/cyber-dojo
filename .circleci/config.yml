@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Clone all repos, build then, test them
-          command: ./sh/git-clone-all.sh && ./sh/build-all.sh
+          command: ./sh/git-clone-all.sh
 
 workflows:
   version: 2
