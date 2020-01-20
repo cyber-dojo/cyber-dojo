@@ -1,4 +1,4 @@
-#!/bin/bash -Eeu
+#!/bin/bash -Ee
 
 # Some of these have a build-order dependency
 export CYBER_DOJO_REPOS=(\
