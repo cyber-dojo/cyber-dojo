@@ -1,7 +1,8 @@
-#!/bin/bash -Ee
+#!/bin/bash -Eeu
 
 readonly MY_DIR="$( cd "$( dirname "${0}" )" && pwd )"
 
+echo 'Cloning...'
 source ${MY_DIR}/env-var-repos.sh
 cd ${MY_DIR}/../..
 for repo in ${CYBER_DOJO_REPOS[@]}; do

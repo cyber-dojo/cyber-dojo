@@ -67,19 +67,23 @@ This will create the following directory structure (each directory holds a git r
 
 ```
 src/cyber-dojo
-src/avatars
-src/commander
+src/ruby-base
+src/rack-base
+src/docker-base
+src/web-base
+src/start-points-base
 src/custom-start-points
 src/exercises-start-points
 src/languages-start-points
+src/avatars
 src/differ
 src/nginx
 src/puller
 src/runner
 src/saver
-src/versioner
 src/web
-src/zipper
+src/commander
+src/versioner
 ```
 
 To build and test from these repos:
