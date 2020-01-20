@@ -82,9 +82,9 @@ src/web
 src/zipper
 ```
 
-To build your server from these repos:
+To build and test from these repos:
 ```
-src/cyber-dojo/sh/build-all.sh
+src/cyber-dojo/sh/test-all.sh
 ```
 
 To bring up your server:

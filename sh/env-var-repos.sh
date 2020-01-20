@@ -1,6 +1,7 @@
 # Some of these have a build-order dependency
 
-CYBER_DOJO_REPOS=(rack-base \
+CYBER_DOJO_REPOS=(ruby-base \
+                  rack-base \
                   docker-base \
                   web-base \
                   start-points-base \
@@ -14,6 +15,5 @@ CYBER_DOJO_REPOS=(rack-base \
                   runner \
                   saver \
                   web \
-                  zipper \
                   versioner \
                   commander)

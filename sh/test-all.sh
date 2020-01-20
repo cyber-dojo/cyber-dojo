@@ -6,7 +6,7 @@ readonly MY_DIR="$( cd "$( dirname "${0}" )" && pwd )"
 
 for repo in ${CYBER_DOJO_SERVICE_REPOS[@]}; do
   cd ${MY_DIR}/../../${repo} # [1]
-  ./pipe_build_up_test.sh
+  ./build_test_tag_publish.sh
 done
 
 # [1] docker-compose docs claim you can specify
