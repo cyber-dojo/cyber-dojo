@@ -1,6 +1,8 @@
-# Some of these have a build-order dependency
+#!/bin/bash -Eeu
 
-CYBER_DOJO_REPOS=(ruby-base \
+# Some of these have a build-order dependency
+export CYBER_DOJO_REPOS=(\
+                  ruby-base \
                   rack-base \
                   docker-base \
                   web-base \
@@ -16,4 +18,5 @@ CYBER_DOJO_REPOS=(ruby-base \
                   saver \
                   web \
                   versioner \
-                  commander)
+                  commander \
+        )
