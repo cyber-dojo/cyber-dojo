@@ -60,7 +60,7 @@ The first time you run this docker will pull dependent images.
 - Can you reduce the runtime `duration`?
 
 Here's a [complete list](https://github.com/cyber-dojo/languages-start-points/blob/master/start-points/all)
-of all 100+ language+testFramework repos in cyber-dojo-languages.
+of all language+testFramework repos in cyber-dojo-languages.
 
 Specific ways you can contribute to cyber-dojo-languages.
 
