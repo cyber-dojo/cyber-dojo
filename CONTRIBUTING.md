@@ -55,12 +55,11 @@ The first time you run this docker will pull dependent images.
   }
   ...
   ```
+- Can you improve/update the Java,JUnit docker image? (built from `java-junit/docker/Dockerfile.base`)?
+- Can you improve the start point files (which live in `java-junit/start_point/`)?
+- Can you reduce the runtime `duration`?
 
-You can now improve the Java,JUnit docker image (built from `java-junit/docker/Dockerfile.base`)
-or the Java-JUnit start point files (which live in `java-junit/start_point/`)
- or use it as a start-point for a new language+testFramework.
-
-Here's a [complete list](https://github.com/cyber-dojo/languages/blob/master/url_list/all)
+Here's a [complete list](https://github.com/cyber-dojo/languages-start-points/blob/master/start-points/all)
 of all 100+ language+testFramework repos in cyber-dojo-languages.
 
 Specific ways you can contribute to cyber-dojo-languages.
@@ -71,12 +70,10 @@ The language+testFramework images are based on either
 [Ubuntu](https://www.ubuntu.com/) or
 [Debian](https://www.debian.org/).
 However, if the official dockerhub image for a language is Ubuntu/Debian
-then it's typically best to use that so builds get the `:latest` image.
-  - the [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit) Alpine based image is 121MB.
-  - the [C++(g++),GoogleMock](https://github.com/cyber-dojo-languages/gplusplus-googlemock) Ubuntu based image is 1.7GB.
-  - the [Python,pytest](https://github.com/cyber-dojo-languages/python-pytest) Debian based image is 1.2GB.
+then it's typically best to use that so it gets the `:latest` image.
+  - the [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit) Alpine based image is ~120MB.
+  - the [C++(g++),GoogleMock](https://github.com/cyber-dojo-languages/gplusplus-googlemock) Ubuntu based image is ~1.7GB.
+  - the [Python,pytest](https://github.com/cyber-dojo-languages/python-pytest) Debian based image is ~1.2GB.
 - add a new test-framework, [testNG](https://testng.org/doc/index.html) anyone?
-- reduce the [test] response time for your favourite language,test-framework
-- read the starting files for you favourite language,test-framework and make them more idiomatic
 - add a new language, Elm, Scala, Prolog, Lisp, SQL, ...
 - suggest a [new exercise](https://github.com/cyber-dojo/start-points-exercises)
