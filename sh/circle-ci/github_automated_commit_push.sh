@@ -48,7 +48,8 @@ done
 # Triggering a CircleCI workflow via a CircleCI API POST request
 # means the latest git-commit sha (CIRCLE_SHA1) is _NOT_ unique
 # and Helm (Kubernetes) will NOT deploy unless it sees a SHA change.
-# Doing a [git commit] + [git push] causes a SHA change.
+# So I don't trigger via an API POST. Instead I do a
+# [git commit] + [git push] which causes a SHA change.
 #
 # NB:2
 # <quote>
