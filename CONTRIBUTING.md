@@ -13,31 +13,35 @@ repositories, one for each language+testFramework (eg "Java, JUnit").
 # contributing to cyber-dojo-languages
 
 This is the simplest way to contribute and a good way to start.
-- git clone the repository for your chosen language,testFramework, eg
+- Clone the git repository for a language,testFramework you are interested in,
+  (or just pick one to learn how the automation works) eg
 [Java, JUnit](https://github.com/cyber-dojo-languages/java-junit).
   ```bash
   git clone https://github.com/cyber-dojo-languages/java-junit.git
   ```
-- in a terminal with Docker installed, build the [Java,Junit] cyber-dojo docker image,
-  and test the [Java,JUnit] cyber-dojo start_point source files, by running `pipe_build_up_test.sh`. It will:
-  - create `docker/Dockerfile` from `docker/Dockerfile.base`, augmented to
+- In a terminal with [Docker](https://docs.docker.com/install/) installed, build
+  the [Java,Junit] cyber-dojo docker image,
+  and test the [Java,JUnit] cyber-dojo start_point source files, by
+  running `pipe_build_up_test.sh`. It will:
+  - Create `docker/Dockerfile` from `docker/Dockerfile.base`, augmented to
     satisfy the [runner's](https://github.com/cyber-dojo/runner) requirements.
-  - build a new docker image from `docker/Dockerfile`. The name of this
+  - Build a new docker image from `docker/Dockerfile`. The name of this
     image is the `image_name` entry of `start_point/manifest.json`.
-  - the names of the start-point source files are specified in
+  - The names of the start-point source files are specified in
     the `visible_filenames` entry of `start_point/manifest.json`.
-  - one of the `visible_filenames` must contain the pattern `6 * 9`
-  - the `visible_filenames` are sent to the
+  - One of the `visible_filenames` is assumed to contain the pattern `6 * 9`.
+  - The `visible_filenames` are sent to the
     [runner](https://github.com/cyber-dojo/runner) service, and the resulting `[stdout,stderr,status]` are passed to the Ruby lambda defined
     in `/docker/red_amber_green.rb`
-  - unmodified, the `visible_filenames` files should produce a `red` traffic-light.
-  - with the `6 * 9` modified to `6 * 9sdsd`, an `amber` traffic-light.
-  - with the `6 * 9` modified to `6 * 7`, a `green` traffic-light.
-  - if the `visible_filenames` do not contain the pattern `6 * 9`
+  - Unmodified, the `visible_filenames` files should produce a `red` traffic-light.
+  - With the `6 * 9` modified to `6 * 9sd`, an `amber` traffic-light.
+  - With the `6 * 9` modified to `6 * 7`, a `green` traffic-light.
+  - If the `visible_filenames` do not contain the pattern `6 * 9`,
     (eg the language uses infix notation) you can specify the red/amber/green
     modifications explicitly using an `options.json` file. See
-    [nasm-assert](https://github.com/cyber-dojo-languages/nasm-assert/blob/master/start_point/options.json) for an example
-- for example:    
+    [nasm-assert](https://github.com/cyber-dojo-languages/nasm-assert/blob/master/start_point/options.json) for an example.
+
+- For example:    
   ```bash
   cd java-junit
   ./pipe_build_up_test.sh
@@ -48,6 +52,7 @@ This is the simplest way to contribute and a good way to start.
     "to": "6 * 9",
     "duration": 2.935575839,
     ...
+    "colour": "red"
   }
   PASSED:TRAFFIC_LIGHT:red:==================================
   {
@@ -56,6 +61,7 @@ This is the simplest way to contribute and a good way to start.
     "to": "6 * 9sd",
     "duration": 1.744033281,
     ...
+    "colour": "amber"    
   }
   PASSED:TRAFFIC_LIGHT:amber:==================================
   {
@@ -64,13 +70,16 @@ This is the simplest way to contribute and a good way to start.
     "to": "6 * 7",
     "duration": 2.895220807,
     ...
+    "colour": "green"    
   }
   PASSED:TRAFFIC_LIGHT:green:==================================
   ...
   ```
-- Can you improve/update the Java,JUnit docker image? (built from `java-junit/docker/Dockerfile.base`)?
-- Can you improve the start point files (which live in `java-junit/start_point/`)?
 - Can you reduce the runtime `duration`?
+- Can you make the start point files more **idiomatic**?
+- Can you reduce the **time** it takes to build the docker image?
+- Can you reduce the **size** of the docker image?
+
 
 Here's a [complete list](https://github.com/cyber-dojo/languages-start-points/blob/master/start-points/all)
 of all language+testFramework repos in cyber-dojo-languages.
@@ -88,5 +97,5 @@ then it's typically best to use that so it gets the `:latest` image.
   - the [C++(g++),GoogleMock](https://github.com/cyber-dojo-languages/gplusplus-googlemock) Ubuntu based image is ~1.7GB.
   - the [Python,pytest](https://github.com/cyber-dojo-languages/python-pytest) Debian based image is ~1.2GB.
 - add a new test-framework, [testNG](https://testng.org/doc/index.html) anyone?
-- add a new language, Elm, Scala, Prolog, Lisp, SQL, Unison, ...
+- add a new language, Elm, Scala, Prolog, Lisp, Unison, ...
 - suggest a [new exercise](https://github.com/cyber-dojo/start-points-exercises)
