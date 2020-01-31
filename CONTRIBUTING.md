@@ -82,8 +82,13 @@ of all language+testFramework repos in cyber-dojo-languages.
 
 Specific ways you can contribute to cyber-dojo-languages.
 
-- reduce a runtime `duration`?
-- make some start point files more **idiomatic**?
+- add a **coverage** report to a language-testFramework.
+  Eg [python-pytest](https://github.com/cyber-dojo-languages/python-pytest/blob/master/start_point/cyber-dojo.sh) uses `coverage3`.
+- add a **lint** report to a language-testFramework.
+  Eg [python-pytest](https://github.com/cyber-dojo-languages/python-pytest/blob/master/start_point/cyber-dojo.sh) uses `pycodestyle`.
+- make a runtime `duration` **faster** (2.9s for Java,Junit)?
+- make some `start_point/` visible_filenames more **idiomatic**?
+- make a `Dockerfile` more **idiomatic**?
 - make the docker build **faster**?
 - add a new test-framework, [testNG](https://testng.org/doc/index.html) anyone?
 - add a new language, Elm, Scala, Prolog, Lisp, Unison, ...
