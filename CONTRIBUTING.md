@@ -92,6 +92,7 @@ Specific ways you can contribute to cyber-dojo-languages.
 - make a **faster docker build**?
 - add a **new language**, Elm, Scala, Prolog, Lisp, Unison, ...
 - add a **new test-framework**, [testNG](https://testng.org/doc/index.html) anyone?
+- add a missing **colour syntax** .js file? See [codemirror/mode](https://github.com/cyber-dojo/web/tree/master/app/assets/javascripts/codemirror/mode)
 - make a **smaller docker image**?
 For example, by changing it's base operating system.
 The language+testFramework images are based on either
