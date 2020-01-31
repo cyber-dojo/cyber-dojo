@@ -82,17 +82,17 @@ of all language+testFramework repos in cyber-dojo-languages.
 
 Specific ways you can contribute to cyber-dojo-languages.
 
-- add a **coverage** report to a language-testFramework.
+- add a **coverage report** to a language-testFramework.
   Eg [python-pytest](https://github.com/cyber-dojo-languages/python-pytest/blob/master/start_point/cyber-dojo.sh) uses `coverage3`.
-- add a **lint** report to a language-testFramework.
+- add a **lint report** to a language-testFramework.
   Eg [python-pytest](https://github.com/cyber-dojo-languages/python-pytest/blob/master/start_point/cyber-dojo.sh) uses `pycodestyle`.
-- make a runtime `duration` **faster** (2.9s for Java,Junit)?
-- make some `start_point/` visible_filenames more **idiomatic**?
-- make a `Dockerfile` more **idiomatic**?
-- make the docker build **faster**?
-- add a new test-framework, [testNG](https://testng.org/doc/index.html) anyone?
-- add a new language, Elm, Scala, Prolog, Lisp, Unison, ...
-- make a large docker image **smaller**?
+- make a **faster run** (2.9s `duration` for Java,Junit)?
+- make some `start_point/` visible_filenames **more idiomatic**?
+- make a `Dockerfile` **more idiomatic**?
+- make a **faster docker build**?
+- add a **new language**, Elm, Scala, Prolog, Lisp, Unison, ...
+- add a **new test-framework**, [testNG](https://testng.org/doc/index.html) anyone?
+- make a **smaller docker image**?
 For example, by changing it's base operating system.
 The language+testFramework images are based on either
 [Alpine Linux](https://alpinelinux.org/) or
