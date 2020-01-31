@@ -75,10 +75,6 @@ This is the simplest way to contribute and a good way to start.
   PASSED:TRAFFIC_LIGHT:green:==================================
   ...
   ```
-- Can you reduce the runtime `duration`?
-- Can you make the start point files more **idiomatic**?
-- Can you reduce the **time** it takes to build the docker image?
-- Can you reduce the **size** of the docker image?
 
 
 Here's a [complete list](https://github.com/cyber-dojo/languages-start-points/blob/master/start-points/all)
@@ -86,7 +82,13 @@ of all language+testFramework repos in cyber-dojo-languages.
 
 Specific ways you can contribute to cyber-dojo-languages.
 
-- convert large docker images to smaller Alpine based images.
+- reduce a runtime `duration`?
+- make some start point files more **idiomatic**?
+- make the docker build **faster**?
+- add a new test-framework, [testNG](https://testng.org/doc/index.html) anyone?
+- add a new language, Elm, Scala, Prolog, Lisp, Unison, ...
+- make a large docker image **smaller**?
+For example, by changing it's base operating system.
 The language+testFramework images are based on either
 [Alpine Linux](https://alpinelinux.org/) or
 [Ubuntu](https://www.ubuntu.com/) or
@@ -96,6 +98,3 @@ then it's typically best to use that so it gets the `:latest` image.
   - the [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit) Alpine based image is ~120MB.
   - the [C++(g++),GoogleMock](https://github.com/cyber-dojo-languages/gplusplus-googlemock) Ubuntu based image is ~1.7GB.
   - the [Python,pytest](https://github.com/cyber-dojo-languages/python-pytest) Debian based image is ~1.2GB.
-- add a new test-framework, [testNG](https://testng.org/doc/index.html) anyone?
-- add a new language, Elm, Scala, Prolog, Lisp, Unison, ...
-- suggest a [new exercise](https://github.com/cyber-dojo/start-points-exercises)
