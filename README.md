@@ -70,13 +70,16 @@ This will create the following directory structure
 src/cyber-dojo
 src/ruby-base
 src/rack-base
+src/sinatra-base
 src/docker-base
 src/web-base
 src/start-points-base
 src/custom-start-points
+src/custom-chooser
 src/exercises-start-points
 src/languages-start-points
 src/avatars
+src/creator
 src/differ
 src/nginx
 src/puller
@@ -89,7 +92,24 @@ src/versioner
 
 To bring up your server:
 ```
-src/commander/cyber-dojo start-point up
+src/commander/cyber-dojo up
+```
+
+This will download docker images for *every* language and test framework combination,
+and for all the exercises.
+If you don't want this, you will need to create your own start point docker images.
+You will need three of these, for language, exercises and custom exercises.
+Read the help docs about how to create them by running:
+
+```
+src/commander/cyber-dojo start-point create --help
+```
+
+Then start your cyber-dojo instance using the 'up' command.
+Read the help docs about how to use this command by running:
+
+```
+src/commander/cyber-dojo up --help
 ```
 
 To bring down your server:

@@ -4,13 +4,16 @@
 export CYBER_DOJO_REPOS=(\
                   ruby-base \
                   rack-base \
+                  sinatra-base \
                   docker-base \
                   web-base \
                   start-points-base \
                   custom-start-points \
+                  custom-chooser \
                   exercises-start-points \
                   languages-start-points \
                   avatars \
+                  creator \
                   differ \
                   nginx \
                   puller \
