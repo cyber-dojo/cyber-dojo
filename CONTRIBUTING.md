@@ -90,7 +90,7 @@ Specific ways you can contribute to cyber-dojo-languages.
 - make some `start_point/` visible_filenames **more idiomatic**?
 - make a `Dockerfile` **more idiomatic**?
 - make a **faster docker build**?
-- add a **new language**, Elm, Scala, Prolog, Lisp, Unison, ...
+- add a **new language**, Elm, Scala, Lisp, Unison, ...
 - add a **new test-framework**, [testNG](https://testng.org/doc/index.html) anyone?
 - add a missing **colour syntax** .js file? See [codemirror/mode](https://github.com/cyber-dojo/web/tree/master/app/assets/javascripts/codemirror/mode)
 - make a **smaller docker image**?
