@@ -82,17 +82,18 @@ of all language+testFramework repos in cyber-dojo-languages.
 
 Specific ways you can contribute to cyber-dojo-languages.
 
-- add a **coverage report** to a language-testFramework.
-  Eg [python-pytest](https://github.com/cyber-dojo-languages/python-pytest/blob/master/start_point/cyber-dojo.sh) uses `coverage3`.
-- add a **lint report** to a language-testFramework.
-  Eg [python-pytest](https://github.com/cyber-dojo-languages/python-pytest/blob/master/start_point/cyber-dojo.sh) uses `pycodestyle`.
+- add a **coverage report** to your favourite language-testFramework.
+  Please write the coverage report to a file called `report/coverage.txt`.
+  For example, see [python-pytest](https://github.com/cyber-dojo-languages/python-pytest/blob/master/start_point/cyber-dojo.sh).
+- add a **lint report** to your favourite language-testFramework.
+  Please write the lint report to a file called `report/style.txt`.
+  For example, see [python-pytest](https://github.com/cyber-dojo-languages/python-pytest/blob/master/start_point/cyber-dojo.sh).
 - make a **faster run** (2.9s `duration` for Java,Junit)?
-- make some `start_point/` visible_filenames **more idiomatic**?
+- make the `start_point/` source files **more idiomatic** for your favourite language-testFramework?
 - make a `Dockerfile` **more idiomatic**?
 - make a **faster docker build**?
 - add a **new language**, Elm, Scala, Lisp, Unison, ...
 - add a **new test-framework**, [testNG](https://testng.org/doc/index.html) anyone?
-- add a missing **colour syntax** .js file? See [codemirror/mode](https://github.com/cyber-dojo/web/tree/master/app/assets/javascripts/codemirror/mode)
 - make a **smaller docker image**?
 For example, by changing it's base operating system.
 The language+testFramework images are based on either
@@ -101,6 +102,6 @@ The language+testFramework images are based on either
 [Debian](https://www.debian.org/).
 However, if the official dockerhub image for a language is Ubuntu/Debian
 then it's typically best to use that so it gets the `:latest` image.
-  - the [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit) Alpine based image is ~120MB.
-  - the [C++(g++),GoogleMock](https://github.com/cyber-dojo-languages/gplusplus-googlemock) Ubuntu based image is ~1.7GB.
-  - the [Python,pytest](https://github.com/cyber-dojo-languages/python-pytest) Debian based image is ~1.2GB.
+  - the [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit) `Alpine` based image is ~**120MB**.
+  - the [Python,pytest](https://github.com/cyber-dojo-languages/python-pytest) `Debian` based image is ~**1.2GB**.
+  - the [C++(g++),GoogleMock](https://github.com/cyber-dojo-languages/gplusplus-googlemock) `Ubuntu` based image is ~**1.7GB**.
