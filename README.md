@@ -28,44 +28,6 @@ cyber-dojo up --help
 ```
 
 - - - -
-# Getting the source for all the cyber-dojo docker services
-
-```bash
-mkdir src
-cd src
-git clone https://github.com/cyber-dojo/cyber-dojo.git
-./cyber-dojo/sh/git-clone-all.sh
-cd ..
-```
-
-This will create the following directory structure
-(each directory holds a git repo with a build_test_tag_publish.sh script):
-
-```
-src/cyber-dojo
-src/ruby-base
-src/rack-base
-src/sinatra-base
-src/docker-base
-src/web-base
-src/start-points-base
-src/custom-start-points
-src/custom-chooser
-src/exercises-start-points
-src/languages-start-points
-src/avatars
-src/creator
-src/differ
-src/nginx
-src/puller
-src/runner
-src/saver
-src/web
-src/commander
-src/versioner
-```
-
-- - - -
 # Services
 Each repo in the github cyber-dojo organization builds a single docker image.
 The main kubernetes backed https://cyber-dojo.org uses:
@@ -75,14 +37,14 @@ The main kubernetes backed https://cyber-dojo.org uses:
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/exercises-start-points.svg?style=svg)](https://circleci.com/gh/cyber-dojo/exercises-start-points) [exercises-start-points](https://github.com/cyber-dojo/exercises-start-points) - serves the exercises start-points
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/languages-start-points.svg?style=svg)](https://circleci.com/gh/cyber-dojo/languages-start-points) [languages-start-points](https://github.com/cyber-dojo/languages-start-points) - serves the languages start-points
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/avatars.svg?style=svg)](https://circleci.com/gh/cyber-dojo/avatars) [avatars](https://github.com/cyber-dojo/avatars) - serves the avatar names and images.
-- [![CircleCI](https://circleci.com/gh/cyber-dojo/creator.svg?style=svg)](https://circleci.com/gh/cyber-dojo/creator) [creator](https://github.com/cyber-dojo/creator) - creates practice sessions (individual and group) and gives them unique ids.
+- [![CircleCI](https://circleci.com/gh/cyber-dojo/creator.svg?style=svg)](https://circleci.com/gh/cyber-dojo/creator) [creator](https://github.com/cyber-dojo/creator) - creates exercises (group and individual) and gives them unique ids.
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/differ.svg?style=svg)](https://circleci.com/gh/cyber-dojo/differ) [differ](https://github.com/cyber-dojo/differ) - diffs two sets of files
-- [![CircleCI](https://circleci.com/gh/cyber-dojo/puller.svg?style=svg)](https://circleci.com/gh/cyber-dojo/puller) [puller](https://github.com/cyber-dojo/puller) - pulls the latest docker images named in the [custom-start-points](https://github.com/cyber-dojo/custom-start-points) and [languages-start-points](https://github.com/cyber-dojo/languages-start-points) services.
-- [![CircleCI](https://circleci.com/gh/cyber-dojo/nginx.svg?style=svg)](https://circleci.com/gh/cyber-dojo/nginx) [nginx](https://github.com/cyber-dojo/nginx) - web-proxy, security, and images (jpg) cache
+- [![CircleCI](https://circleci.com/gh/cyber-dojo/puller.svg?style=svg)](https://circleci.com/gh/cyber-dojo/puller) [puller](https://github.com/cyber-dojo/puller) - pulls the latest images named in [custom-start-points](https://github.com/cyber-dojo/custom-start-points) and [languages-start-points](https://github.com/cyber-dojo/languages-start-points).
+- [![CircleCI](https://circleci.com/gh/cyber-dojo/nginx.svg?style=svg)](https://circleci.com/gh/cyber-dojo/nginx) [nginx](https://github.com/cyber-dojo/nginx) - web-proxy, security, images (jpg) cache, and service routing.
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/runner.svg?style=svg)](https://circleci.com/gh/cyber-dojo/runner) [runner](https://github.com/cyber-dojo/runner) - runs the tests and returns a `[stdout,stderr,status,timed_out,colour]` tuple.
-- [![CircleCI](https://circleci.com/gh/cyber-dojo/saver.svg?style=svg)](https://circleci.com/gh/cyber-dojo/saver) [saver](https://github.com/cyber-dojo/saver) - saves groups/katas and code/test files in a host dir volume-mounted to `/cyber-dojo`
-- [![CircleCI](https://circleci.com/gh/cyber-dojo/web.svg?style=svg)](https://circleci.com/gh/cyber-dojo/web) [web](https://github.com/cyber-dojo/web) - rails web-server
-- [![CircleCI](https://circleci.com/gh/cyber-dojo/zipper.svg?style=svg)](https://circleci.com/gh/cyber-dojo/zipper) [zipper](https://github.com/cyber-dojo/zipper) - creates tgz files for download
+- [![CircleCI](https://circleci.com/gh/cyber-dojo/saver.svg?style=svg)](https://circleci.com/gh/cyber-dojo/saver) [saver](https://github.com/cyber-dojo/saver) - persists exercises and all code/test files in a host dir volume-mounted to `/cyber-dojo`.
+- [![CircleCI](https://circleci.com/gh/cyber-dojo/web.svg?style=svg)](https://circleci.com/gh/cyber-dojo/web) [web](https://github.com/cyber-dojo/web) - rails web-server (a monolith slowly being 'Strangler Figged').
+- [![CircleCI](https://circleci.com/gh/cyber-dojo/zipper.svg?style=svg)](https://circleci.com/gh/cyber-dojo/zipper) [zipper](https://github.com/cyber-dojo/zipper) - creates tgz files for download. Currently offline.
 
 Locally running servers also use:
 
