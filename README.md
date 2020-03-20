@@ -15,7 +15,7 @@
 
 Follow [these instructions](https://blog.cyber-dojo.org/2014/09/setting-up-your-own-cyber-dojo-server.html).
 
-The `cyber-dojo up` command uses three default start-point images; *custom*, *exercises*, and *languages*.
+The `cyber-dojo up` command uses three default start-point images; *--custom*, *--exercises*, and *--languages*.
 You can create and use your own start-point images in place of these defaults if you wish.
 Read how to create them by running:
 ```
