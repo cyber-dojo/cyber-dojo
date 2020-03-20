@@ -124,7 +124,7 @@ cd ..
 ```
 
 This will create the following directory structure
-(each directory holds a git repo with a build_test_tag_publish.sh script):
+(each directory holds a git repo with a `build_test_tag_publish.sh` script):
 
 ```
 src/cyber-dojo
@@ -149,3 +149,6 @@ src/web
 src/commander
 src/versioner
 ```
+
+You will need to read [versioner's README](https://github.com/cyber-dojo/versioner/blob/master/README.md)
+to learn how to to run a local cyber-dojo server which uses locally built images.
