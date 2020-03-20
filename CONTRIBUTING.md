@@ -5,29 +5,29 @@
 
 The cyber-dojo source code is split across two github organizations.
 - [cyber-dojo-languages](https://github.com/cyber-dojo-languages) contains 100+
-repositories, one for each language+testFramework (eg "Java, JUnit").
-- [cyber-dojo](https://github.com/cyber-dojo) contains 20+ repositories, one for
+git repositories, one for each language+testFramework (eg `"Java, JUnit"`).
+- [cyber-dojo](https://github.com/cyber-dojo) contains 20+ git repositories, one for
 each dockerized microservice (eg runner) that together comprise the server.
 
 - - - -
 # contributing to cyber-dojo-languages
 
-This is the simplest way to contribute and a good way to start.
-Each language,testFramework (eg `"Java, JUnit"`) lives in a single git repository.
 Here's a [complete list of all 100+ git repo URLs](https://github.com/cyber-dojo/languages-start-points/blob/master/start-points/all).
-Each repository contains:
-  - a `docker/` dir to build the docker image. See below.
-  - a `start_point/` dir holding the minimal initial source files.
-    These files always specify a function called `answer` that returns `6 * 9`
-    and a test asserting `answer() == 42`. See below.
 
-- Clone the git repository for a language,testFramework you are interested in,
+Each repository contains:
+- a `docker/` dir to build the docker image. See below.
+- a `start_point/` dir holding the minimal initial source files.
+  These files always specify a function called `answer` that returns `6 * 9`
+  and a test asserting `answer() == 42`. See below.
+
+To get started, clone the git repository for a language,testFramework you are interested in,
   (or just pick one to learn how the automation works) eg
 [Java, JUnit](https://github.com/cyber-dojo-languages/java-junit).
   ```bash
   git clone https://github.com/cyber-dojo-languages/java-junit.git
   ```
-- In a terminal with [Docker](https://docs.docker.com/install/) installed, build
+
+In a terminal with [Docker](https://docs.docker.com/install/) installed, build
   the `"Java, Junit"` cyber-dojo docker image,
   and test its `start_point/` files, by running `pipe_build_up_test.sh`.
   It will:
@@ -96,8 +96,8 @@ Specific ways you can contribute to cyber-dojo-languages.
 - make the `start_point/` source files **more idiomatic** for your favourite language-testFramework?
 - make a `Dockerfile` **more idiomatic**?
 - make a **faster docker build**?
-- add a **new language**, Elm, Scala, Lisp, Unison, ...
 - add a **new test-framework**, [testNG](https://testng.org/doc/index.html) anyone?
+- add a **new language**, Elm, Scala, Lisp, Unison, ...
 - make a **smaller docker image**?
 For example, by changing it's base operating system.
 The language+testFramework images are based on either
