@@ -104,9 +104,9 @@ By default your cyber-dojo server will be on port 80.
 
 # overriding the default start-point images
 * The `cyber-dojo up` command uses three default start-point images (tagged appropriately)
-  - [cyberdojo/custom-start-points](https://hub.docker.com/r/cyberdojo/custom-start-points/tags)
-  - [cyberdojo/exercises-start-points](https://hub.docker.com/r/cyberdojo/exercises-start-points/tags)
-  - [cyberdojo/languages-start-points-common](https://hub.docker.com/r/cyberdojo/languages-start-points-common/tags)
+  - --custom=[cyberdojo/custom-start-points](https://hub.docker.com/r/cyberdojo/custom-start-points/tags)
+  - --exercises=[cyberdojo/exercises-start-points](https://hub.docker.com/r/cyberdojo/exercises-start-points/tags)
+  - --languages=[cyberdojo/languages-start-points-common](https://hub.docker.com/r/cyberdojo/languages-start-points-common/tags)
 * You can create and use your own alternative start-point images in place of these defaults if you wish.
   - Read how to create them by running:
     ```
