@@ -26,6 +26,7 @@
   * [rails web image](#overriding-the-default-rails-web-image)
   * [dot env files](#overriding-the-default-dot-env-files)
 
+- - - -
 # running a server on docker
 Follow [these instructions](https://blog.cyber-dojo.org/2014/09/setting-up-your-own-cyber-dojo-server.html)
 to install the `cyber-dojo` bash script and to prepare your server.
@@ -102,13 +103,11 @@ By default your cyber-dojo server will be on port 80.
   ```
 
 # overriding the default start-point images
-By default your cyber-dojo server will use these start-point images (tagged appropriately)
-- [cyberdojo/custom-start-points](https://hub.docker.com/r/cyberdojo/custom-start-points/tags)
-- [cyberdojo/exercises-start-points](https://hub.docker.com/r/cyberdojo/exercises-start-points/tags)
-- [cyberdojo/languages-start-points-common](https://hub.docker.com/r/cyberdojo/languages-start-points-common/tags)
-
-* The `cyber-dojo up` command uses three default start-point images; *--custom*, *--exercises*, and *--languages*.
-  - You can create and use your own start-point images in place of these defaults if you wish.
+* The `cyber-dojo up` command uses three default start-point images (tagged appropriately)
+  - [cyberdojo/custom-start-points](https://hub.docker.com/r/cyberdojo/custom-start-points/tags)
+  - [cyberdojo/exercises-start-points](https://hub.docker.com/r/cyberdojo/exercises-start-points/tags)
+  - [cyberdojo/languages-start-points-common](https://hub.docker.com/r/cyberdojo/languages-start-points-common/tags)
+  - You can create and use your own alternative start-point images in place of these defaults if you wish.
   - Read how to create them by running:
   ```
   cyber-dojo start-point create --help
@@ -117,7 +116,6 @@ By default your cyber-dojo server will use these start-point images (tagged appr
   ```
   cyber-dojo up --help
   ```
-
 
 # overriding the default nginx image
 * By default your cyber-dojo server will use
