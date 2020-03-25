@@ -97,7 +97,8 @@ Specific ways you can contribute to cyber-dojo-languages.
 - make a `Dockerfile` **more idiomatic**?
 - make a **faster docker build**?
 - add a **new test-framework**, [testNG](https://testng.org/doc/index.html) anyone?
-- add a **new language**, Elm, Scala, Lisp, Unison, ...
+- add a **new language**, Elm, Julia, Lisp, Scala, Unison, ...
+- split the [Rust-test](https://github.com/cyber-dojo-languages/rust-test) starting file into two; one for the test, one for the code
 - make a **smaller docker image**?
 For example, by changing it's base operating system.
 The language+testFramework images are based on either
