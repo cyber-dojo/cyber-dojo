@@ -112,10 +112,18 @@ then it's typically best to use that so it gets the `:latest` image.
   - the [C++(g++),GoogleMock](https://github.com/cyber-dojo-languages/gplusplus-googlemock) `Ubuntu` based image is ~**1.7GB**.
 
 - - - -
-# contributing to the cyber-dojo services
+# contributing to cyber-dojo
 
-To get the source for *all* the cyber-dojo docker services:
+First, setup and learn how run a local cyber-dojo server. Please read and follow [these instructions](https://blog.cyber-dojo.org/2014/09/setting-up-your-own-cyber-dojo-server.html). They tell you how to:
+- install the main cyber-dojo bash script used to control your server.
+- install `docker`. If you are on Mac or Windows you must install `Docker Toolbox` and run from a Docker-QuickStart terminal as instructed. A cyber-dojo server comprises many separate services, each running from its own docker image.
+- set the correct permissions on the `/cyber-dojo` dir.
 
+Once you are running a local cyber-dojo server, install these two tools:
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Each cyber-dojo service lives in its own git repository.
+- [docker-compose](https://docs.docker.com/compose/install/). Each cyber-dojo service has a `docker-compose.yml` file used to build and run the service.
+
+Now install the source for *all* the cyber-dojo docker services:
 ```bash
 mkdir src
 cd src
@@ -125,7 +133,6 @@ cd ..
 ```
 
 This will create the following directory structure.
-
 ```
 src/cyber-dojo
 src/ruby-base
@@ -152,13 +159,25 @@ src/commander
 src/versioner
 ```
 
+
 Each directory holds a git repo with a `build_test_tag_publish.sh` script
 which is used to
-- build the docker-service image
+- build its docker-image
 - run its tests
-- if they pass, tag the image using the git commit sha
-- if running on ci, push the image to dockerhub
-- if running on ci, publish the image to [https://beta.cyber-dojo.org](https://beta.cyber-dojo.org)
+- if they pass, tag the docker-image
+- if running on ci
+  - push the docker-image to [dockerhub](https://hub.docker.com/search/?q=cyberdojo&type=image)
+  - deploy the docker-image to [https://beta.cyber-dojo.org](https://beta.cyber-dojo.org)
+  - some services also deploy the docker-image to [https://cyber-dojo.org](https://cyber-dojo.org)
 
-You will need to read [versioner's README](https://github.com/cyber-dojo/versioner/blob/master/README.md)
-to learn how to to run a local cyber-dojo server which uses locally built images.
+
+cyber-dojo uses:
+- an immutable architecture. Updates and fixes are made by creating and deploying *new* docker images.
+- image tagging. Each image's *tag* is the first seven chars of its git commit sha (on *master* at *HEAD*)
+- a versioned architecture. The `cyberdojo/versioner` service serves a set of tags, which are used when bringing up your cyber-dojo server with the `cyber-dojo up` command.
+
+
+You need to read [versioner's README](https://github.com/cyber-dojo/versioner/blob/master/README.md)
+to learn
+- how `cyberdojo/versioner` uses these tags.
+- how to make one or more of its tags refer to tags of locally built images.
