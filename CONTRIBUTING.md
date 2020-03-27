@@ -124,8 +124,7 @@ git clone https://github.com/cyber-dojo/cyber-dojo.git
 cd ..
 ```
 
-This will create the following directory structure
-(each directory holds a git repo with a `build_test_tag_publish.sh` script):
+This will create the following directory structure.
 
 ```
 src/cyber-dojo
@@ -138,7 +137,9 @@ src/start-points-base
 src/custom-start-points
 src/custom-chooser
 src/exercises-start-points
+src/exercises-chooser
 src/languages-start-points
+src/languages-chooser
 src/avatars
 src/creator
 src/differ
@@ -150,6 +151,14 @@ src/web
 src/commander
 src/versioner
 ```
+
+Each directory holds a git repo with a `build_test_tag_publish.sh` script
+which is used to
+- build the docker-service image
+- run its tests
+- if they pass, tag the image using the git commit sha
+- if running on ci, push the image to dockerhub
+- if running on ci, publish the image to [https://beta.cyber-dojo.org](https://beta.cyber-dojo.org)
 
 You will need to read [versioner's README](https://github.com/cyber-dojo/versioner/blob/master/README.md)
 to learn how to to run a local cyber-dojo server which uses locally built images.

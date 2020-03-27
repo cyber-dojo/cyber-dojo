@@ -11,7 +11,9 @@ export CYBER_DOJO_REPOS=(\
                   custom-start-points \
                   custom-chooser \
                   exercises-start-points \
+                  exercises-chooser \
                   languages-start-points \
+                  languages-chooser \
                   avatars \
                   creator \
                   differ \
