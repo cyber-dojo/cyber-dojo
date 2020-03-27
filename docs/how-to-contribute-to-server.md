@@ -1,5 +1,7 @@
 
-# contributing to cyber-dojo's server
+# Contributing to cyber-dojo's server
+
+:+1::tada: Thanks :tada::+1:
 
 First, setup and learn how run a local cyber-dojo server. Please read and follow [these instructions](https://blog.cyber-dojo.org/2014/09/setting-up-your-own-cyber-dojo-server.html). They tell you how to:
 - install the main cyber-dojo bash script used to control your server.

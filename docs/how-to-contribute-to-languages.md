@@ -1,5 +1,7 @@
 
-# contributing to cyber-dojo's languages
+# Contributing to cyber-dojo's languages
+
+:+1::tada: Thanks :tada::+1:
 
 Here's a [complete list of all 100+ git repo URLs](https://github.com/cyber-dojo/languages-start-points/blob/master/start-points/all).
 
