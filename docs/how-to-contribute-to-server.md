@@ -53,16 +53,17 @@ Each directory holds a git repo with a `build_test_tag_publish.sh` script which:
 - runs its tests (from inside a container run from the image)
 - if they pass, tags the docker-image
 - if running on ci
-  - pushes the docker-image to [dockerhub](https://hub.docker.com/search/?q=cyberdojo&type=image)
-  - deploys the docker-image to [https://beta.cyber-dojo.org](https://beta.cyber-dojo.org)
-  - may also deploy the docker-image to [https://cyber-dojo.org](https://cyber-dojo.org)
+  - pushes the tagged docker-image to [dockerhub](https://hub.docker.com/search/?q=cyberdojo&type=image)
+  - deploys the tagged docker-image to [https://beta.cyber-dojo.org](https://beta.cyber-dojo.org)
+  - may also deploy the tagged docker-image to [https://cyber-dojo.org](https://cyber-dojo.org)
 
 cyber-dojo uses:
 - an immutable architecture. Updates and fixes are made by creating and deploying *new* docker images.
 - image tagging. Each image's *tag* is the first seven chars of its git commit sha (on *master* at *HEAD*)
-- a versioned architecture. The `cyberdojo/versioner` service serves a set of tags, which are used when bringing up your cyber-dojo server with the `cyber-dojo up` command.
-
-You need to read [versioner's README](https://github.com/cyber-dojo/versioner/blob/master/README.md)
-to learn:
-- how `cyberdojo/versioner` uses these tags.
-- how to make one or more of its tags refer to tags of locally built images.
+- a versioned architecture.
+  - The `cyberdojo/versioner` service serves a set of tags, which are used when bringing up your
+    cyber-dojo server with the `cyber-dojo up` command. You need to read
+    [versioner's README](https://github.com/cyber-dojo/versioner/blob/master/README.md)
+    to learn:
+    - how `cyberdojo/versioner` uses these tags.
+    - how to make one or more of its tags refer to tags of locally built images.
