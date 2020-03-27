@@ -10,7 +10,8 @@ Here's a [complete list of all 100+ git repo URLs](https://github.com/cyber-dojo
   ```bash
   git clone https://github.com/cyber-dojo-languages/java-junit.git
   ```
-- If you want to add a **new testFramework** to an **existing language**, clone one of the languages' existing testFrameworks, rename it, and modify it.
+- If you want to add a **new testFramework** to an **existing language**, clone one
+  of the languages' existing testFrameworks, rename it, and modify it.
   For example, to add [testNG](https://testng.org/doc/index.html)
   ```bash
   git clone https://github.com/cyber-dojo-languages/java-junit.git
@@ -28,22 +29,32 @@ Here's a [complete list of all 100+ git repo URLs](https://github.com/cyber-dojo
   ```
 
 Each language-testFramework (eg `java-junit`) repository contains:
+
 - a `docker/` dir to build the docker image. See below.
-- a `start_point/` dir holding the minimal initial source files. These files always specify a function called `answer` that returns `6 * 9` and a test asserting `answer() == 42`. See below.
+- a `start_point/` dir holding the minimal initial source files.
+  These files always specify a function called `answer` that returns `6 * 9` and a
+  test asserting `answer() == 42`. See below.
 
 In a terminal with [Docker](https://docs.docker.com/install/) installed, build and test the docker image by running `pipe_build_up_test.sh` which will:
-- Create `docker/Dockerfile` from `docker/Dockerfile.base`, augmented to satisfy the [runner's](https://github.com/cyber-dojo/runner) requirements.
+
+- Create `docker/Dockerfile` from `docker/Dockerfile.base`, augmented to satisfy
+  the [runner's](https://github.com/cyber-dojo/runner) requirements.
 - Build a new docker image from `docker/Dockerfile`.
 - The name of the image is the `image_name` entry of `start_point/manifest.json`.
-- The names of the start-point source files are specified in the `visible_filenames` entry of `start_point/manifest.json`.
+- The names of the start-point source files are specified in the `visible_filenames`
+  entry of `start_point/manifest.json`.
 - One of the `visible_filenames` is assumed to contain the pattern `6 * 9`.
-- The `visible_filenames` are sent to the [runner](https://github.com/cyber-dojo/runner) service, and the resulting `[stdout,stderr,status]` are passed to the Ruby lambda defined in `/docker/red_amber_green.rb`
+- The `visible_filenames` are sent to the [runner](https://github.com/cyber-dojo/runner) service,
+  and the resulting `[stdout,stderr,status]` are passed to the Ruby lambda defined
+  in `/docker/red_amber_green.rb`
 - Unmodified, the `visible_filenames` files should produce a `red` traffic-light.
 - With the `6 * 9` modified to `6 * 9sd`, an `amber` traffic-light.
 - With the `6 * 9` modified to `6 * 7`, a `green` traffic-light.
-- If the `visible_filenames` do not contain the pattern `6 * 9`, (eg the language uses infix notation) you can specify the red/amber/green modifications explicitly using an `options.json` file. See [nasm-assert](https://github.com/cyber-dojo-languages/nasm-assert/blob/master/start_point/options.json) for an example.
+- If the `visible_filenames` do not contain the pattern `6 * 9`, (eg the language uses infix
+  notation) you can specify the red/amber/green modifications explicitly using an `options.json`
+  file. See [nasm-assert](https://github.com/cyber-dojo-languages/nasm-assert/blob/master/start_point/options.json) for an example.
 
-- For example:    
+An `pipe_build_up_test.sh` run looks like this:    
   ```bash
   cd java-junit
   ./pipe_build_up_test.sh
@@ -78,7 +89,7 @@ In a terminal with [Docker](https://docs.docker.com/install/) installed, build a
   ...
   ```
 
-Specific ways you can contribute to cyber-dojo-languages.
+Specific ways you can contribute to cyber-dojo-languages:
 
 - add a **coverage report** to your favourite language-testFramework.
   Please write the coverage report to a file called `report/coverage.txt`.
