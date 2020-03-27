@@ -3,16 +3,31 @@
 
 :+1::tada: Thanks :tada::+1:
 
-To get started, clone the git repository for the language,testFramework you are interested in.
-If you wish to contribute a *new* language,tesFramework I suggest cloning any repo and then modifying it.
-For example to clone [Java, JUnit](https://github.com/cyber-dojo-languages/java-junit):
+Here's a [complete list of all 100+ git repo URLs](https://github.com/cyber-dojo/languages-start-points/blob/master/start-points/all) from Assembler through to Zig!
+
+- If you want to update an *existing* language-testFramework then git clone it.
+  For example [java-junit](https://github.com/cyber-dojo-languages/java-junit):
   ```bash
   git clone https://github.com/cyber-dojo-languages/java-junit.git
   ```
+- If you want to add a *new testFramework* to an *existing language*, clone one of the languages' existing testFrameworks, rename it, and modify it.
+  For example, to add [testNG](https://testng.org/doc/index.html)
+  ```bash
+  git clone https://github.com/cyber-dojo-languages/java-junit.git
+  mv java-junit java-testNG
+  ...
+  ```
+- If you want to add a *new testFramework* for a *new language*, clone an existing language-repo and one of its testFramework-repos, rename them, and modify them.
+  For example [java](https://github.com/cyber-dojo-languages/java) and [java-junit](https://github.com/cyber-dojo-languages/java-junit)
+  ```bash
+  git clone https://github.com/cyber-dojo-languages/java.git
+  git clone https://github.com/cyber-dojo-languages/java-junit.git
+  mv java lisp
+  mv java-junit lisp-test
+  ...
+  ```
 
-Here's a [complete list of all 100+ git repo URLs](https://github.com/cyber-dojo/languages-start-points/blob/master/start-points/all) from Assembler through to Zig!
-
-Each repository contains:
+Each language-testFramework (eg `java-junit`) repository contains:
 - a `docker/` dir to build the docker image. See below.
 - a `start_point/` dir holding the minimal initial source files.
   These files always specify a function called `answer` that returns `6 * 9`
