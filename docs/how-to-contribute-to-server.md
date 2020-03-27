@@ -7,12 +7,12 @@ cyber-dojo uses:
 - microservices.
   - Each running from its own docker image.
 - an immutable architecture.
-  - Updates and fixes are made by creating and deploying *new* docker images.
+  - Updates and fixes are made by creating, testing, and deploying *new* docker images.
+- image tagging.
+  - Each deployed docker image is *tagged* with the first seven chars of its git commit sha (on *master* at *HEAD*)
 - a versioned architecture.
   - `cyberdojo/versioner` serves a set of image tags (one for each microservice), which are used when
     bringing up a cyber-dojo server with the `cyber-dojo up` command.
-- image tagging.
-  - Each docker image is tagged with the first seven chars of its git commit sha (on *master* at *HEAD*)
 
 First, setup and learn how run a local cyber-dojo server. Please read and follow [these instructions](https://blog.cyber-dojo.org/2014/09/setting-up-your-own-cyber-dojo-server.html) which tell you:
 - how to install the main cyber-dojo bash script used to control your server.
