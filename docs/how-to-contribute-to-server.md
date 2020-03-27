@@ -3,23 +3,25 @@
 
 :+1::tada: Thanks :tada::+1:
 
+cyber-dojo uses:
+- microservices.
+  - Each running from its own docker image.
+- an immutable architecture.
+  - Updates and fixes are made by creating and deploying *new* docker images.
+- a versioned architecture.
+  - `cyberdojo/versioner` serves a set of image tags (one for each microservice), which are used when
+    bringing up a cyber-dojo server with the `cyber-dojo up` command.
+- image tagging.
+  - Each docker image is tagged with the first seven chars of its git commit sha (on *master* at *HEAD*)
+
 First, setup and learn how run a local cyber-dojo server. Please read and follow [these instructions](https://blog.cyber-dojo.org/2014/09/setting-up-your-own-cyber-dojo-server.html) which tell you:
 - how to install the main cyber-dojo bash script used to control your server.
-- how to install `docker`. If you are on Mac or Windows you must install `Docker Toolbox` and run from a Docker-QuickStart terminal as instructed. A cyber-dojo server comprises many separate services, each running from its own docker image.
+- how to install `docker`. If you are on Mac or Windows you must (currently) install `Docker Toolbox` and run from a Docker-QuickStart terminal as per the instructions.
 - how to set the correct permissions on the `/cyber-dojo` dir. This dir is volume-mounted into the saver service.
 
 Once you are running a local cyber-dojo server, install these two tools:
 - [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Each cyber-dojo service lives in its own git repository.
 - [docker-compose](https://docs.docker.com/compose/install/). Each repository has a `docker-compose.yml` file used when building and testing the service.
-
-cyber-dojo uses:
-- an immutable architecture.
-  - Updates and fixes are made by creating and deploying *new* docker images.
-- a versioned architecture.
-  - `cyberdojo/versioner` serves a set of image tags (one for each service), which are used when
-    bringing up your cyber-dojo server with the `cyber-dojo up` command.
-- image tagging.
-  - Each docker image is tagged with the first seven chars of its git commit sha (on *master* at *HEAD*)
 
 Install the source for *all* the cyber-dojo services.
 ```bash
@@ -66,6 +68,6 @@ Each directory holds a git repo with a `build_test_tag_publish.sh` script which:
   - deploys the tagged docker-image to [https://beta.cyber-dojo.org](https://beta.cyber-dojo.org)
   - may also deploy the tagged docker-image to [https://cyber-dojo.org](https://cyber-dojo.org)
 - if running locally
-  - you need to read
+  - you will need to read
     [versioner's README](https://github.com/cyber-dojo/versioner/blob/master/README.md)
     to learn how to make one or more of its tags refer to tags of locally built images.
