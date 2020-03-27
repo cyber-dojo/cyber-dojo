@@ -3,10 +3,10 @@
 
 :+1::tada: Thanks :tada::+1:
 
-First, setup and learn how run a local cyber-dojo server. Please read and follow [these instructions](https://blog.cyber-dojo.org/2014/09/setting-up-your-own-cyber-dojo-server.html). They tell you how to:
-- install the main cyber-dojo bash script used to control your server.
-- install `docker`. If you are on Mac or Windows you must install `Docker Toolbox` and run from a Docker-QuickStart terminal as instructed. A cyber-dojo server comprises many separate services, each running from its own docker image.
-- set the correct permissions on the `/cyber-dojo` dir. This dir is volume-mounted into the saver service.
+First, setup and learn how run a local cyber-dojo server. Please read and follow [these instructions](https://blog.cyber-dojo.org/2014/09/setting-up-your-own-cyber-dojo-server.html) which tell you:
+- how to install the main cyber-dojo bash script used to control your server.
+- how to install `docker`. If you are on Mac or Windows you must install `Docker Toolbox` and run from a Docker-QuickStart terminal as instructed. A cyber-dojo server comprises many separate services, each running from its own docker image.
+- how to set the correct permissions on the `/cyber-dojo` dir. This dir is volume-mounted into the saver service.
 
 Once you are running a local cyber-dojo server, install these two tools:
 - [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Each cyber-dojo service lives in its own git repository.
@@ -48,7 +48,6 @@ src/commander
 src/versioner
 ```
 
-
 Each directory holds a git repo with a `build_test_tag_publish.sh` script which:
 - builds its docker-image
 - runs its tests (from inside a container run from the image)
@@ -58,12 +57,10 @@ Each directory holds a git repo with a `build_test_tag_publish.sh` script which:
   - deploys the docker-image to [https://beta.cyber-dojo.org](https://beta.cyber-dojo.org)
   - may also deploy the docker-image to [https://cyber-dojo.org](https://cyber-dojo.org)
 
-
 cyber-dojo uses:
 - an immutable architecture. Updates and fixes are made by creating and deploying *new* docker images.
 - image tagging. Each image's *tag* is the first seven chars of its git commit sha (on *master* at *HEAD*)
 - a versioned architecture. The `cyberdojo/versioner` service serves a set of tags, which are used when bringing up your cyber-dojo server with the `cyber-dojo up` command.
-
 
 You need to read [versioner's README](https://github.com/cyber-dojo/versioner/blob/master/README.md)
 to learn:

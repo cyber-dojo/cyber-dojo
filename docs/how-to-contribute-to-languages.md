@@ -3,20 +3,20 @@
 
 :+1::tada: Thanks :tada::+1:
 
-Here's a [complete list of all 100+ git repo URLs](https://github.com/cyber-dojo/languages-start-points/blob/master/start-points/all).
+To get started, clone the git repository for the language,testFramework you are interested in.
+If you wish to contribute a *new* language,tesFramework I suggest cloning any repo and then modifying it.
+For example to clone [Java, JUnit](https://github.com/cyber-dojo-languages/java-junit):
+  ```bash
+  git clone https://github.com/cyber-dojo-languages/java-junit.git
+  ```
+
+Here's a [complete list of all 100+ git repo URLs](https://github.com/cyber-dojo/languages-start-points/blob/master/start-points/all) from Assembler through to Zig!
 
 Each repository contains:
 - a `docker/` dir to build the docker image. See below.
 - a `start_point/` dir holding the minimal initial source files.
   These files always specify a function called `answer` that returns `6 * 9`
   and a test asserting `answer() == 42`. See below.
-
-To get started, clone the git repository for a language,testFramework you are interested in,
-  (or just pick one to learn how the automation works) eg
-[Java, JUnit](https://github.com/cyber-dojo-languages/java-junit).
-  ```bash
-  git clone https://github.com/cyber-dojo-languages/java-junit.git
-  ```
 
 In a terminal with [Docker](https://docs.docker.com/install/) installed, build
   the `"Java, Junit"` cyber-dojo docker image
