@@ -5,19 +5,19 @@
 
 Here's a [complete list of all 100+ git repo URLs](https://github.com/cyber-dojo/languages-start-points/blob/master/start-points/all) from Assembler through to Zig!
 
-- If you want to update an *existing* language-testFramework then git clone it.
+- If you want to update an **existing language-testFramework** then git clone it.
   For example [java-junit](https://github.com/cyber-dojo-languages/java-junit):
   ```bash
   git clone https://github.com/cyber-dojo-languages/java-junit.git
   ```
-- If you want to add a *new testFramework* to an *existing language*, clone one of the languages' existing testFrameworks, rename it, and modify it.
+- If you want to add a **new testFramework** to an **existing language**, clone one of the languages' existing testFrameworks, rename it, and modify it.
   For example, to add [testNG](https://testng.org/doc/index.html)
   ```bash
   git clone https://github.com/cyber-dojo-languages/java-junit.git
-  mv java-junit java-testNG
+  mv java-junit java-testng
   ...
   ```
-- If you want to add a *new testFramework* for a *new language*, clone an existing language-repo and one of its testFramework-repos, rename them, and modify them.
+- If you want to add a **new testFramework** for a **new language**, clone an existing language repo and one of its testFramework repos, rename them, and modify them.
   For example [java](https://github.com/cyber-dojo-languages/java) and [java-junit](https://github.com/cyber-dojo-languages/java-junit)
   ```bash
   git clone https://github.com/cyber-dojo-languages/java.git
@@ -34,9 +34,8 @@ Each language-testFramework (eg `java-junit`) repository contains:
   and a test asserting `answer() == 42`. See below.
 
 In a terminal with [Docker](https://docs.docker.com/install/) installed, build
-  the `"Java, Junit"` cyber-dojo docker image
-  (and test its `start_point/` files), by running `pipe_build_up_test.sh`.
-  It will:
+  and test the cyber-dojo docker image by running `pipe_build_up_test.sh`
+  which will:
   - Create `docker/Dockerfile` from `docker/Dockerfile.base`, augmented to
     satisfy the [runner's](https://github.com/cyber-dojo/runner) requirements.
   - Build a new docker image from `docker/Dockerfile`.
