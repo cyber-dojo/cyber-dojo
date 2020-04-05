@@ -1,0 +1,6 @@
+Cat the 6 png files together at
+https://www.aconvert.com/image/merge/
+
+View home page at 80%
+Cmd-Shift-4 to take snapshot.
+Width is 1111 pixels
