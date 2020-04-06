@@ -91,23 +91,23 @@ An `pipe_build_up_test.sh` run looks like this:
 
 Specific ways you can contribute to cyber-dojo-languages:
 
+- make a **faster run** (can you reduce 2.9s `duration` for Java,Junit)?
+- make the `start_point/` source files **more idiomatic** for your favourite language-testFramework?
+- add a **new test-framework**, [testNG](https://testng.org/doc/index.html) anyone?
+- add a **new language**, Elm, Julia, Lisp, Scala, Racket, Unison, ...
+- split the [Rust-test](https://github.com/cyber-dojo-languages/rust-test) starting file into two; one for the test, one for the code
 - add a **coverage report** to your favourite language-testFramework.
   Please write the coverage report to a file called `report/coverage.txt`.
   For example, see [python-pytest](https://github.com/cyber-dojo-languages/python-pytest/blob/master/start_point/cyber-dojo.sh).
 - add a **lint report** to your favourite language-testFramework.
   Please write the lint report to a file called `report/style.txt`.
   For example, see [python-pytest](https://github.com/cyber-dojo-languages/python-pytest/blob/master/start_point/cyber-dojo.sh).
-- make a **faster run** (2.9s `duration` for Java,Junit)?
-- make the `start_point/` source files **more idiomatic** for your favourite language-testFramework?
 - make a `Dockerfile` **more idiomatic**?
 - make a **faster docker build**?
-- add a **new test-framework**, [testNG](https://testng.org/doc/index.html) anyone?
-- add a **new language**, Elm, Julia, Lisp, Scala, Racket, Unison, ...
-- split the [Rust-test](https://github.com/cyber-dojo-languages/rust-test) starting file into two; one for the test, one for the code
 - make a **smaller docker image**?
 For example, by changing it's base operating system.
 The language+testFramework images are based on either
-[Alpine Linux](https://alpinelinux.org/) or
+[Alpine](https://alpinelinux.org/) or
 [Ubuntu](https://www.ubuntu.com/) or
 [Debian](https://www.debian.org/).
 However, if the official dockerhub image for a language is Ubuntu/Debian
