@@ -160,7 +160,7 @@ set to the absolute path of your own .env file. Eg
   Using web.env=/home/fred/my_web.env (custom)
   ...
   ```
-By default when an exercise starts a welcome dialog displays
+From 0.1.131 onwards, when an exercise starts a welcome dialog displays
 traffic-light information. You can turn off this dialog with
 the following `web.env` entry:
   ```
