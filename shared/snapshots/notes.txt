@@ -1,6 +1,20 @@
-Cat the 6 png files together at
-https://www.aconvert.com/image/merge/
+group-id=dMc6L6
+fox-id=g1B8AT
+Cmd-Shift-4 to take snapshot.
+Remember to keep thin top white bar.
+Resize in Gimp:
+  Image|Scale Image...|
+     width=2100px
+     [scale] button
 
 View home page at 80%
-Cmd-Shift-4 to take snapshot.
-Width is 1111 pixels
+View review page at 90%
+
+Cat the 6 png files together
+to form shared/home_page_snapshot.png
+(bad name but lots of readme.md files link to it)
+at https://www.aconvert.com/image/merge/
+
+
+For cyber-dojo-6-review.png prefer review page
+from dashboard page (it only has one avatar on it).
