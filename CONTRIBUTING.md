@@ -7,7 +7,7 @@ The cyber-dojo source is split across three github organizations.
 
 - [cyber-dojo](https://github.com/cyber-dojo)
   - contains 20+ git repositories, one for each service that together comprise the server.
-  - when running, a server allows you to create new practice sessions from a set of start-points, one for each language+testFramework (eg `"Java, JUnit"`).
+  - you create new practice sessions by choosing from a set of start-points, one for each language+testFramework (eg `"Java, JUnit"`).
   - [I'd like to contribute to the server](https://github.com/cyber-dojo/cyber-dojo/blob/master/docs/how-to-contribute-to-server.md)
 
 - [cyber-dojo-start-points](https://github.com/cyber-dojo-start-points)
