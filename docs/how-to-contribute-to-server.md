@@ -55,7 +55,6 @@ src/avatars
 src/creator
 src/differ
 src/nginx
-src/puller
 src/runner
 src/saver
 src/web

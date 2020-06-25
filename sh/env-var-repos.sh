@@ -18,7 +18,6 @@ export CYBER_DOJO_REPOS=(\
                   creator \
                   differ \
                   nginx \
-                  puller \
                   runner \
                   saver \
                   web \
