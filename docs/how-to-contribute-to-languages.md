@@ -47,13 +47,11 @@ Specific ways you can contribute to cyber-dojo-languages:
 - make a `Dockerfile` **more idiomatic**?
 - make a **faster docker build**?
 - make a **smaller docker image**?
-For example, by changing it's base operating system.
 The language+testFramework images are based on either
 [Alpine](https://alpinelinux.org/) or
-[Ubuntu](https://www.ubuntu.com/) or
-[Debian](https://www.debian.org/).
-However, if the official dockerhub image for a language is Ubuntu/Debian
-then it's typically best to use that so it gets the `:latest` image.
+[Debian](https://www.debian.org/) or
+[Ubuntu](https://www.ubuntu.com/).
+Changing a Debian/Ubuntu image to Alpine would be a big help.
   - the [Java,JUnit](https://github.com/cyber-dojo-languages/java-junit) `Alpine` based image is ~**120MB**.
   - the [Python,pytest](https://github.com/cyber-dojo-languages/python-pytest) `Debian` based image is ~**1.2GB**.
   - the [C++(g++),GoogleMock](https://github.com/cyber-dojo-languages/gplusplus-googlemock) `Ubuntu` based image is ~**1.7GB**.
