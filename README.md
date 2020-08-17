@@ -189,6 +189,7 @@ The main kubernetes backed https://cyber-dojo.org uses:
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/differ.svg?style=svg)](https://circleci.com/gh/cyber-dojo/differ) [differ](https://github.com/cyber-dojo/differ) - diffs two sets of files.
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/nginx.svg?style=svg)](https://circleci.com/gh/cyber-dojo/nginx) [nginx](https://github.com/cyber-dojo/nginx) - web-proxy, security, images (jpg) cache, and service routing.
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/runner.svg?style=svg)](https://circleci.com/gh/cyber-dojo/runner) [runner](https://github.com/cyber-dojo/runner) - runs the tests and returns a `[stdout,stderr,status,timed_out,colour]` tuple.
+- [![CircleCI](https://circleci.com/gh/cyber-dojo/puller.svg?style=svg)](https://circleci.com/gh/cyber-dojo/puller) [puller](https://github.com/cyber-dojo/puller) - pulls start-point images onto nodes..
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/saver.svg?style=svg)](https://circleci.com/gh/cyber-dojo/saver) [saver](https://github.com/cyber-dojo/saver) - persists group/individual exercises + code/test files (in a host dir volume-mounted to `/cyber-dojo`).
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/web.svg?style=svg)](https://circleci.com/gh/cyber-dojo/web) [web](https://github.com/cyber-dojo/web) - rails web-server (a monolith slowly being [Strangler Figged](https://martinfowler.com/bliki/StranglerFigApplication.html)).
 
