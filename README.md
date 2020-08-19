@@ -179,7 +179,6 @@ Each repo in the github cyber-dojo organization builds a single docker image.
 The main kubernetes backed https://cyber-dojo.org uses:
 
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/custom-start-points.svg?style=svg)](https://circleci.com/gh/cyber-dojo/custom-start-points) [custom-start-points](https://github.com/cyber-dojo/custom-start-points) - serves the custom start-points.
-- [![CircleCI](https://circleci.com/gh/cyber-dojo/custom-chooser.svg?style=svg)](https://circleci.com/gh/cyber-dojo/custom-chooser) [custom-chooser](https://github.com/cyber-dojo/custom-chooser) - an html page to choose a custom start-point.
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/exercises-start-points.svg?style=svg)](https://circleci.com/gh/cyber-dojo/exercises-start-points) [exercises-start-points](https://github.com/cyber-dojo/exercises-start-points) - serves the exercises start-points.
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/exercises-chooser.svg?style=svg)](https://circleci.com/gh/cyber-dojo/exercises-chooser) [exercises-chooser](https://github.com/cyber-dojo/exercises-chooser) - an html page to choose an exercise start-point.
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/languages-start-points.svg?style=svg)](https://circleci.com/gh/cyber-dojo/languages-start-points) [languages-start-points](https://github.com/cyber-dojo/languages-start-points) - serves the languages start-points.

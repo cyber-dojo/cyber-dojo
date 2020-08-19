@@ -9,7 +9,6 @@ export CYBER_DOJO_REPOS=(\
                   web-base \
                   start-points-base \
                   custom-start-points \
-                  custom-chooser \
                   exercises-start-points \
                   exercises-chooser \
                   languages-start-points \
@@ -19,6 +18,7 @@ export CYBER_DOJO_REPOS=(\
                   differ \
                   nginx \
                   runner \
+                  puller \
                   saver \
                   web \
                   versioner \
