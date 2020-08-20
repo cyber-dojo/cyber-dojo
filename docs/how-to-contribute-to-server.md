@@ -47,9 +47,7 @@ src/web-base
 src/start-points-base
 src/custom-start-points
 src/exercises-start-points
-src/exercises-chooser
 src/languages-start-points
-src/languages-chooser
 src/avatars
 src/creator
 src/differ
