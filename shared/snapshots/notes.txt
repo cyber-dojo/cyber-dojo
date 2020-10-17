@@ -10,11 +10,11 @@ Resize in Gimp:
 View home page at 80%
 View review page at 90%
 
-Cat the 6 png files together
+Cat the png files together
 to form shared/home_page_snapshot.png
 (bad name but lots of readme.md files link to it)
 at https://www.aconvert.com/image/merge/
 
 
-For cyber-dojo-6-review.png prefer review page
+For cyber-dojo-X-review.png prefer review page
 from dashboard page (it only has one avatar on it).
