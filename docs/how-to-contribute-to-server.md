@@ -48,12 +48,10 @@ src/start-points-base
 src/custom-start-points
 src/exercises-start-points
 src/languages-start-points
-src/avatars
 src/creator
 src/differ
 src/nginx
 src/runner
-src/puller
 src/saver
 src/web
 src/commander

@@ -11,12 +11,10 @@ export CYBER_DOJO_REPOS=(\
                   custom-start-points \
                   exercises-start-points \
                   languages-start-points \
-                  avatars \
                   creator \
                   differ \
                   nginx \
                   runner \
-                  puller \
                   saver \
                   web \
                   versioner \
