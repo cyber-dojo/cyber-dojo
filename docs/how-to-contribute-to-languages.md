@@ -43,8 +43,8 @@ In a terminal with [Docker](https://docs.docker.com/install/) installed, build a
 Specific ways you can contribute to cyber-dojo-languages:
 
 - add a **new test-framework**, [testNG](https://testng.org/doc/index.html) anyone?
-- add a **new language**, Elm, Julia, Lisp, Scala, Racket, Unison, ...
-- make a `Dockerfile` **more idiomatic**?
+- add a **new language**, Elm, Lisp, Scala, Racket, Unison, ...
+- make a `Dockerfile.base` **more idiomatic**?
 - make a **faster docker build**?
 - make a **smaller docker image**?
 The language+testFramework images are based on either

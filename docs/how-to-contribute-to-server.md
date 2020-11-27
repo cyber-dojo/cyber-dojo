@@ -53,12 +53,13 @@ src/differ
 src/nginx
 src/runner
 src/saver
+src/model
 src/web
 src/commander
 src/versioner
 ```
 
-Each directory holds a git repo with a `build_test_tag_publish.sh` script which:
+Each directory holds a git repo with a `build_test_publish.sh` script which:
 - builds its docker image
 - runs its tests (from inside a docker container run from the docker image)
 - if they pass, tags the docker image

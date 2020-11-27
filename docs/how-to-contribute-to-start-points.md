@@ -4,7 +4,7 @@
 :+1::tada: Thanks :tada::+1:
 
 - The cyber-dojo language+testFramework start-point repos all live in the [cyber-dojo-start-points](https://github.com/cyber-dojo-start-points) github organzation.
-- Each repository specified the *starting files* for a language+testFramework.
+- Each repository specifies the *starting files* for a language+testFramework.
 - Each repository (eg [java-junit](https://github.com/cyber-dojo-start-points/java-junit)) has the same
 `start_point/manifest.json` layout.
 - for example:
@@ -45,7 +45,6 @@ Specific ways you can contribute to cyber-dojo-start-points:
 - make a **faster run** (can you reduce 2.9s `duration` for Java,Junit)?
 - make the `start_point/` source files **more idiomatic** for your favourite language-testFramework?
 - add a **new test-framework**, [testNG](https://testng.org/doc/index.html) anyone?
-- split the [Rust-test](https://github.com/cyber-dojo-languages/rust-test) starting file into two; one for the test, one for the code
 - add a **coverage report** to your favourite language-testFramework.
   Please write the coverage report to a file called `report/coverage.txt`.
   For example, see [python-pytest](https://github.com/cyber-dojo-languages/python-pytest/blob/master/start_point/cyber-dojo.sh).

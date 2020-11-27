@@ -16,6 +16,7 @@ export CYBER_DOJO_REPOS=(\
                   nginx \
                   runner \
                   saver \
+                  model \
                   web \
                   versioner \
                   commander \
