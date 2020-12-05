@@ -12,6 +12,7 @@ export CYBER_DOJO_REPOS=(\
                   exercises-start-points \
                   languages-start-points \
                   creator \
+                  dashboard
                   differ \
                   nginx \
                   runner \
