@@ -172,6 +172,11 @@ You can turn this on with the following `web.env` entry:
   REPL=on
   ```
 
+From 0.1.291 onwards, you can turn off the review page's [fork] button
+with the following `web.env` entry:
+  ```
+  FORK_BUTTON=off
+  ```
 
 - - - -
 # Services
