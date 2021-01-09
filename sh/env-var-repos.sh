@@ -19,6 +19,12 @@ export CYBER_DOJO_REPOS=(\
                   saver \
                   model \
                   web \
+                  shas \
+                  repler \
                   versioner \
                   commander \
+                  gcloud-kubectl-helm \
+                  k8s-install \
+                  service-yaml \
+                  helm-charts
         )
