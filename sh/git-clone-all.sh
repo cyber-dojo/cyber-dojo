@@ -1,10 +1,10 @@
 #!/bin/bash -Eeu
 
-readonly MY_DIR="$( cd "$( dirname "${0}" )" && pwd )"
+readonly MY_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo 'Cloning...'
 source ${MY_DIR}/env-var-repos.sh
 cd ${MY_DIR}/../..
 for repo in ${CYBER_DOJO_REPOS[@]}; do
-  git clone https://github.com/cyber-dojo/${repo}.git
+  git clone git@github.com:cyber-dojo/${repo}.git
 done
