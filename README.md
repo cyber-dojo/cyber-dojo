@@ -29,8 +29,8 @@
   * [List of MicroServices](#micro-services)
   * [Image dependencies](#image-dependencies)
   * [Domain model](#domain-model)
-
-
+  * [Screenshots](#screenshots)
+ 
 - - - -
 # running a server on Kubernetes
 Follow [these instructions](https://github.com/cyber-dojo/k8s-install)
@@ -193,6 +193,7 @@ with the following `web.env` entry:
 Each repo in the github cyber-dojo organization builds a single docker image.
 The main kubernetes backed https://cyber-dojo.org uses:
 
+
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/custom-start-points.svg?style=svg)](https://circleci.com/gh/cyber-dojo/custom-start-points) [custom-start-points](https://github.com/cyber-dojo/custom-start-points) - serves the custom start-points.
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/exercises-start-points.svg?style=svg)](https://circleci.com/gh/cyber-dojo/exercises-start-points) [exercises-start-points](https://github.com/cyber-dojo/exercises-start-points) - serves the exercises start-points.
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/languages-start-points.svg?style=svg)](https://circleci.com/gh/cyber-dojo/languages-start-points) [languages-start-points](https://github.com/cyber-dojo/languages-start-points) - serves the languages start-points.
@@ -211,13 +212,16 @@ Locally running servers also use:
 - [![CircleCI](https://circleci.com/gh/cyber-dojo/versioner.svg?style=svg)](https://circleci.com/gh/cyber-dojo/versioner) [versioner](https://github.com/cyber-dojo/versioner) - holds consistent sets of image tags for all cyber-dojo services
 
 - - - -
-# Image dependencies
+# Image Dependencies
 
 ![Image Dependency Graph](dev/image_dependency_graph.png?raw=true "image dependency graph")
 
 - - - -
-# Domain model
+# Domain Model
 
 ![Domain model](dev/domain_model.png?raw=true "domain model")
+
+- - - -
+# Screenshots
 
 ![cyber-dojo.org home page](https://github.com/cyber-dojo/cyber-dojo/blob/master/shared/home_page_snapshot.png)
