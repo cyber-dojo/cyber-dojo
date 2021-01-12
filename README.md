@@ -11,6 +11,7 @@
 
 - - - -
 - Running a server
+  * [on Kubernetes](#running-a-server-on-kubernetes)
   * [on docker](#running-a-server-on-docker)
   * [on docker swarm](#running-a-server-on-docker-swarm)
 - Versioning
@@ -24,6 +25,15 @@
   * [nginx image](#overriding-the-default-nginx-image)
   * [rails web image](#overriding-the-default-rails-web-image)
   * [dot env files](#overriding-the-default-dot-env-files)
+- Misc
+  * [List of MicroServices](#micro-services)
+  * [Image dependencies](#image-dependencies)
+  * [Domain model](#domain-model)
+
+
+- - - -
+# running a server on Kubernetes
+Follow [these instructions](https://github.com/cyber-dojo/k8s-install)
 
 - - - -
 # running a server on docker
@@ -39,7 +49,7 @@ Version: 0.1.19
 ```
 
 # running a server on docker swarm
-This is currently in beta!
+This is exploratory only and may be dropped without notice.
 Follow [these instructions](https://blog.cyber-dojo.org/2014/09/setting-up-your-own-cyber-dojo-server.html)
 to install the `cyber-dojo` bash script and to prepare your server.
 ```bash
@@ -179,7 +189,7 @@ with the following `web.env` entry:
   ```
 
 - - - -
-# Services
+# Micro Services
 Each repo in the github cyber-dojo organization builds a single docker image.
 The main kubernetes backed https://cyber-dojo.org uses:
 
