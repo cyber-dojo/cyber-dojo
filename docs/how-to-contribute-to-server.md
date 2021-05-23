@@ -53,7 +53,6 @@ src/differ
 src/nginx
 src/runner
 src/saver
-src/model
 src/web
 src/commander
 src/versioner
