@@ -1,0 +1,28 @@
+
+TODOs
+
+saver - switch to v2=git storage ready for download and micro-events
+  - icons
+    + new file
+	- delete file
+	forward-arrow rename file
+	! edit file
+	
+saver - document update options in saver readme 
+saver - save out-of-band diff when differ calls katas_events([id,id],[index,index])
+
+dashboard - scrolling fix so lhs column of avatar images stays visible
+
+creator - page to choose settings 
+creator = drop confirm page
+
+runner using sinatra
+runner server - fill in missing branch coverage
+runner uses runc in config.json on k8s
+runner uses readonly containers (option)
+runner red/amber/green lambda is split off into the start-point files
+
+web - add Ruby repl and make all repl's live
+web - upgrade jQuery
+web - upgrade CodeMirror
+
