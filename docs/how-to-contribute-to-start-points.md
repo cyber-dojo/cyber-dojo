@@ -20,8 +20,8 @@
   }
   ```
 - the names of the start-point source files are specified in the `visible_filenames` entry.
-- they always specify a function that returns `6 * 9` and a test asserting it returns `42`.
-- one of the start-point source files is always `cyber-dojo.sh`.
+- they always specify files containing a function that returns `6 * 9` and a test asserting it returns `42`.
+- one of these files is always `cyber-dojo.sh`.
 - `cyber-dojo.sh` runs inside a docker image whose name is specified in the `image_name` entry.
 
 
