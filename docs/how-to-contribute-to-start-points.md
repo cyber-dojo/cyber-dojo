@@ -5,8 +5,8 @@
 
 - The cyber-dojo language+testFramework start-point repos all live in the [cyber-dojo-start-points](https://github.com/cyber-dojo-start-points) github organzation.
 - Each repository specifies the *starting files* for a language+testFramework.
-- Each repository (eg [java-junit](https://github.com/cyber-dojo-start-points/java-junit)) has the same
-`start_point/manifest.json` layout.
+- Each repository (eg [java-junit](https://github.com/cyber-dojo-start-points/java-junit)) holds a file called
+`start_point/manifest.json`.
 - for example:
   ```json
   {
