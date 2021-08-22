@@ -190,7 +190,7 @@ with the following `web.env` entry:
 
 - - - -
 # Micro Services
-Each repo in the github cyber-dojo organization builds a single docker image.
+Each repo in the github cyber-dojo organization builds a single docker image.  
 The main kubernetes backed https://cyber-dojo.org uses:
 
 
