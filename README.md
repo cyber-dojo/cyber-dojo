@@ -188,6 +188,12 @@ with the following `web.env` entry:
   FORK_BUTTON=off
   ```
 
+From 0.1.319 onwards, you can turn off the [bashboard] button from the 
+info toolbar with the following `web.env` entry:
+  ```
+  DASHBOARD_BUTTON=off
+  ```
+
 - - - -
 # Micro Services
 Each repo in the github cyber-dojo organization builds a single docker image.  
