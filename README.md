@@ -194,6 +194,13 @@ info toolbar with the following `web.env` entry:
   DASHBOARD_BUTTON=off
   ```
 
+From 0.1.320 onwards, you can turn off traffic-light prediction with the
+following `web.env` entry:
+  ```
+  PREDICT=off
+  ```
+
+
 - - - -
 # Micro Services
 Each repo in the github cyber-dojo organization builds a single docker image.  
