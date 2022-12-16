@@ -204,7 +204,7 @@ following `web.env` entry:
 - - - -
 # Micro Services
 Each repo in the github cyber-dojo organization builds a single docker image.  
-The main kubernetes backed https://cyber-dojo.org uses:
+The main Amazon ECS backed https://cyber-dojo.org uses:
 
 - [![Github Action (main)](https://github.com/cyber-dojo/custom-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/custom-start-points/actions) [custom-start-points](https://github.com/cyber-dojo/custom-start-points) - serves the custom start-points.
 - [![Github Action (main)](https://github.com/cyber-dojo/exercises-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/exercises-start-points/actions) [exercises-start-points](https://github.com/cyber-dojo/exercises-start-points) - serves the exercises start-points.
