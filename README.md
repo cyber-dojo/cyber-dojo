@@ -188,7 +188,7 @@ with the following `web.env` entry:
   FORK_BUTTON=off
   ```
 
-From 0.1.319 onwards, you can turn off the [bashboard] button from the 
+From 0.1.319 onwards, you can turn off the [dashboard] button from the 
 info toolbar with the following `web.env` entry:
   ```
   DASHBOARD_BUTTON=off
