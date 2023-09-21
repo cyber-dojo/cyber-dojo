@@ -11,7 +11,7 @@ cyber-dojo uses:
 - an immutable architecture.
   - Updates and fixes are made by creating, testing, and deploying *new* docker images.
 - image tagging.
-  - Each deployed docker image is *tagged* with the first seven chars of its git commit sha (on *master* at *HEAD*)
+  - Each deployed docker image is *tagged* with the first seven chars of its git commit sha (on *main* at *HEAD*)
 - a versioned architecture.
   - `cyberdojo/versioner` serves a set of image tags, one for each micro-service.
   - These are used when bringing up a cyber-dojo server with the `cyber-dojo up` command.
