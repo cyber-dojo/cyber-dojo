@@ -2,8 +2,6 @@
 
 # Some of these have a build-order dependency
 export CYBER_DOJO_REPOS=(\
-                  ruby-base \
-                  rack-base \
                   sinatra-base \
                   docker-base \
                   web-base \
@@ -18,7 +16,6 @@ export CYBER_DOJO_REPOS=(\
                   runner \
                   saver \
                   web \
-                  shas \
                   repler \
                   versioner \
                   commander \
