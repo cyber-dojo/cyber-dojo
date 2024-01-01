@@ -214,8 +214,8 @@ The main Amazon ECS backed https://cyber-dojo.org uses:
 - [![Github Action](https://github.com/cyber-dojo/runner/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/runner/actions) [runner](https://github.com/cyber-dojo/runner) - runs the tests and returns `[stdout,stderr,status,timed_out,colour]`.
 - [![Github Action](https://github.com/cyber-dojo/saver/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/saver/actions) [saver](https://github.com/cyber-dojo/saver) - persistent API for groups/katas.
 - Gitlab [creator](https://gitlab.com/cyber-dojo/creator) - UX for creating exercises (group and individual) with unique ids.
-- [![Github Action](https://github.com/cyber-dojo/dashboard/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/dashboard/actions) [dashboard](https://github.com/cyber-dojo/dashboard) - UX for a group session dashboard.
-- [![Github Action](https://github.com/cyber-dojo/web/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/web/actions) [web](https://github.com/cyber-dojo/web) - UX for editing and reviewing.
+- [![Github Action](https://github.com/cyber-dojo/dashboard/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/dashboard/actions) [dashboard](https://github.com/cyber-dojo/dashboard) - UX for a group session review dashboard.
+- [![Github Action](https://github.com/cyber-dojo/web/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/web/actions) [web](https://github.com/cyber-dojo/web) - main UX for coding, testing, and reviewing.
 
 Locally running servers also use:
 
