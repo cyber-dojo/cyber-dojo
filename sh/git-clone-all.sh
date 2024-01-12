@@ -6,5 +6,6 @@ echo 'Cloning...'
 source ${MY_DIR}/env-var-repos.sh
 cd ${MY_DIR}/../..
 for repo in ${CYBER_DOJO_REPOS[@]}; do
+  # TODO: creator repo is now in Gitlab
   git clone git@github.com:cyber-dojo/${repo}.git
 done
