@@ -16,7 +16,6 @@ export CYBER_DOJO_REPOS=(\
                   runner \
                   saver \
                   web \
-                  repler \
                   versioner \
                   commander \
                   gcloud-kubectl-helm \
