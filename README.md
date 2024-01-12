@@ -212,9 +212,9 @@ The main Amazon ECS backed https://cyber-dojo.org uses:
 - [![Github Action](https://github.com/cyber-dojo/differ/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/differ/actions) [differ](https://github.com/cyber-dojo/differ) - diffs two sets of files.
 - [![Github Action](https://github.com/cyber-dojo/nginx/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/nginx/actions) [nginx](https://github.com/cyber-dojo/nginx) - web-proxy, security, images (jpg) cache, and service routing.
 - [![Github Action](https://github.com/cyber-dojo/runner/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/runner/actions) [runner](https://github.com/cyber-dojo/runner) - runs the tests and returns `[stdout,stderr,status,timed_out,colour]`.
-- [![Github Action](https://github.com/cyber-dojo/saver/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/saver/actions) [saver](https://github.com/cyber-dojo/saver) - persistent API for groups/katas.
-- Gitlab [creator](https://gitlab.com/cyber-dojo/creator) - UX for creating exercises (group and individual) with unique ids.
-- [![Github Action](https://github.com/cyber-dojo/dashboard/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/dashboard/actions) [dashboard](https://github.com/cyber-dojo/dashboard) - UX for a group session review dashboard.
+- [![Github Action](https://github.com/cyber-dojo/saver/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/saver/actions) [saver](https://github.com/cyber-dojo/saver) - API to GET/POST group/kata data, e.g., for individual traffic-lights.
+- Gitlab [creator](https://gitlab.com/cyber-dojo/creator) - UI to configure and create (or re-enter) a group-exercise or an individual-exercise. 
+- [![Github Action](https://github.com/cyber-dojo/dashboard/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/dashboard/actions) [dashboard](https://github.com/cyber-dojo/dashboard) - UX for a group session dashboard of all traffic-lights.
 - [![Github Action](https://github.com/cyber-dojo/web/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/web/actions) [web](https://github.com/cyber-dojo/web) - main UX for coding, testing, and reviewing.
 
 Locally running servers also use:
