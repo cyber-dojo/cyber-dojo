@@ -24,7 +24,7 @@ There is a cyber-dojo [Project Board](https://github.com/orgs/cyber-dojo/project
       - [Java, JUnit](https://github.com/cyber-dojo-languages/java-junit)
       - [Python, pytest](https://github.com/cyber-dojo-languages/python-pytest)
       - each repo contains the Dockerfile and script to build the image.
-      - [Contribute to the language images](https://github.com/cyber-dojo/cyber-dojo/blob/master/docs/how-to-contribute-to-languages.md)
+      - [Contribute to the language/test-framework images](https://github.com/cyber-dojo/cyber-dojo/blob/master/docs/how-to-contribute-to-languages.md)
  
     - The [cyber-dojo-start-points](https://github.com/cyber-dojo-start-points) Org contains 80+ git repositories, one for each language+testFramework's `starting source-files`. For example:
       - [Java, JUnit](https://github.com/cyber-dojo-start-points/java-junit)
