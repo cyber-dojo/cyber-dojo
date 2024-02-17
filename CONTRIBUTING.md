@@ -9,7 +9,7 @@ There is a cyber-dojo [Project Board](https://github.com/orgs/cyber-dojo/project
   - The [cyber-dojo](https://github.com/cyber-dojo) Org contains 10+ git repositories, one for each micro-service that together comprise the server. For example
     - [web](https://github.com/cyber-dojo/web) for the main edit/review pages, written in Ruby on Rails
     - [dashboard](https://github.com/cyber-dojo/dashboard) for the group dashboard UX, written in Ruby Sinatra
-    - [runner](https://github.com/cyber-dojo/runner) for running the cyber-dojo.sh files in docker-in-docker 
+    - [runner](https://github.com/cyber-dojo/runner) for running the tests in docker-in-docker 
   - [Contribute to the server?](https://github.com/cyber-dojo/cyber-dojo/blob/master/docs/how-to-contribute-to-server.md)
 
 - exercises
