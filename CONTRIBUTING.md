@@ -5,16 +5,21 @@
 
 There is a cyber-dojo [Project Board](https://github.com/orgs/cyber-dojo/projects/3/views/1)  
 
-There three ways to contribute:
+I'd like to contribute to the:
 
-- [I'd like to contribute to the server](https://github.com/cyber-dojo/cyber-dojo/blob/master/docs/how-to-contribute-to-server.md)
-  - The [cyber-dojo](https://github.com/cyber-dojo) Org contains 10+ git repositories, one for each service that together comprise the server.
+- [server](https://github.com/cyber-dojo/cyber-dojo/blob/master/docs/how-to-contribute-to-server.md)
+  - The [cyber-dojo](https://github.com/cyber-dojo) Org contains 10+ git repositories, one for each micro-service that together comprise the server. For example
+    - [web](https://github.com/cyber-dojo/web) for the main edit/review pages, written in Ruby on Rails
+    - [dashboard](https://github.com/cyber-dojo/dashboard) for the group dashboard UX, written in Ruby Sinatra
+    - [runner](https://github.com/cyber-dojo/runner) for running the cyber-dojo.sh files in docker-in-docker 
 
-- [I'd like to contribute to the exercises](https://github.com/cyber-dojo/exercises-start-points/blob/main/docs/contributing.md)
-  - The [cyber-dojo-exercises](https://github.com/cyber-dojo/exercises-start-points) repo in the cyber-dojo Org holds the 50+ exercises
+- [exercises](https://github.com/cyber-dojo/exercises-start-points/blob/main/docs/contributing.md)
+  - The [cyber-dojo-exercises](https://github.com/cyber-dojo/exercises-start-points) repo in the cyber-dojo Org holds the 50+ exercises. For example:
+    - [Fizz Buzz](https://github.com/cyber-dojo/exercises-start-points/tree/main/start-points/Fizz_Buzz)
+    - [Print Diamond](https://github.com/cyber-dojo/exercises-start-points/tree/main/start-points/Print_Diamond)
 
-- I'd like to contribute the language/test-frameworks
-  - each language/test-frameworks, such as `Java, JUnit`, is split into two parts:
+- language/test-frameworks
+  - each language/test-frameworks, such as `Java, JUnit`, is split into two parts, the docker image, and the starting source-files.
     - The [cyber-dojo-languages](https://github.com/cyber-dojo-languages) Org contains 80+ git repositories, one for each language+testFramework docker `image`.
       - for example, the Dockerfile for `Java, JUnit` lives in [https://github.com/cyber-dojo-languages/java-junit](https://github.com/cyber-dojo-languages/java-junit).
       - [I'd like to contribute to the language images](https://github.com/cyber-dojo/cyber-dojo/blob/master/docs/how-to-contribute-to-languages.md)
