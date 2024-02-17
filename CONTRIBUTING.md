@@ -6,7 +6,7 @@
 The cyber-dojo source is split across three github organizations.
 
 - [cyber-dojo](https://github.com/cyber-dojo)
-  - contains 20+ git repositories, one for each service that together comprise the server.
+  - contains 10+ git repositories, one for each service that together comprise the server.
   - [I'd like to contribute to the server](https://github.com/cyber-dojo/cyber-dojo/blob/master/docs/how-to-contribute-to-server.md)
 
 - [cyber-dojo-exercises](https://github.com/cyber-dojo/exercises-start-points)
