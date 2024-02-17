@@ -5,7 +5,7 @@
 
 There is a cyber-dojo [Project Board](https://github.com/orgs/cyber-dojo/projects/3/views/1)  
 
-There four ways to contribute:
+There three ways to contribute:
 
 - [I'd like to contribute to the server](https://github.com/cyber-dojo/cyber-dojo/blob/master/docs/how-to-contribute-to-server.md)
   - The [cyber-dojo](https://github.com/cyber-dojo) Org contains 10+ git repositories, one for each service that together comprise the server.
