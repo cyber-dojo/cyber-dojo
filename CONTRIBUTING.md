@@ -10,13 +10,13 @@ There is a cyber-dojo [Project Board](https://github.com/orgs/cyber-dojo/project
     - [web](https://github.com/cyber-dojo/web) for the main edit/review pages, written in Ruby on Rails
     - [dashboard](https://github.com/cyber-dojo/dashboard) for the group dashboard UX, written in Ruby Sinatra
     - [runner](https://github.com/cyber-dojo/runner) for running the tests in docker-in-docker 
-  - [Contribute to the server?](https://github.com/cyber-dojo/cyber-dojo/blob/master/docs/how-to-contribute-to-server.md)
+  - [Contribute to the server](https://github.com/cyber-dojo/cyber-dojo/blob/master/docs/how-to-contribute-to-server.md)
 
 - exercises
   - The [cyber-dojo-exercises](https://github.com/cyber-dojo/exercises-start-points) repo in the cyber-dojo Org holds the 50+ exercises. For example:
     - [Fizz Buzz](https://github.com/cyber-dojo/exercises-start-points/tree/main/start-points/Fizz_Buzz)
     - [Print Diamond](https://github.com/cyber-dojo/exercises-start-points/tree/main/start-points/Print_Diamond)
-  - [Contribute to the exercises?](https://github.com/cyber-dojo/exercises-start-points/blob/main/docs/contributing.md)
+  - [Contribute to the exercises](https://github.com/cyber-dojo/exercises-start-points/blob/main/docs/contributing.md)
 
 - language/test-frameworks
   - each language/test-frameworks, such as `Java, JUnit`, is split into two parts, the docker image, and the starting source-files.
