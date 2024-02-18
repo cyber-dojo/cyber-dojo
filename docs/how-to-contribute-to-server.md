@@ -18,10 +18,9 @@ cyber-dojo uses:
 
 First, setup and learn how run a local cyber-dojo server. Please read and follow [these instructions](https://blog.cyber-dojo.org/2014/09/setting-up-your-own-cyber-dojo-server.html) which tell you:
 - how to install the main `cyber-dojo` bash script used to control your server.
+- how to install `docker`.
 - how to set the correct permissions on the `/cyber-dojo` dir.
   - This dir is volume-mounted into the saver service.
-- how to install `docker`.
-  - If you are on Mac or Windows you must (currently) install `Docker Toolbox` and run from a Docker-QuickStart terminal as per the instructions.
 
 Once you are running a local cyber-dojo server, ensure you can run these two tools:
 - [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Each cyber-dojo service lives in its own git repository.
@@ -39,8 +38,6 @@ cd ..
 This will create the following directory structure:
 ```
 src/cyber-dojo
-src/ruby-base
-src/rack-base
 src/sinatra-base
 src/docker-base
 src/web-base
@@ -50,6 +47,7 @@ src/exercises-start-points
 src/languages-start-points
 src/creator
 src/differ
+src/dashboard
 src/nginx
 src/runner
 src/saver
