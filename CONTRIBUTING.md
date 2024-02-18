@@ -21,12 +21,12 @@ There is a cyber-dojo [Project Board](https://github.com/orgs/cyber-dojo/project
 - **exercises** - the [exercises-start-points](https://github.com/cyber-dojo/exercises-start-points) repo in the cyber-dojo Org holds the 50+ exercises. For example:
     - [Fizz Buzz](https://github.com/cyber-dojo/exercises-start-points/tree/main/start-points/Fizz_Buzz)
     - [Print Diamond](https://github.com/cyber-dojo/exercises-start-points/tree/main/start-points/Print_Diamond)
-    - [CONTRIBUTE](https://github.com/cyber-dojo/exercises-start-points/blob/main/docs/contributing.md)
+    - [CONTRIBUTE](https://github.com/cyber-dojo/exercises-start-points/blob/main/CONTRIBUTING.md)
 
 - **custom-exercises** - The [custom-start-points](https://github.com/cyber-dojo/custom-start-points) repo in the cyber-dojo Org holds the custom exercises. For example:
     - [Tennis](https://github.com/cyber-dojo/custom-start-points/tree/main/start-points/Tennis)
     - [Yahtzee](https://github.com/cyber-dojo/custom-start-points/tree/main/start-points/Yahtzee)
-    - [CONTRIBUTE](https://github.com/cyber-dojo/custom-start-points/blob/main/docs/contributing.md)
+    - [CONTRIBUTE](https://github.com/cyber-dojo/custom-start-points/blob/main/CONTRIBUTING.md)
 
 - **server** - The [cyber-dojo](https://github.com/cyber-dojo) Org contains 10+ git repositories, one for each microservice that together comprise the server. For example:
     - [web](https://github.com/cyber-dojo/web) UX for the edit/review pages, Ruby on Rails
