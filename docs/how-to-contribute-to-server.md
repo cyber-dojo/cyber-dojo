@@ -64,6 +64,7 @@ Each directory holds a git repo with a `build_test_publish.sh` script which:
   - pushes the tagged docker image to [dockerhub](https://hub.docker.com/search/?q=cyberdojo&type=image)
   - deploys the tagged docker image to [https://beta.cyber-dojo.org](https://beta.cyber-dojo.org)
   - may also deploy the tagged docker image to [https://cyber-dojo.org](https://cyber-dojo.org)
-- if running locally
-  - read [versioner's README](https://github.com/cyber-dojo/versioner/blob/master/README.md)
-    to learn how to make one or more of its tags refer to locally built images.
+- some repo's hold a `build_test.sh` script
+- some repo's hold a `Makefile` - run `make test`
+
+If running locally read [versioner's README](https://github.com/cyber-dojo/versioner/blob/master/README.md) to learn how to make one or more of its tags refer to locally built images.
