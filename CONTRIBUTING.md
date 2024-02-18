@@ -13,7 +13,7 @@ There is a cyber-dojo [Project Board](https://github.com/orgs/cyber-dojo/project
   - [Contribute to the server](https://github.com/cyber-dojo/cyber-dojo/blob/master/docs/how-to-contribute-to-server.md)
 
 - exercises
-  - The [cyber-dojo-exercises](https://github.com/cyber-dojo/exercises-start-points) repo in the cyber-dojo Org holds the 50+ exercises. For example:
+  - The [exercises-start-points](https://github.com/cyber-dojo/exercises-start-points) repo in the cyber-dojo Org holds the 50+ exercises. For example:
     - [Fizz Buzz](https://github.com/cyber-dojo/exercises-start-points/tree/main/start-points/Fizz_Buzz)
     - [Print Diamond](https://github.com/cyber-dojo/exercises-start-points/tree/main/start-points/Print_Diamond)
   - [Contribute to the exercises](https://github.com/cyber-dojo/exercises-start-points/blob/main/docs/contributing.md)
