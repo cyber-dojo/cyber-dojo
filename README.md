@@ -1,5 +1,5 @@
 
-# Hi. Welcome to cyber-dojo :-) :smile:
+# Hi. Welcome to cyber-dojo :smile:
 
 - [cyber-dojo](https://cyber-dojo.org) is where programmers meet to [practice](http://jonjagger.blogspot.co.uk/2013/10/practice.html) programming!
 - cyber-dojo is <em>not</em> an **IDE**, an **I**ndividual **D**evelopment **E**nvironment
