@@ -207,16 +207,26 @@ following `web.env` entry:
 Each repo in the github cyber-dojo organization builds a single docker image.  
 The main Amazon ECS backed https://cyber-dojo.org uses:
 
-- [![Github Action](https://github.com/cyber-dojo/custom-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/custom-start-points/actions) [custom-start-points](https://github.com/cyber-dojo/custom-start-points) - serves the custom start-points.
-- [![Github Action](https://github.com/cyber-dojo/exercises-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/exercises-start-points/actions) [exercises-start-points](https://github.com/cyber-dojo/exercises-start-points) - serves the exercises start-points.
-- [![Github Action](https://github.com/cyber-dojo/languages-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/languages-start-points/actions) [languages-start-points](https://github.com/cyber-dojo/languages-start-points) - serves the languages start-points.
-- [![Github Action](https://github.com/cyber-dojo/differ/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/differ/actions) [differ](https://github.com/cyber-dojo/differ) - diffs two sets of files.
-- [![Github Action](https://github.com/cyber-dojo/nginx/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/nginx/actions) [nginx](https://github.com/cyber-dojo/nginx) - web-proxy, security, images (jpg) cache, and service routing.
-- [![Github Action](https://github.com/cyber-dojo/runner/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/runner/actions) [runner](https://github.com/cyber-dojo/runner) - runs the tests and returns `[stdout,stderr,status,timed_out,colour]`.
-- [![Github Action](https://github.com/cyber-dojo/saver/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/saver/actions) [saver](https://github.com/cyber-dojo/saver) - API to GET/POST group/kata data, e.g., for individual traffic-lights.
-- Gitlab [creator](https://gitlab.com/cyber-dojo/creator) - UI to configure and create (or re-enter) a group-exercise or an individual-exercise. 
-- [![Github Action](https://github.com/cyber-dojo/dashboard/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/dashboard/actions) [dashboard](https://github.com/cyber-dojo/dashboard) - UX for a group session dashboard of all traffic-lights.
-- [![Github Action](https://github.com/cyber-dojo/web/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/web/actions) [web](https://github.com/cyber-dojo/web) - main UX for coding, testing, and reviewing.
+- [![Github Action](https://github.com/cyber-dojo/custom-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/custom-start-points/actions) [custom-start-points](https://github.com/cyber-dojo/custom-start-points)  
+  serves the custom start-points.
+- [![Github Action](https://github.com/cyber-dojo/exercises-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/exercises-start-points/actions) [exercises-start-points](https://github.com/cyber-dojo/exercises-start-points)  
+  serves the exercises start-points.
+- [![Github Action](https://github.com/cyber-dojo/languages-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/languages-start-points/actions) [languages-start-points](https://github.com/cyber-dojo/languages-start-points)  
+  serves the languages start-points.
+- [![Github Action](https://github.com/cyber-dojo/differ/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/differ/actions) [differ](https://github.com/cyber-dojo/differ)  
+  diffs two sets of files.
+- [![Github Action](https://github.com/cyber-dojo/nginx/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/nginx/actions) [nginx](https://github.com/cyber-dojo/nginx)  
+  web-proxy, security, images (jpg) cache, and service routing.
+- [![Github Action](https://github.com/cyber-dojo/runner/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/runner/actions) [runner](https://github.com/cyber-dojo/runner)  
+  runs the tests and returns `[stdout,stderr,status,timed_out,colour]`.
+- [![Github Action](https://github.com/cyber-dojo/saver/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/saver/actions) [saver](https://github.com/cyber-dojo/saver)  
+  API to GET/POST group/kata data, e.g., for individual traffic-lights.
+- Gitlab [creator](https://gitlab.com/cyber-dojo/creator)  
+  UI to configure and create (or re-enter) a group-exercise or an individual-exercise. 
+- [![Github Action](https://github.com/cyber-dojo/dashboard/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/dashboard/actions) [dashboard](https://github.com/cyber-dojo/dashboard)  
+  UX for a group session dashboard of all traffic-lights.
+- [![Github Action](https://github.com/cyber-dojo/web/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/web/actions) [web](https://github.com/cyber-dojo/web)  
+  main UX for coding, testing, and reviewing.
 
 Locally running servers also use:
 
