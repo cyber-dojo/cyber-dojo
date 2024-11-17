@@ -1,7 +1,7 @@
 
 # Hi. Welcome to cyber-dojo :smile:
 
-- [cyber-dojo](https://cyber-dojo.org) is where programmers meet to [practice](http://jonjagger.blogspot.co.uk/2013/10/practice.html) TDD.
+- [cyber-dojo](https://cyber-dojo.org) is where programmers meet to [practice](http://jonjagger.blogspot.co.uk/2013/10/practice.html) TDD
 - this video explains how to use it for *group* TDD practice: https://youtu.be/OGGk-iFVOPQ
 - this video explains how to use it for *individual* TDD practice: https://youtu.be/lIRF8MgyXho
 - cyber-dojo is <em>not</em> an **IDE**, an **I**ndividual **D**evelopment **E**nvironment
