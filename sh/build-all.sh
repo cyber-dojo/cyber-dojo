@@ -13,7 +13,7 @@ for repo in ${CYBER_DOJO_REPOS[@]}; do
   fi
 done
 
-# [1] docker-compose docs claim you can specify
+# [1] docker compose docs claim you can specify
 # a .env file in the same dir as docker-compose.yml
 # and it will be found. Alas it seems not...
 # https://github.com/docker/compose/issues/3381
