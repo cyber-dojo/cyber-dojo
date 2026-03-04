@@ -5,7 +5,7 @@
 
 There is a cyber-dojo [Project Board](https://github.com/orgs/cyber-dojo/projects/3/views/1)  
 
-- **language/test-frameworks** - each language/test-frameworks, such as `Java 21, JUnit 5`, is split into two parts:
+- **language/test-frameworks** - each language/test-framework, such as `Java 21, JUnit 5`, is split into two parts:
     - The [cyber-dojo-languages](https://github.com/cyber-dojo-languages) Org contains 80+ git repositories, one for each language+testFramework's `docker image`. For example:
       - [Java, JUnit](https://github.com/cyber-dojo-languages/java-junit)
       - [Python, pytest](https://github.com/cyber-dojo-languages/python-pytest)
