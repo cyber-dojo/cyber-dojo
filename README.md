@@ -13,7 +13,7 @@
 
 - - - -
 - Running a server
-  * [on Kubernetes](#running-a-server-on-kubernetes)
+  * [on Kubernetes](#running-a-server-on-kubernetes) no-longer-maintained
   * [on docker](#running-a-server-on-docker)
   * [on docker swarm](#running-a-server-on-docker-swarm)
 - Versioning
@@ -45,7 +45,7 @@ to install the `cyber-dojo` bash script and to prepare your server.
 $ cyber-dojo up
 ...
 $ cyber-dojo version
-Version: 0.1.19
+Version: 0.1.462
    Type: public
 ...
 ```
@@ -62,18 +62,16 @@ $ cyber-dojo up
 # listing the current version
 ```bash
 $ cyber-dojo version
-Version: 0.1.23
+Version: 0.1.462
    Type: public
 ```
 
 # listing installed versions
-From 0.1.50 onwards:
 ```bash
 $ cyber-dojo version ls
-0.1.49              2019-11-21 21:31:09 +0000 UTC
-0.1.48              2019-11-20 12:52:04 +0000 UTC
+0.1.462      2026-02-15 20:27:03 +0000 UTC
 ...
-0.1.21              2019-08-07 11:51:48 +0000 UTC
+0.1.21       2019-08-07 11:51:48 +0000 UTC
 ...
 ```
 
@@ -81,25 +79,25 @@ $ cyber-dojo version ls
 ```bash
 $ cyber-dojo update latest
 $ cyber-dojo version
-Version: 0.1.49
+Version: 0.1.462
    Type: public
 ...
 # Now make it live...
 $ cyber-dojo up
-Using version=0.1.49 (public)
+Using version=0.1.462 (public)
 ...
 ```
 
 # setting the server to a specific version
 ```bash
-$ cyber-dojo update 0.1.21
+$ cyber-dojo update 0.1.555
 $ cyber-dojo version
-Version: 0.1.21
+Version: 0.1.555
    Type: public
 ...
 # Now make it live...
 $ cyber-dojo up
-Using version=0.1.21 (public)
+Using version=0.1.555 (public)
 ...
 ```
 
@@ -132,7 +130,7 @@ By default your cyber-dojo server will be on port 80.
 * By default your cyber-dojo server will use
 [cyberdojo/nginx](https://hub.docker.com/r/cyberdojo/nginx/tags) as its nginx
 service image (tagged appropriately).
-* From 0.1.47 onwards you can override this by exporting two
+* You can override this by exporting two
 environment variables. Eg
   ```bash
   $ export CYBER_DOJO_NGINX_IMAGE=cucumber/nginx
@@ -147,7 +145,7 @@ environment variables. Eg
 * By default your cyber-dojo server will use
 [cyberdojo/web](https://hub.docker.com/r/cyberdojo/web/tags)
 as its web service image (tagged appropriately).
-* From 0.1.28 onwards you can override this by exporting two
+* You can override this by exporting two
 environment variables. Eg
   ```bash
   $ export CYBER_DOJO_WEB_IMAGE=turtlesec/web
@@ -171,26 +169,26 @@ set to the absolute path of your own .env file. Eg
   Using web.env=/home/fred/my_web.env (custom)
   ...
   ```
-From 0.1.131 onwards, when an exercise starts a welcome dialog displays
+When an exercise starts a welcome dialog displays
 traffic-light information. You can turn off this dialog with
 the following `web.env` entry:
   ```
   STARTING_INFO_DIALOG=off
   ```
 
-From 0.1.291 onwards, you can turn off the review page's [fork] button
+You can turn off the review page's [fork] button
 with the following `web.env` entry:
   ```
   FORK_BUTTON=off
   ```
 
-From 0.1.319 onwards, you can turn off the [dashboard] button from the 
+You can turn off the [dashboard] button from the 
 info toolbar with the following `web.env` entry:
   ```
   DASHBOARD_BUTTON=off
   ```
 
-From 0.1.320 onwards, you can turn off traffic-light prediction with the
+You can turn off traffic-light prediction with the
 following `web.env` entry:
   ```
   PREDICT=off
