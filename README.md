@@ -217,7 +217,7 @@ The main Amazon ECS backed https://cyber-dojo.org uses:
 - [creator](https://gitlab.com/cyber-dojo/creator) Gitlab  
   UI to configure and create (or re-enter) a group-exercise or an individual-exercise. 
 - [dashboard](https://github.com/cyber-dojo/dashboard) [![Github Action](https://github.com/cyber-dojo/dashboard/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/dashboard/actions)  
-  UX for a group session dashboard of all traffic-lights.
+  UI for a group session dashboard of all traffic-lights.
 - [web](https://github.com/cyber-dojo/web) [![Github Action](https://github.com/cyber-dojo/web/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/web/actions)  
   main UX for coding, testing, and reviewing.
 
