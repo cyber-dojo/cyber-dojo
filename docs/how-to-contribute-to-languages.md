@@ -19,15 +19,17 @@
   ```bash
   git clone https://github.com/cyber-dojo-languages/java-junit.git
   mv java-junit java-testng
+  cd java-testng
+  rm -rf .git
   ...
   ```
-- If you want to add a **new testFramework** for a **new language**, clone an existing language repo and one of its testFramework repos, rename them, and modify them.
+- If you want to add a **new testFramework** for a **new language**, clone an existing testFramework repo, rename it, and modify it.
   For example [java](https://github.com/cyber-dojo-languages/java) and [java-junit](https://github.com/cyber-dojo-languages/java-junit)
   ```bash
-  git clone https://github.com/cyber-dojo-languages/java.git
   git clone https://github.com/cyber-dojo-languages/java-junit.git
-  mv java lisp
   mv java-junit lisp-test
+  cd lisp-test
+  rm -rf .git
   ...
   ```
 
