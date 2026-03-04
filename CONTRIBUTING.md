@@ -9,13 +9,13 @@ There is a cyber-dojo [Project Board](https://github.com/orgs/cyber-dojo/project
     - The [cyber-dojo-languages](https://github.com/cyber-dojo-languages) Org contains 80+ git repositories, one for each language+testFramework's `docker image`. For example:
       - [Java, JUnit](https://github.com/cyber-dojo-languages/java-junit)
       - [Python, pytest](https://github.com/cyber-dojo-languages/python-pytest)
-      - each repo contains the Dockerfile and script to build the image.
+      - each repo contains the Dockerfile and a script to build the image.
       - [CONTRIBUTE](https://github.com/cyber-dojo/cyber-dojo/blob/master/docs/how-to-contribute-to-languages.md)
  
     - The [cyber-dojo-start-points](https://github.com/cyber-dojo-start-points) Org contains 80+ git repositories, one for each language+testFramework's `starting source-files`. For example:
       - [Java, JUnit](https://github.com/cyber-dojo-start-points/java-junit)
       - [Python, pytest](https://github.com/cyber-dojo-start-points/python-pytest)
-      - each repo contains the initial source files (typically one source file and one test file) and the name of the cyber-dojo-languages docker image they run inside.
+      - each repo contains the initial source files (typically one code file and one test file), a `manifest.json` file containing the name of the cyber-dojo-languages docker image they run inside, and a `run_tests.sh` script to check it works as designed.
       - [CONTRIBUTE](https://github.com/cyber-dojo/cyber-dojo/blob/master/docs/how-to-contribute-to-start-points.md)
 
 - **exercises** - the [exercises-start-points](https://github.com/cyber-dojo/exercises-start-points) repo in the cyber-dojo Org holds the 50+ exercises. For example:
