@@ -1,0 +1,23 @@
+
+It would be good if I could collect the typical times 
+each start-point takes in https://cyber-dojo.org
+and list them, slowest to fastest. 
+I could write a script in the languages-start-points repo which
+went through all the data/*/ dirs and
+- pulled image_name (to avoid the pull being in timings)
+- ran run_tests.sh and somehow retrieved the three json outputs
+  containing duration, colour, and pass/fail status.
+Good start would be to tee the three json outputs so they are saved in a file.
+
+
+Sorry for the interuption (it happens at random every 256 tests).
+cyber-dojo is a [charitable organization](link)
+...here have photo, and mention tie in with Turing Trust...
+It relies on honest corporate users [buying a license](link)
+The software that runs cyber-dojo relies on unpaid volunteers.
+We'd particularly appreciate:
+- help in maintaining the 80+ start-points such as Java-JUnit, 
+  Python-Pytest, etc. 
+- feedback on what you like and what you don't
+- suggestions for possible new features you'd like to see.
+If you'd like to help please email support@cyber-dojo.org

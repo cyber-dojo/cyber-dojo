@@ -13,9 +13,9 @@
 
 - - - -
 - Running a server
-  * [on Kubernetes](#running-a-server-on-kubernetes) no-longer-maintained
   * [on docker](#running-a-server-on-docker)
   * [on docker swarm](#running-a-server-on-docker-swarm)
+  * [on Kubernetes](#running-a-server-on-kubernetes) (no-longer-maintained)
 - Versioning
   * [listing the current version](#listing-the-current-version)
   * [listing installed versions](#listing-installed-versions)
@@ -33,10 +33,6 @@
   * [Domain model](#domain-model)
   * [Screenshots](#screenshots)
  
-- - - -
-# running a server on Kubernetes
-Follow [these instructions](https://github.com/cyber-dojo/k8s-install)
-
 - - - -
 # running a server on docker
 Follow [these instructions](https://blog.cyber-dojo.org/2014/09/setting-up-your-own-cyber-dojo-server.html)
@@ -58,6 +54,10 @@ to install the `cyber-dojo` bash script and to prepare your server.
 $ export CYBER_DOJO_SWARM=true
 $ cyber-dojo up
 ```
+
+- - - -
+# running a server on Kubernetes
+Follow [these instructions](https://github.com/cyber-dojo/k8s-install)
 
 # listing the current version
 ```bash
