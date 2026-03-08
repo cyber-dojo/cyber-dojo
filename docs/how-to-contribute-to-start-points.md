@@ -1,18 +1,17 @@
 
-# Contributing to cyber-dojo's Language & Test-Framework (LTF) start-points
-
 :+1::tada: Thanks :tada::+1:
 
-The cyber-dojo Language & Test-Framework start-point repos all live in the [cyber-dojo-start-points](https://github.com/cyber-dojo-start-points) GitHub organzation.
+# Contributing to cyber-dojo's Language & Test-Framework (LTF) start-points
 
+The cyber-dojo Language & Test-Framework start-point repos all live in the [cyber-dojo-start-points](https://github.com/cyber-dojo-start-points) GitHub organzation.
 Each repository defines the *starting files* and associated details for _one_ Language & Test-Framework. For example:
 - [csharp-nunit](https://github.com/cyber-dojo-start-points/csharp-nunit)
 - [python-pytest](https://github.com/cyber-dojo-start-points/python-pytest)
 - [java-junit](https://github.com/cyber-dojo-start-points/java-junit)
 
-## The two best ways you can contribute 
+## The best way you can contribute to the LTFs
 
-### 1. Speed up a slow LTF
+### Speed up a slow LTF
 
 For example, the initial start-point for `csharp-nunit` used `dotnet` commands
 which took ~8 seconds (which is a long time for one trivial test). 
@@ -22,13 +21,15 @@ There are two main reasons for this:
 - Each cyber-dojo [test] run is 100% stateless - it is executed in a _new_ container and cannot, for example, take advantage of caching from previous runs.
 - Default language installs tend to be tailored for large projects, not very small ones that don't need or want complicated extra bells and whistles.
 
-### 2. Become the 'owner' of one or more LTFs
+## The second best way you can contribute to the LTFs
+
+### Become the 'owner' of one or more LTFs
 
 Take on responsibility for upgrading it periodically.
 For example, as new versions of the language or test-framework come out. 
 This is typically very easy - it's just that there are a _lot_ of start-points.
 
-## Other ways you can contribute to LTFs
+## Other ways you can contribute to the LTFs
 
 - add a **new test-framework**, [testNG](https://testng.org/doc/index.html) anyone?
 - make some existing `start_point/` source files **more idiomatic** 
@@ -60,9 +61,11 @@ For example:
 - `display_name` specifies the text for the start-point when you are setting up your practice session.
 - `visible_filenames` specifies the _names_ of the starting source files (which must be present in the `start_point` directory):
   - they always specify a file containing a function returning `6 * 9` and a test file asserting it returns `42` (start with a failing test!). This `6 * 9 == 42` structure is from Hitch Hikers Guide to the Galaxy, so the files are usually named `hiker`.
-  - one of these files must be `cyber-dojo.sh`. This is a bash script with the necessary command(s) to run the tests. Do not hard-code the filenames from `visible_filenames` into it. Instead use wildcards so it will continue to work when the files are renamed or added in an actual practice session.
+  - one of these files _must_ be `cyber-dojo.sh`. This is a bash script with the necessary commands to run the tests. Do not hard-code the filenames from `visible_filenames` into it. Instead use wildcards so it will continue to work when files are renamed or added in a practice session.
 - `image_name` specifies the name of the docker image inside which `cyber-dojo.sh` runs.
-- `rag_lambda` specifies the name of a file (also in the `start_point` directory) containing a Ruby lambda whose output is `red`, `amber`, or `green` and whose input is [`stdout`, `stderr`,`status`] of `cyber-dojo.sh` when it is run inside `image_name`.
+- `rag_lambda` specifies the name of a file (also in the `start_point` directory) containing a Ruby lambda whose:
+  - input is the [`stdout`, `stderr`,`status`] of `cyber-dojo.sh` when run inside `image_name`
+  - output is the string `red`, `amber`, or `green` 
 
 For each LTF, there is always a _separate_ "partner" repository in the [cyber-dojo-languages](https://github.com/cyber-dojo-start-languages/) GitHub organization, whose job is to build `image_name`. 
 For example, java-junit's two repos are:
@@ -70,7 +73,9 @@ For example, java-junit's two repos are:
 - [cyber-dojo-languages/java-junit](https://github.com/cyber-dojo-languages/java-junit)
 
 This separation is necessary because:
-1. Automated custom tooling ensures the image's Dockerfile is augmented with commands needed to satisfy cyber-dojo's runtime requirements. For example it must have a designated non-root user.
+1. Automated custom tooling ensures the image's Dockerfile is augmented with commands needed to satisfy cyber-dojo's runtime requirements. For example:
+  - it must have a designated non-root user
+  - it must have `tar` installed so files can be piped into and out of the container.
 2. The `image_name` in the `manifest.json` file is tagged with the short-sha of the commit that built the image. That is not available until _after_ the commit has taken place (chicken and egg).
 
 
