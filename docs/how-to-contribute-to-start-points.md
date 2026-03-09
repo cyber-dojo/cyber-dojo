@@ -233,6 +233,7 @@ For example:
 - In the start-points repo:
   - edit the tag for `image_name` in `start_point/manifest.json`
   - edit the files named in `visible_filenames`
+  - edit the `rag_lambda` file
   - run `run_tests.sh`, check the `duration`'s, and the correctness:
     - the `red` run is `red`
     - the `amber` run is `amber`
