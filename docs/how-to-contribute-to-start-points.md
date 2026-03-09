@@ -103,7 +103,7 @@ The `image_name` in the `manifest.json` file is built in a
 _separate_ "partner" repository in the [cyber-dojo-languages](https://github.com/cyber-dojo-start-languages/) GitHub organization. 
 [Always two there are](https://www.youtube.com/watch?v=b7SjW0vFCiI).
 For example, the two repos for java-junit are:
-- [cyber-dojo-languages/java-junit](https://github.com/cyber-dojo-languages/java-junit) which names a docker image built in...
+- [cyber-dojo-languages/java-junit](https://github.com/cyber-dojo-languages/java-junit) which builds the docker image named in the manifest.json file in...
 - [cyber-dojo-start-points/java-junit](https://github.com/cyber-dojo-start-points/java-junit)
 
 This separation into two repositories per LTF is necessary because:
