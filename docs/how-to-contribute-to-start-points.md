@@ -1,33 +1,29 @@
 
 :+1::tada: Thank you :tada::+1:
 
-For all questions and offers of support, please [email](mailto:support@cyber-dojo.org 'Supporting cyber-dojo')
+Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Supporting cyber-dojo') if you have any questions or can offer support,
 
 # Contributing to cyber-dojo's Language & Test-Framework (LTF) start-points
 
-* [Top level repo structure](#top-level-repo-structure)
-* [Speed up a slow LTF](#speed-up-a-slow-ltf)
-* [Become the owner of one or more LTFs](#become-the-owner-of-one-or-more-ltfs)
-* [Other ways you can contribute to the LTFs](#other-ways-you-can-contribute-to-the-ltfs)
-* [Details you need to know ](#details-you-need-to-know)
-* [How to build the image_name](#how-to-build-the-image_name)
-* [How to test the start-point](#how-to-test-the-start-point)
+* [Ways you can help](#ways-you-can-help)
+  * [Speed up a slow LTF](#speed-up-a-slow-ltf)
+  * [Become the owner of one or more LTFs](#become-the-owner-of-one-or-more-ltfs)
+  * [Other ways you can contribute to the LTFs](#other-ways-you-can-contribute-to-the-ltfs)
+* [What you need to know ](#what-you-need-to-know)
+  * [Top level repo structure](#top-level-repo-structure)
+  * [The manifest.json file](#the-manifest-json-file)
+* [How to...](#how-to)
+  * [How to build the image](#how-to-build-the-image)
+  * [How to test the start-point](#how-to-test-the-start-point)
 * [A typical development loop](#a-typical-development-loop)
 
 ***
 
-## Top level repo structure
+## Ways you can help
 
-The cyber-dojo Language & Test-Framework start-point repos all live in the [cyber-dojo-start-points](https://github.com/cyber-dojo-start-points) GitHub organization.
-Each repository defines the *starting files* and associated details for _one_ Language & Test-Framework. For example:
-- [csharp-nunit](https://github.com/cyber-dojo-start-points/csharp-nunit)
-- [python-pytest](https://github.com/cyber-dojo-start-points/python-pytest)
-- [java-junit](https://github.com/cyber-dojo-start-points/java-junit)
-
-## Speed up a slow LTF
+### Speed up a slow LTF
 
 This is the most helpful way you can contribute to the LTFs.
-Please [email](mailto:support@cyber-dojo.org 'Speed up a slow LTF')
 
 For example, the initial start-point for `csharp-nunit` used `dotnet` commands
 which took ~8 seconds (which is a long time for one trivial test). 
@@ -36,17 +32,17 @@ The obvious/canonical/documented commands can be _slow_ for two main reasons:
 - Each cyber-dojo [test] run is 100% stateless - it is executed in a _new_ container and cannot, for example, take advantage of caching from previous runs.
 - Default language installs tend to be tailored for large projects, not very small ones that don't need or want complicated extra bells and whistles.
 
-## Become the owner of one or more LTFs
+Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Speed up a slow LTF') if you can help.
 
-Please [email](mailto:support@cyber-dojo.org 'Becoming the owner of one or more LTFs')
+### Become the owner of one or more LTFs
 
 Take on responsibility for upgrading it periodically.
 For example, as new versions of the language or test-framework come out. 
 This is typically very easy - it's just that there are a _lot_ of start-points.
 
-## Other ways you can contribute to the LTFs
+Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Becoming the owner of one or more LTFs') if you can help.
 
-Please [email](mailto:support@cyber-dojo.org 'Other ways you can contribute to the LTFs')
+### Other ways you can contribute to the LTFs
 
 - add a **new test-framework**, [testNG](https://testng.org/doc/index.html) anyone?
 - make some existing `start_point/` source files **more idiomatic** 
@@ -57,7 +53,19 @@ Please [email](mailto:support@cyber-dojo.org 'Other ways you can contribute to t
   Please write the lint report to a file called `report/style.txt`.
   For example, see [python-pytest](https://github.com/cyber-dojo-languages/python-pytest/blob/master/start_point/cyber-dojo.sh).
 
-## Details you need to know 
+Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Other ways you can contribute to the LTFs') if you can help.
+
+## What you need to know 
+
+### Top level repo structure
+
+The cyber-dojo Language & Test-Framework start-point repos all live in the [cyber-dojo-start-points](https://github.com/cyber-dojo-start-points) GitHub organization.
+Each repository defines the *starting files* and associated details for _one_ Language & Test-Framework. For example:
+- [csharp-nunit](https://github.com/cyber-dojo-start-points/csharp-nunit)
+- [python-pytest](https://github.com/cyber-dojo-start-points/python-pytest)
+- [java-junit](https://github.com/cyber-dojo-start-points/java-junit)
+
+### The manifest.json file
 
 Each start-point repository (eg [java-junit](https://github.com/cyber-dojo-start-points/java-junit)) holds a file called `start_point/manifest.json`.
 For example:
@@ -87,8 +95,9 @@ For example:
   - input is the [`stdout`, `stderr`,`status`] of `cyber-dojo.sh` when run inside `image_name`
   - output is the string `red`, `amber`, or `green` 
 
+## How to...
 
-## How to build the image_name
+### How to build the image
 
 The `image_name` in the `manifest.json` file is built in a
 _separate_ "partner" repository in the [cyber-dojo-languages](https://github.com/cyber-dojo-start-languages/) GitHub organization. Always two there are.
@@ -145,7 +154,7 @@ For example:
 }
 ```
 
-## How to test the start-point
+### How to test the start-point
 
 Each start-point repo contains a `run_tests.sh` script. Run this in a terminal with [Docker](https://docs.docker.com/install/) and git installed. It will:
 - run `cyber-dojo.sh` inside the docker image `image_name` from `start_point/manifest.json` three times, checking the resulting traffic-light colour (from `rag_lambda`) is:
@@ -227,5 +236,7 @@ For example:
     - the `red` run is `red`
     - the `amber` run is `amber`
     - the `green` run is `green`
+
+Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Other ways you can contribute to the LTFs') if you need help.
 
 :+1::tada: Thank you :tada::+1:
