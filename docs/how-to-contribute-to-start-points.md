@@ -1,5 +1,7 @@
 
-:+1::tada: Thanks :tada::+1:
+:+1::tada: Thank you :tada::+1:
+
+For all questions and offers of support, please [email](mailto:support@cyber-dojo.org 'Supporting cyber-dojo')
 
 # Contributing to cyber-dojo's Language & Test-Framework (LTF) start-points
 
@@ -19,6 +21,7 @@ Some great work from a contributor (thanks Martin) reduced this to ~2 seconds.
 The obvious/canonical/documented commands can be _slow_ for two main reasons:
 - Each cyber-dojo [test] run is 100% stateless - it is executed in a _new_ container and cannot, for example, take advantage of caching from previous runs.
 - Default language installs tend to be tailored for large projects, not very small ones that don't need or want complicated extra bells and whistles.
+Please [email](mailto:support@cyber-dojo.org 'Speed up a slow LTF')
 
 ## Become the 'owner' of one or more LTFs
 
@@ -27,6 +30,7 @@ This is the second best way you can contribute to the LTFs
 Take on responsibility for upgrading it periodically.
 For example, as new versions of the language or test-framework come out. 
 This is typically very easy - it's just that there are a _lot_ of start-points.
+Please [email](mailto:support@cyber-dojo.org 'Becoming the owner of one or more LTFs')
 
 ## Other ways you can contribute to the LTFs
 
@@ -196,15 +200,16 @@ For example:
 }
 ```
 
-Your typically development loop will be:
+## A typical development loop
+
 - In the languages repo:
-  - editing `docker/Dockerfile.base`
-  - rerunning `pipe_build_up_test.sh`
-  - noting the tag of the newly built image
+  - edit `docker/Dockerfile.base`
+  - rerun `pipe_build_up_test.sh`
+  - note the tag of the newly built image
 - In the start-points repo:
-  - editing the tag for `image_name` in `start_point/manifest.json`
-  - editing the contents of the files named in `visible_filenames`
-  - running `run_tests.sh`, checking the `duration`'s, and the correctness:
+  - edit the tag for `image_name` in `start_point/manifest.json`
+  - edit the contents of the files named in `visible_filenames`
+  - run `run_tests.sh`, check the `duration`'s, and the correctness:
     - the `red` run is `red`
     - the `amber` run is `amber`
     - the `green` run is `green`
