@@ -5,6 +5,19 @@ For all questions and offers of support, please [email](mailto:support@cyber-doj
 
 # Contributing to cyber-dojo's Language & Test-Framework (LTF) start-points
 
+* [Top level repo structure](#top-level-repo-structure)
+* [Speed up a slow LTF](#speed-up-a-slow-ltf)
+* [Become the owner of one or more LTFs](#become-the-owner-of-one-or-more-ltfs)
+* [Other ways you can contribute to the LTFs](#other-ways-you-can-contribute-to-the-ltfs)
+* [Details you need to know ](#details-you-need-to-know)
+* [How to build the image_name](#how-to-build-the-image_name)
+* [How to test the start-point](#how-to-test-the-start-point)
+* [A typical development loop](#a-typical-development-loop)
+
+***
+
+## Top level repo structure
+
 The cyber-dojo Language & Test-Framework start-point repos all live in the [cyber-dojo-start-points](https://github.com/cyber-dojo-start-points) GitHub organization.
 Each repository defines the *starting files* and associated details for _one_ Language & Test-Framework. For example:
 - [csharp-nunit](https://github.com/cyber-dojo-start-points/csharp-nunit)
@@ -13,7 +26,8 @@ Each repository defines the *starting files* and associated details for _one_ La
 
 ## Speed up a slow LTF
 
-This is the most helpful way you can contribute to the LTFs
+This is the most helpful way you can contribute to the LTFs.
+Please [email](mailto:support@cyber-dojo.org 'Speed up a slow LTF')
 
 For example, the initial start-point for `csharp-nunit` used `dotnet` commands
 which took ~8 seconds (which is a long time for one trivial test). 
@@ -21,18 +35,18 @@ Some great work from a contributor (thanks Martin) reduced this to ~2 seconds.
 The obvious/canonical/documented commands can be _slow_ for two main reasons:
 - Each cyber-dojo [test] run is 100% stateless - it is executed in a _new_ container and cannot, for example, take advantage of caching from previous runs.
 - Default language installs tend to be tailored for large projects, not very small ones that don't need or want complicated extra bells and whistles.
-Please [email](mailto:support@cyber-dojo.org 'Speed up a slow LTF')
 
-## Become the 'owner' of one or more LTFs
+## Become the owner of one or more LTFs
 
-This is the second best way you can contribute to the LTFs
+Please [email](mailto:support@cyber-dojo.org 'Becoming the owner of one or more LTFs')
 
 Take on responsibility for upgrading it periodically.
 For example, as new versions of the language or test-framework come out. 
 This is typically very easy - it's just that there are a _lot_ of start-points.
-Please [email](mailto:support@cyber-dojo.org 'Becoming the owner of one or more LTFs')
 
 ## Other ways you can contribute to the LTFs
+
+Please [email](mailto:support@cyber-dojo.org 'Other ways you can contribute to the LTFs')
 
 - add a **new test-framework**, [testNG](https://testng.org/doc/index.html) anyone?
 - make some existing `start_point/` source files **more idiomatic** 
@@ -213,3 +227,5 @@ For example:
     - the `red` run is `red`
     - the `amber` run is `amber`
     - the `green` run is `green`
+
+:+1::tada: Thank you :tada::+1:
