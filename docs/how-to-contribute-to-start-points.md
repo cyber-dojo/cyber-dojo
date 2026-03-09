@@ -118,6 +118,7 @@ Successfully tagged to ghcr.io/cyber-dojo-languages/java_junit:2eac00c
 ```
 
 This is the `image_name` you must use in the start-point's `manifest.json` file.
+For example:
 ```json
 {
     "display_name": "Java 25.0.2, JUnit 6.0.3",
@@ -203,8 +204,7 @@ Your typically development loop will be:
 - In the start-points repo:
   - editing the tag for `image_name` in `start_point/manifest.json`
   - editing the contents of the files named in `visible_filenames`
-  - running `run_tests.sh` and seeing if:
+  - running `run_tests.sh`, checking the `duration`'s, and the correctness:
     - the `red` run is `red`
     - the `amber` run is `amber`
     - the `green` run is `green`
-
