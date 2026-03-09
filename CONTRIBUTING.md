@@ -6,7 +6,7 @@
 ## Language & Test-Frameworks - such as 'Python 3.14.3, pytest 9.0.2'
 
 The [cyber-dojo-start-points](https://github.com/cyber-dojo-start-points) Org contains
-80+ git repositories, one for each language+testFramework's `starting source-files`. 
+80+ git repositories, one for each language+testFramework's starting source files. 
 For example:
 - [python-pytest](https://github.com/cyber-dojo-start-points/python-pytest)
 - [java-junit](https://github.com/cyber-dojo-start-points/java-junit)

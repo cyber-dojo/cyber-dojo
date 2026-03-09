@@ -3,27 +3,26 @@
 
 # Contributing to cyber-dojo's Language & Test-Framework (LTF) start-points
 
-The cyber-dojo Language & Test-Framework start-point repos all live in the [cyber-dojo-start-points](https://github.com/cyber-dojo-start-points) GitHub organzation.
+The cyber-dojo Language & Test-Framework start-point repos all live in the [cyber-dojo-start-points](https://github.com/cyber-dojo-start-points) GitHub organization.
 Each repository defines the *starting files* and associated details for _one_ Language & Test-Framework. For example:
 - [csharp-nunit](https://github.com/cyber-dojo-start-points/csharp-nunit)
 - [python-pytest](https://github.com/cyber-dojo-start-points/python-pytest)
 - [java-junit](https://github.com/cyber-dojo-start-points/java-junit)
 
-## The best way you can contribute to the LTFs
+## Speed up a slow LTF
 
-### Speed up a slow LTF
+This is the most helpful way you can contribute to the LTFs
 
 For example, the initial start-point for `csharp-nunit` used `dotnet` commands
 which took ~8 seconds (which is a long time for one trivial test). 
 Some great work from a contributor (thanks Martin) reduced this to ~2 seconds.
-It is not unusual for the obvious/canonical/documented commands to be _slooow_. 
-There are two main reasons for this:
+The obvious/canonical/documented commands can be _slow_ for two main reasons:
 - Each cyber-dojo [test] run is 100% stateless - it is executed in a _new_ container and cannot, for example, take advantage of caching from previous runs.
 - Default language installs tend to be tailored for large projects, not very small ones that don't need or want complicated extra bells and whistles.
 
-## The second best way you can contribute to the LTFs
+## Become the 'owner' of one or more LTFs
 
-### Become the 'owner' of one or more LTFs
+This is the second best way you can contribute to the LTFs
 
 Take on responsibility for upgrading it periodically.
 For example, as new versions of the language or test-framework come out. 
@@ -42,7 +41,7 @@ This is typically very easy - it's just that there are a _lot_ of start-points.
 
 ## Details you need to know 
 
-Each repository (eg [java-junit](https://github.com/cyber-dojo-start-points/java-junit)) holds a file called `start_point/manifest.json`.
+Each start-point repository (eg [java-junit](https://github.com/cyber-dojo-start-points/java-junit)) holds a file called `start_point/manifest.json`.
 For example:
   ```json
   {
@@ -58,36 +57,83 @@ For example:
   }
   ```
   
-- `display_name` specifies the text for the start-point when you are setting up your practice session.
-- `visible_filenames` specifies the _names_ of the starting source files (which must be present in the `start_point` directory):
-  - they always specify a file containing a function returning `6 * 9` and a test file asserting it returns `42` (start with a failing test!). This `6 * 9 == 42` structure is from Hitch Hikers Guide to the Galaxy, so the files are usually named `hiker`.
-  - one of these files _must_ be `cyber-dojo.sh`. This is a bash script with the necessary commands to run the tests. Do not hard-code the filenames from `visible_filenames` into it. Instead use wildcards so it will continue to work when files are renamed or added in a practice session.
-- `image_name` specifies the name of the docker image inside which `cyber-dojo.sh` runs.
-- `rag_lambda` specifies the name of a file (also in the `start_point` directory) containing a Ruby lambda whose:
+- `display_name`: the text for the start-point when you are setting up your practice session.
+- `visible_filenames`: the paths of the starting source files, relative to the `start_point` directory:
+  - they always specify a file containing a function returning `6 * 9` and a test file asserting it returns `42` (start with a failing test!). 
+  - the `6 * 9 == 42` structure is from Hitch Hikers Guide to the Galaxy, so the files are usually named `hiker`.
+  - one of these files _must_ be `cyber-dojo.sh`. This is a bash script with the necessary commands to run the tests. Do not hard-code the filenames from `visible_filenames` into it. Use wildcards so it will continue to work when files are renamed or added in a practice session.
+  - paths can include subdirs. For example, `StepDefinitions/HikerSteps.cs` which will
+  appear in the browser and be honoured when `cyber-dojo.sh` runs inside the docker container.
+- `image_name`: the name of the docker image`cyber-dojo.sh` run inside.
+- `rag_lambda`: the name of a file (also in the `start_point` directory) containing a Ruby lambda whose:
   - input is the [`stdout`, `stderr`,`status`] of `cyber-dojo.sh` when run inside `image_name`
   - output is the string `red`, `amber`, or `green` 
 
-For each LTF, there is always a _separate_ "partner" repository in the [cyber-dojo-languages](https://github.com/cyber-dojo-start-languages/) GitHub organization, whose job is to build `image_name`. 
-For example, java-junit's two repos are:
-- [cyber-dojo-start-points/java-junit](https://github.com/cyber-dojo-start-points/java-junit) which names a docker image buiult in...
+
+## How to build the image_name
+
+The `image_name` in the `manifest.json` file is built in a
+_separate_ "partner" repository in the [cyber-dojo-languages](https://github.com/cyber-dojo-start-languages/) GitHub organization. Always two there are.
+For example, the two repos for java-junit are:
+- [cyber-dojo-start-points/java-junit](https://github.com/cyber-dojo-start-points/java-junit) which names a docker image built in...
 - [cyber-dojo-languages/java-junit](https://github.com/cyber-dojo-languages/java-junit)
 
-This separation is necessary because:
-1. Automated custom tooling ensures the image's Dockerfile is augmented with commands needed to satisfy cyber-dojo's runtime requirements. For example:
-  - it must have a designated non-root user
-  - it must have `tar` installed so files can be piped into and out of the container.
-2. The `image_name` in the `manifest.json` file is tagged with the short-sha of the commit that built the image. That is not available until _after_ the commit has taken place (chicken and egg).
+This separation into two repositories per LTF is necessary because:
+1. The `image_name` in the `manifest.json` file is tagged with the short-sha of the commit that built the image. That is not available until _after_ the commit has taken place (chicken and egg).
+2. Automated custom tooling ensures the image is augmented with commands needed to satisfy cyber-dojo's runtime requirements. 
 
+Each languages "partner" repo holds a file called `docker/Dockerfile.base`.
+For example:
+```Dockerfile
+FROM ghcr.io/cyber-dojo-languages/java:fd1ea55
+LABEL maintainer=jon@jaggersoft.com
 
-## How you test your contribution
+COPY /jars/* /junit/
+ENV CLASSPATH=/junit/
+```
 
-Each start-point repo contains the script `run_tests.sh`. Run this in a terminal with [Docker](https://docs.docker.com/install/) and git installed. It will:
-- run `cyber-dojo.sh` inside the specified docker image container three times, checking
-  the resulting traffic-light colour (from `rag_lambda`) is:
+In a terminal with [Docker](https://docs.docker.com/install/) installed, build the docker image by running `pipe_build_up_test.sh` which will:
+
+- Create `docker/Dockerfile` from `docker/Dockerfile.base`, augmented to satisfy
+  the [runner's](https://github.com/cyber-dojo/runner) requirements. For example:
+  - it creates a specific non-root user
+  - it installs `tar` to pipe files in and out of the container.
+- Build a new docker image from `docker/Dockerfile`.
+- The untagged name of the image is the `image_name` entry of `docker/image_name.json`.
+
+The image OS must be Alpine, Debian, or Ubuntu, as determined by the contents
+of the FROM image's `/etc/issue` file. If there is no `etc/issue` file you
+can use a custom comment. For example:
+```Dockerfile
+FROM ghcr.io/cyber-dojo-languages/java:fd1ea55
+LABEL maintainer=jon@jaggersoft.com
+# OS=Alpine
+...
+```
+
+If `pipe_build_up_test.sh` succeeds, near the end of its output you will see
+a message:
+```
+Successfully tagged to ghcr.io/cyber-dojo-languages/java_junit:2eac00c
+```
+
+This is the `image_name` you must use in the start-point's `manifest.json` file.
+```json
+{
+    "display_name": "Java 25.0.2, JUnit 6.0.3",
+    "image_name":"ghcr.io/cyber-dojo-languages/java_junit:2eac00c",
+    ...
+}
+```
+
+## How to test the start-point
+
+Each start-point repo contains a `run_tests.sh` script. Run this in a terminal with [Docker](https://docs.docker.com/install/) and git installed. It will:
+- run `cyber-dojo.sh` inside the docker image `image_name` from `start_point/manifest.json` three times, checking the resulting traffic-light colour (from `rag_lambda`) is:
     - `red` when the `visible_filenames` are unmodified.
     - `amber` when the `6 * 9` is modified to `6 * 9sd`.
     - `green` when the `6 * 9` is modified to `6 * 7`.
-- if none of the `visible_filenames` contain the pattern `6 * 9`, (eg the language uses infix notation) you can specify the red/amber/green modifications explicitly using an `options.json` file. See [nasm-assert](https://github.com/cyber-dojo-start-points/nasm-assert/blob/master/start_point/options.json) for an example.
+- if none of the `visible_filenames` contain the pattern `6 * 9`, (eg the language uses infix notation) you can override the red/amber/green modification patterns using an `options.json` file. See [nasm-assert](https://github.com/cyber-dojo-start-points/nasm-assert/blob/master/start_point/options.json) for an example.
 
 Each `red`, `amber`, `green` run will print two JSON objects.
 
@@ -104,37 +150,17 @@ For example:
     "content": [
       "Microsoft (R) Visual C# Compiler version 5.0.0-2.26075.103 (c2435c3e)\n",
       "Copyright (C) Microsoft Corporation. All rights reserved.\n",
-      "\n",
-      "Runtime Environment\n",
-      "   OS Version: Alpine Linux v3.22\n",
-      "  Runtime: .NET 10.0.3\n",
-      "\n",
-      "Test Files\n",
-      "    dojo.dll\n",
-      "\n",
-      "\n",
-      "Run Settings\n",
-      "    DisposeRunners: True\n",
-      "    WorkDirectory: /sandbox\n",
-      "    NumberOfTestWorkers: 10\n",
-      "\n",
+      ...
       "Test Run Summary\n",
       "  Overall result: Passed\n",
       "  Test Count: 1, Passed: 1, Failed: 0, Warnings: 0, Inconclusive: 0, Skipped: 0\n",
-      "  Start time: 2026-03-08 18:08:31Z\n",
-      "    End time: 2026-03-08 18:08:32Z\n",
-      "    Duration: 0.122 seconds\n",
-      "\n",
-      "Results (nunit3) saved as TestResult.xml\n"
+      ...
     ],
     "truncated": false
   },
   "stderr": {
     "content": [
-      "\n",
-      "real\t0m3.043s\n",
-      "user\t0m2.014s\n",
-      "sys\t0m1.142s\n"
+      ...
     ],
     "truncated": false
   },
@@ -150,9 +176,9 @@ For example:
 
 The second JSON object shows:
 - `runner_sha` is the commit of the runner microservice in action
-- `filename`, `from`, `to` detail the auto edit made (no edit for initial `red` run)
+- `filename`, `from`, `to` detail the edit made (no edit for initial `red` run)
 - `duration` is how long `cyber-dojo.sh` took to execute
-- `colour` the colour result of the "rag_lambda" named in `manifest.json`
+- `colour` the result of the "rag_lambda" named in `manifest.json`
 - `result` is "PASSED" if the `colour` is as expected.
 
 For example:
@@ -169,4 +195,16 @@ For example:
 }
 ```
 
+Your typically development loop will be:
+- In the languages repo:
+  - editing `docker/Dockerfile.base`
+  - rerunning `pipe_build_up_test.sh`
+  - noting the tag of the newly built image
+- In the start-points repo:
+  - editing the tag for `image_name` in `start_point/manifest.json`
+  - editing the contents of the files named in `visible_filenames`
+  - running `run_tests.sh` and seeing if:
+    - the `red` run is `red`
+    - the `amber` run is `amber`
+    - the `green` run is `green`
 

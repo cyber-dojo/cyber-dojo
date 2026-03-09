@@ -1,4 +1,7 @@
 
+Have just links in the top level contributing.md file
+Delete docs/how-to-contribute-to-languages.md
+
 It would be good if I could collect the typical times 
 each start-point takes in https://cyber-dojo.org
 and list them, slowest to fastest. 
@@ -6,8 +9,10 @@ I could write a script in the languages-start-points repo which
 went through all the data/*/ dirs and
 - pulled image_name (to avoid the pull being in timings)
 - ran run_tests.sh and somehow retrieved the three json outputs
-  containing duration, colour, and pass/fail status.
+  containing duration, colour, and pass/fail status.  
 Good start would be to tee the three json outputs so they are saved in a file.
+They could be triggered to do this by looking for env-vars that name the 
+path you want the json file saved to.
 
 
 Sorry for the interuption (it happens at random every 256 tests).
