@@ -11,7 +11,7 @@ Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Supporting 
   * [Other ways you can contribute to the LTFs](#other-ways-you-can-contribute-to-the-ltfs)
 * [What you need to know ](#what-you-need-to-know)
   * [Top level repo structure](#top-level-repo-structure)
-  * [The manifest.json file](#the-manifest-json-file)
+  * [The manifest.json file](#the-manifestjson-file)
 * [How to...](#how-to)
   * [How to build the image](#how-to-build-the-image)
   * [How to test the start-point](#how-to-test-the-start-point)
@@ -231,7 +231,7 @@ For example:
   - note the tag of the newly built image
 - In the start-points repo:
   - edit the tag for `image_name` in `start_point/manifest.json`
-  - edit the contents of the files named in `visible_filenames`
+  - edit the files named in `visible_filenames`
   - run `run_tests.sh`, check the `duration`'s, and the correctness:
     - the `red` run is `red`
     - the `amber` run is `amber`
