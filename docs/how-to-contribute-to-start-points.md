@@ -1,7 +1,7 @@
 
 :+1::tada: Thank you :tada::+1:
 
-Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Supporting cyber-dojo') if you have any questions or can offer support,
+Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Supporting cyber-dojo') if you have any questions or can offer support.
 
 # Contributing to cyber-dojo's Language & Test-Framework (LTF) start-points
 
