@@ -2,20 +2,31 @@
 Have just links in the top level contributing.md file
 Delete docs/how-to-contribute-to-languages.md
 
+XXX: Add a link to the how-to-contribute-to-start-points.md file 
+in each cyber-dojo-languages repo and each cyber-dojo-start-points repo.
 
-It would be good if I could collect the typical times 
-each start-point takes in https://cyber-dojo.org
-and list them, slowest to fastest. 
-I could write a script in the languages-start-points repo which
-went through all the data/*/ dirs and
-- pulled image_name (to avoid the pull being in timings)
-- ran run_tests.sh and somehow retrieved the three json outputs
-  containing duration, colour, and pass/fail status.  
-Good start would be to tee the three json outputs so they are saved in a file.
-They could be triggered to do this by looking for env-vars that name the 
-path you want the json file saved to.
-XXX: Add link to list of durations
+XXX: manifest.json information needs to be updated with 
+     progress_regexs key. Take info from blog post.
+     
+XXX: keep the three test-run output files in the data/DIR/
 
+XXX: collect all data/DIR/ files (except test runs) 
+     into single JSON file containing
+     - image-name
+     - commit
+     - URL
+     - image path in registry
+     - size in bytes
+     - size in human
+     - durations
+   
+XXX: Even better would be if the current red/amber/green
+  durations could be made available via an API?
+
+XXX: Add -h to bin/concat_all_durations.py ?
+
+Text that will go into web popup
+--------------------------------
 Sorry for the interuption (it happens at random every 256 tests).
 cyber-dojo is a [charitable organization](link)
 ...here have photo, and mention tie in with Turing Trust...
