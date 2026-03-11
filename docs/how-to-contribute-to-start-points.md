@@ -30,7 +30,7 @@ The obvious/canonical/documented commands for a given LTF can be _slow_ for two 
 - Default language installs tend to be tailored for large projects, not very small ones that don't need or want complicated extra bells and whistles.
 
 For example, the initial start-point for `csharp-nunit` used `dotnet` commands
-which took ~8 seconds (which is a long time for one trivial test). 
+which took ~8 seconds (a long time for one trivial test). 
 Some great work from a contributor (thanks Martin) reduced this to ~2 seconds.
 
 The LTFs whose test durations are currently 4+ seconds are:
@@ -97,7 +97,7 @@ For example:
   }
   ```
   
-- `display_name`: the text for the start-point when you are setting up your practice session.
+- `display_name`: the start-point's name when you are choosing your LTF.
 - `visible_filenames`: the paths of the starting source files, relative to the `start_point` directory:
   - they always specify a file containing a function returning `6 * 9` and a test file asserting it returns `42` (start with a failing test!). 
   - the `6 * 9 == 42` structure is from Hitch Hikers Guide to the Galaxy, so the files are usually named `hiker`.
@@ -124,7 +124,7 @@ This separation into two repositories per LTF is necessary because:
 1. The `image_name` in the `manifest.json` file is tagged with the short-sha of the commit that built the image. That is not available until _after_ the commit has taken place (chicken and egg).
 2. Automated custom tooling ensures the image is augmented with commands needed to satisfy cyber-dojo's runtime requirements. 
 
-Each languages "partner" repo holds a file called `docker/Dockerfile.base`.
+Each language "partner" repo holds a file called `docker/Dockerfile.base`.
 For example:
 ```Dockerfile
 FROM ghcr.io/cyber-dojo-languages/java:fd1ea55
@@ -178,46 +178,15 @@ Each start-point repo contains a `run_tests.sh` script. Run this in a terminal w
     - `green` when the `6 * 9` is modified to `6 * 7`.
 - if none of the `visible_filenames` contain the pattern `6 * 9`, (eg the language uses infix notation) you can override the red/amber/green modification patterns using an `options.json` file. See [nasm-assert](https://github.com/cyber-dojo-start-points/nasm-assert/blob/master/start_point/options.json) for an example.
 
-Each `red`, `amber`, `green` run will print two JSON objects.
+Each `red`, `amber`, `green` run will print a JSON object:
 
-The first JSON object shows:
+Keyed under `"cyber-dojo.sh"` you will see:
 - `stdout`, `stderr` and `status` output by `cyber-dojo.sh`
 - `outcome` the colour result of the `rag_lambda` named in `manifest.json`
 - `created` shows any new files created by `cyber-dojo.sh`
 - `changed` shows any existing files changed by `cyber-dojo.sh`
 
-For example:
-```json
-{
-  "stdout": {
-    "content": [
-      "Microsoft (R) Visual C# Compiler version 5.0.0-2.26075.103 (c2435c3e)\n",
-      "Copyright (C) Microsoft Corporation. All rights reserved.\n",
-      ...
-      "Test Run Summary\n",
-      "  Overall result: Passed\n",
-      "  Test Count: 1, Passed: 1, Failed: 0, Warnings: 0, Inconclusive: 0, Skipped: 0\n",
-      ...
-    ],
-    "truncated": false
-  },
-  "stderr": {
-    "content": [
-      ...
-    ],
-    "truncated": false
-  },
-  "status": "0",
-  "outcome": "green",
-  "log": null,
-  "created": {
-  },
-  "changed": {
-  }
-}
-```
-
-The second JSON object shows:
+Keyed under `"summary"` you will see:
 - `runner_sha` is the commit of the runner microservice in action
 - `filename`, `from`, `to` detail the edit made (no edit for initial `red` run)
 - `duration` is how long `cyber-dojo.sh` took to execute
@@ -227,14 +196,43 @@ The second JSON object shows:
 For example:
 ```json
 {
-  "runner_sha": "d579c7a17cc224f22b6b7db3f1e4f3421b511f00",
-  "max_seconds": 15,
-  "filename": "Hiker.cs",
-  "from": "6 * 9",
-  "to": "6 * 7",
-  "duration": 3.638545877,
-  "colour": "green",
-  "result": "PASSED"
+  "cyber-dojo.sh": {
+    "stdout": {
+      "content": [
+        "Microsoft (R) Visual C# Compiler version 5.0.0-2.26075.103 (c2435c3e)\n",
+        "Copyright (C) Microsoft Corporation. All rights reserved.\n",
+        ...
+        "Test Run Summary\n",
+        "  Overall result: Passed\n",
+        "  Test Count: 1, Passed: 1, Failed: 0, Warnings: 0, Inconclusive: 0, Skipped: 0\n",
+        ...
+      ],
+      "truncated": false
+    },
+    "stderr": {
+      "content": [
+        ...
+      ],
+      "truncated": false
+    },
+    "status": "0",
+    "outcome": "green",
+    "log": null,
+    "created": {
+    },
+    "changed": {
+    }
+  },
+  "summary": {
+    "runner_sha": "d579c7a17cc224f22b6b7db3f1e4f3421b511f00",
+    "max_seconds": 15,
+    "filename": "Hiker.cs",
+    "from": "6 * 9",
+    "to": "6 * 7",
+    "duration": 3.650806085,
+    "colour": "green",
+    "result": "PASSED"
+  }  
 }
 ```
 
