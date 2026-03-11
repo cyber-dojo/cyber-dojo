@@ -25,12 +25,13 @@ Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Supporting 
 
 This is the most helpful way you can contribute to the LTFs.
 
+The obvious/canonical/documented commands for a given LTF can be _slow_ for two main reasons:
+- Each cyber-dojo [test] run is 100% stateless - it is executed in a _new_ container and cannot, for example, take advantage of caching from previous runs.
+- Default language installs tend to be tailored for large projects, not very small ones that don't need or want complicated extra bells and whistles.
+
 For example, the initial start-point for `csharp-nunit` used `dotnet` commands
 which took ~8 seconds (which is a long time for one trivial test). 
 Some great work from a contributor (thanks Martin) reduced this to ~2 seconds.
-The obvious/canonical/documented commands can be _slow_ for two main reasons:
-- Each cyber-dojo [test] run is 100% stateless - it is executed in a _new_ container and cannot, for example, take advantage of caching from previous runs.
-- Default language installs tend to be tailored for large projects, not very small ones that don't need or want complicated extra bells and whistles.
 
 The LTFs whose test durations are currently 4+ seconds are:
 - 7.034 [javascript-jest](https://github.com/cyber-dojo-start-points/)
