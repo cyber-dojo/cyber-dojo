@@ -93,6 +93,8 @@ For example:
       "cyber-dojo.sh"
     ],
     "rag_lambda": "red_amber_green.rb",
+    "filename_extension": [ ".java" ],
+    "tab_size": 4,
     ...      
   }
   ```
