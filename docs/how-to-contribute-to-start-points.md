@@ -108,6 +108,7 @@ For example:
 - `rag_lambda`: the name of a file (also in the `start_point` directory) containing a Ruby lambda whose:
   - input is the [`stdout`, `stderr`,`status`] of `cyber-dojo.sh` when run inside `image_name`
   - output is the string `red`, `amber`, or `green` 
+- there are a few other [optional keys](https://blog.cyber-dojo.org/2016/08/cyber-dojo-start-points-manifestjson.html).
 
 ## How to...
 
