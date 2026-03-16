@@ -139,8 +139,13 @@ COPY /jars/* /junit/
 ENV CLASSPATH=/junit/
 ```
 
-In a terminal with [Docker](https://docs.docker.com/install/) installed, build the docker image by running `pipe_build_up_test.sh` which will:
+In a terminal with [Docker](https://docs.docker.com/install/) installed, build the docker image:
 
+```bash
+./pipe_build_up_test.sh
+```
+
+This will:
 - Create `docker/Dockerfile` from `docker/Dockerfile.base`, augmented to satisfy
   the [runner's](https://github.com/cyber-dojo/runner) requirements. For example:
   - it creates a specific non-root user
@@ -176,7 +181,13 @@ For example:
 
 ### How to test the start-point
 
-Each start-point repo contains a `run_tests.sh` script. Run this in a terminal with [Docker](https://docs.docker.com/install/) and git installed. It will:
+Each start-point repo contains a `run_tests.sh` script. Run this in a terminal with [Docker](https://docs.docker.com/install/) and git installed:
+
+```bash
+./run_tests.sh
+```
+
+This will:
 - run `cyber-dojo.sh` inside the docker image `image_name` from `start_point/manifest.json` three times, checking the resulting traffic-light colour (from `rag_lambda`) is:
     - `red` when the `visible_filenames` are unmodified.
     - `amber` when the `6 * 9` is modified to `6 * 9sd`.
