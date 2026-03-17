@@ -139,7 +139,7 @@ COPY /jars/* /junit/
 ENV CLASSPATH=/junit/
 ```
 
-In a terminal with [Docker](https://docs.docker.com/install/) installed, build the docker image:
+Each language repo contains a `pipe_build_up_test.sh` script. Run this in a terminal with [Docker](https://docs.docker.com/install/) and git installed:
 
 ```bash
 ./pipe_build_up_test.sh
@@ -256,13 +256,13 @@ For example:
 
 - In the languages repo:
   - edit `docker/Dockerfile.base`
-  - rerun `pipe_build_up_test.sh`
+  - run `pipe_build_up_test.sh`
   - note the tag of the newly built image
 - In the start-points repo:
   - edit the tag for `image_name` in `start_point/manifest.json`
   - edit the files named in `visible_filenames`
   - edit the `rag_lambda` file
-  - run `run_tests.sh`, check the `duration`'s, and the correctness:
+  - run `run_tests.sh`, check the `duration`'s, and correctness:
     - the `red` run is `red`
     - the `amber` run is `amber`
     - the `green` run is `green`
