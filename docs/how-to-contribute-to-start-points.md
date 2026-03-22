@@ -34,15 +34,15 @@ which took ~8 seconds (a long time for one trivial test).
 Some great work from a contributor (thanks Martin) reduced this to ~2 seconds.
 
 The LTFs whose test durations are currently 4+ seconds are:
-- 7.034 [javascript-jest](https://github.com/cyber-dojo-start-points/)
-- 6.569 [javascript-mocha-chai-sinon](https://github.com/cyber-dojo-start-points/javascript-mocha-chai-sinon)
 - 6.527 [go-testing](https://github.com/cyber-dojo-start-points/go-testing)
-- 6.388 [javascript-jasmine](https://github.com/cyber-dojo-start-points/javascript-jasmine)
-- 6.332 [javascript-qunit-sinon](https://github.com/cyber-dojo-start-points/javascript-qunit-sinon)
 - 6.216 [kotlin-test](https://github.com/cyber-dojo-start-points/kotlin-test)
 - 6.118 [csharp-reqnroll](https://github.com/cyber-dojo-start-points/csharp-reqnroll)
 - 5.910 [elixir-exunit](https://github.com/cyber-dojo-start-points/elixir-exunit)
-- 5.375 [csharp-moq](https://github.com/cyber-dojo-start-points/csharp-moq)
+- 5.786 [javascript-jasmine](https://github.com/cyber-dojo-start-points/javascript-jasmine)
+- 5.735 [javascript-mocha-chai-sinon](https://github.com/cyber-dojo-start-points/
+- 5.725 [javascript-jest](https://github.com/cyber-dojo-start-points/)
+javascript-mocha-chai-sinon)
+- 5.586 [javascript-qunit-sinon](https://github.com/cyber-dojo-start-points/javascript-qunit-sinon)
 - 5.374 [clojure-midje](https://github.com/cyber-dojo-start-points/clojure-midje)
 - 5.133 [gplusplus-googlemock](https://github.com/cyber-dojo-start-points/gplusplus-googlemock)
 
