@@ -39,9 +39,8 @@ The LTFs whose test durations are currently 4+ seconds are:
 - 6.118 [csharp-reqnroll](https://github.com/cyber-dojo-start-points/csharp-reqnroll)
 - 5.910 [elixir-exunit](https://github.com/cyber-dojo-start-points/elixir-exunit)
 - 5.786 [javascript-jasmine](https://github.com/cyber-dojo-start-points/javascript-jasmine)
-- 5.735 [javascript-mocha-chai-sinon](https://github.com/cyber-dojo-start-points/
-- 5.725 [javascript-jest](https://github.com/cyber-dojo-start-points/)
-javascript-mocha-chai-sinon)
+- 5.735 [javascript-mocha-chai-sinon](https://github.com/cyber-dojo-start-points/javascript-mocha-chai-sinon)
+- 5.725 [javascript-jest](https://github.com/cyber-dojo-start-points/javascript-jest)
 - 5.586 [javascript-qunit-sinon](https://github.com/cyber-dojo-start-points/javascript-qunit-sinon)
 - 5.374 [clojure-midje](https://github.com/cyber-dojo-start-points/clojure-midje)
 - 5.133 [gplusplus-googlemock](https://github.com/cyber-dojo-start-points/gplusplus-googlemock)
