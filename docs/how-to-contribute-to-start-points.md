@@ -33,7 +33,7 @@ For example, the initial start-point for `csharp-nunit` used `dotnet` commands
 which took ~8 seconds (a long time for one trivial test). 
 Some great work from a contributor (thanks Martin) reduced this to ~2 seconds.
 
-The LTFs whose test durations are currently 4+ seconds are:
+The LTFs whose test durations are currently 5+ seconds are:
 - 6.527 [go-testing](https://github.com/cyber-dojo-start-points/go-testing)
 - 6.216 [kotlin-test](https://github.com/cyber-dojo-start-points/kotlin-test)
 - 6.118 [csharp-reqnroll](https://github.com/cyber-dojo-start-points/csharp-reqnroll)
@@ -57,12 +57,12 @@ Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Becoming th
 
 ### Other ways you can contribute to the LTFs
 
-- add a **new test-framework**, [testNG](https://testng.org/doc/index.html) anyone?
-- make some existing `start_point/` source files **more idiomatic** 
-- add a **coverage report** to your favourite language-testFramework.
+- add a new test-framework, [testNG](https://testng.org/doc/index.html) anyone?
+- make some existing `start_point/` source files more idiomatic 
+- add a coverage report to your favourite language-testFramework.
   Please write the coverage report to a file called `report/coverage.txt`.
   For example, see [python-pytest](https://github.com/cyber-dojo-languages/python-pytest/blob/master/start_point/cyber-dojo.sh).
-- add a **lint report** to your favourite language-testFramework.
+- add a lint report to your favourite language-testFramework.
   Please write the lint report to a file called `report/style.txt`.
   For example, see [python-pytest](https://github.com/cyber-dojo-languages/python-pytest/blob/master/start_point/cyber-dojo.sh).
 
@@ -101,11 +101,11 @@ For example:
 - `display_name`: the start-point's name when you are choosing your LTF.
 - `visible_filenames`: the paths of the starting source files, relative to the `start_point` directory:
   - they always specify a file containing a function returning `6 * 9` and a test file asserting it returns `42` (start with a failing test!). 
-  - the `6 * 9 == 42` structure is from Hitch Hikers Guide to the Galaxy, so the files are usually named `hiker`.
+  - the `6 * 9 == 42` structure is from [Hitch Hikers Guide to the Galaxy](https://en.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy), so the files are usually named `hiker`.
   - one of these files _must_ be `cyber-dojo.sh`. This is a bash script with the necessary commands to run the tests. Do not hard-code the filenames from `visible_filenames` into it. Use wildcards so it will continue to work when files are renamed or added in a practice session.
-  - paths can include subdirs. For example, `StepDefinitions/HikerSteps.cs` which will
+  - paths can include subdirs. For example, [StepDefinitions/HikerSteps.cs](https://github.com/cyber-dojo-start-points/csharp-reqnroll/blob/main/start_point/StepDefinitions/HikerSteps.cs) which will
   appear in the browser and be honoured when `cyber-dojo.sh` runs inside the docker container.
-- `image_name`: the name of the docker image`cyber-dojo.sh` run inside.
+- `image_name`: the name of the docker image `cyber-dojo.sh` run inside.
 - `rag_lambda`: the name of a file (also in the `start_point` directory) containing a Ruby lambda whose:
   - input is the [`stdout`, `stderr`,`status`] of `cyber-dojo.sh` when run inside `image_name`
   - output is the string `red`, `amber`, or `green` 
@@ -124,7 +124,7 @@ For example, the two repos for java-junit are:
 - [cyber-dojo-languages/java-junit](https://github.com/cyber-dojo-languages/java-junit) which builds the docker image named in the manifest.json file in...
 - [cyber-dojo-start-points/java-junit](https://github.com/cyber-dojo-start-points/java-junit)
 
-This separation into two repositories per LTF is necessary because:
+This separation into two repositories for each LTF is necessary because:
 1. The `image_name` in the `manifest.json` file is tagged with the short-sha of the commit that built the image. That is not available until _after_ the commit has taken place (chicken and egg).
 2. Automated custom tooling ensures the image is augmented with commands needed to satisfy cyber-dojo's runtime requirements. 
 
@@ -198,15 +198,15 @@ Each `red`, `amber`, `green` run will print a JSON object:
 Keyed under `"cyber-dojo.sh"` you will see:
 - `stdout`, `stderr` and `status` output by `cyber-dojo.sh`
 - `outcome` the colour result of the `rag_lambda` named in `manifest.json`
-- `created` shows any new files created by `cyber-dojo.sh`
-- `changed` shows any existing files changed by `cyber-dojo.sh`
+- `created` shows any _new_ files created by `cyber-dojo.sh`
+- `changed` shows any _existing_ files changed by `cyber-dojo.sh`
 
 Keyed under `"summary"` you will see:
 - `runner_sha` is the commit of the runner microservice in action
 - `filename`, `from`, `to` detail the edit made (no edit for initial `red` run)
 - `duration` is how long `cyber-dojo.sh` took to execute
 - `colour` the result of the "rag_lambda" named in `manifest.json`
-- `result` is "PASSED" if the `colour` is as expected.
+- `result` is "PASSED" if the `colour` is as expected
 
 For example:
 ```json
