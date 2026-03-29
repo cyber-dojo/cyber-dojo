@@ -34,7 +34,6 @@ which took ~8 seconds (a long time for one trivial test).
 Some great work from a contributor (thanks Martin) reduced this to ~2 seconds.
 
 The LTFs whose test durations are currently 5+ seconds are:
-- 6.527 [go-testing](https://github.com/cyber-dojo-start-points/go-testing)
 - 6.216 [kotlin-test](https://github.com/cyber-dojo-start-points/kotlin-test)
 - 6.118 [csharp-reqnroll](https://github.com/cyber-dojo-start-points/csharp-reqnroll)
 - 5.935 [typescript-jest](https://github.com/cyber-dojo-start-points/typescript-jest)
