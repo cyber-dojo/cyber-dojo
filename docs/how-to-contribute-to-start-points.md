@@ -26,7 +26,7 @@ Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Supporting 
 This is the most helpful way you can contribute to the LTFs.
 
 The obvious/canonical/documented commands for a given LTF can be _slow_ for two main reasons:
-- Each cyber-dojo [test] run is 100% stateless - it is executed in a _new_ container and cannot, for example, take advantage of caching from previous runs.
+- Each cyber-dojo [test] run is 100% stateless - it is executed in a _new_ container and cannot, for example, take advantage of caching from previous [test].
 - Default language installs tend to be tailored for large projects, not very small ones that don't need or want complicated extra bells and whistles.
 
 For example, the initial start-point for `csharp-nunit` used `dotnet` commands
@@ -72,8 +72,8 @@ Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Other ways 
 
 ### Top level repo structure
 
-The cyber-dojo Language & Test-Framework start-point repos all live in the [cyber-dojo-start-points](https://github.com/cyber-dojo-start-points) GitHub organization.
-Each repository defines the *starting files* and associated details for _one_ Language & Test-Framework. For example:
+The cyber-dojo LTF start-point repos all live in the [cyber-dojo-start-points](https://github.com/cyber-dojo-start-points) GitHub organization.
+Each repository defines the *starting files* and associated details for _one_ LTF. For example:
 - [csharp-nunit](https://github.com/cyber-dojo-start-points/csharp-nunit)
 - [python-pytest](https://github.com/cyber-dojo-start-points/python-pytest)
 - [java-junit](https://github.com/cyber-dojo-start-points/java-junit)
@@ -198,8 +198,8 @@ Each `red`, `amber`, `green` run will print a JSON object:
 Keyed under `"cyber-dojo.sh"` you will see:
 - `stdout`, `stderr` and `status` output by `cyber-dojo.sh`
 - `outcome` the colour result of the `rag_lambda` named in `manifest.json`
-- `created` shows any _new_ files created by `cyber-dojo.sh`
-- `changed` shows any _existing_ files changed by `cyber-dojo.sh`
+- `created` shows any _new_ text files created by `cyber-dojo.sh`
+- `changed` shows any _existing_ text files changed by `cyber-dojo.sh`
 
 Keyed under `"summary"` you will see:
 - `runner_sha` is the commit of the runner microservice in action
@@ -214,8 +214,6 @@ For example:
   "cyber-dojo.sh": {
     "stdout": {
       "content": [
-        "Microsoft (R) Visual C# Compiler version 5.0.0-2.26075.103 (c2435c3e)\n",
-        "Copyright (C) Microsoft Corporation. All rights reserved.\n",
         ...
         "Test Run Summary\n",
         "  Overall result: Passed\n",
@@ -265,6 +263,8 @@ For example:
     - the `red` run is `red`
     - the `amber` run is `amber`
     - the `green` run is `green`
+
+AI's such as claude can (and have) helped perform this loop.
 
 Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Other ways you can contribute to the LTFs') if you need help.
 
