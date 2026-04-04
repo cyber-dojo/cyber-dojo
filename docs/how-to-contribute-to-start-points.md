@@ -263,7 +263,7 @@ For example:
     - the `amber` run is `amber`
     - the `green` run is `green`
 
-AI's such as claude can (and have) helped perform this loop.
+AI's such as claude are typically very helpful during this loop.
 
 Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Other ways you can contribute to the LTFs') if you need help.
 
