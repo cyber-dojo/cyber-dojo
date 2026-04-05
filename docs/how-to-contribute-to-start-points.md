@@ -41,7 +41,6 @@ The LTFs whose test durations are currently 5+ seconds are:
 - 5.735 [javascript-mocha-chai-sinon](https://github.com/cyber-dojo-start-points/javascript-mocha-chai-sinon)
 - 5.725 [javascript-jest](https://github.com/cyber-dojo-start-points/javascript-jest)
 - 5.586 [javascript-qunit-sinon](https://github.com/cyber-dojo-start-points/javascript-qunit-sinon)
-- 5.374 [clojure-midje](https://github.com/cyber-dojo-start-points/clojure-midje)
 - 5.133 [gplusplus-googlemock](https://github.com/cyber-dojo-start-points/gplusplus-googlemock)
 
 Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Speed up a slow LTF') if you can help.
