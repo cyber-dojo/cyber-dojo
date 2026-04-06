@@ -37,7 +37,6 @@ Some great work from a contributor (thanks Martin) reduced this to ~2 seconds.
 The LTFs whose test durations are currently 5+ seconds are:
 - 6.118 [csharp-reqnroll](https://github.com/cyber-dojo-start-points/csharp-reqnroll)
 - 5.935 [typescript-jest](https://github.com/cyber-dojo-start-points/typescript-jest)
-- 5.786 [javascript-jasmine](https://github.com/cyber-dojo-start-points/javascript-jasmine)
 - 5.735 [javascript-mocha-chai-sinon](https://github.com/cyber-dojo-start-points/javascript-mocha-chai-sinon)
 - 5.586 [javascript-qunit-sinon](https://github.com/cyber-dojo-start-points/javascript-qunit-sinon)
 - 5.133 [gplusplus-googlemock](https://github.com/cyber-dojo-start-points/gplusplus-googlemock)
