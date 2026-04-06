@@ -35,7 +35,6 @@ which took ~8 seconds (a long time for one trivial test).
 Some great work from a contributor (thanks Martin) reduced this to ~2 seconds.
 
 The LTFs whose test durations are currently 5+ seconds are:
-- 6.216 [kotlin-test](https://github.com/cyber-dojo-start-points/kotlin-test)
 - 6.118 [csharp-reqnroll](https://github.com/cyber-dojo-start-points/csharp-reqnroll)
 - 5.935 [typescript-jest](https://github.com/cyber-dojo-start-points/typescript-jest)
 - 5.786 [javascript-jasmine](https://github.com/cyber-dojo-start-points/javascript-jasmine)
@@ -43,6 +42,7 @@ The LTFs whose test durations are currently 5+ seconds are:
 - 5.725 [javascript-jest](https://github.com/cyber-dojo-start-points/javascript-jest)
 - 5.586 [javascript-qunit-sinon](https://github.com/cyber-dojo-start-points/javascript-qunit-sinon)
 - 5.133 [gplusplus-googlemock](https://github.com/cyber-dojo-start-points/gplusplus-googlemock)
+- 4.487 [kotlin-test](https://github.com/cyber-dojo-start-points/kotlin-test)
 
 Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Speed up a slow LTF') if you can help.
 
