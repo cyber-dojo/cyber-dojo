@@ -25,7 +25,7 @@ Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Supporting 
 
 This is the most helpful way you can contribute to the LTFs.
 
-The obvious/canonical/documented commands for a given LTF can be _slow_ for two main reasons:
+The obvious/canonical/documented commands for a given LTF can be _slow_ for several reasons:
 - Each cyber-dojo [test] run executes in a docker container with _no_ internet access.
 - Each cyber-dojo [test] run is 100% stateless - it is executed in a _new_ docker container and cannot, for example, take advantage of caching from previous [test].
 - Default language installs tend to be tailored for large projects, not very small ones that don't need or want complicated extra bells and whistles.
@@ -45,7 +45,7 @@ Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Speed up a 
 ### Become the owner of one or more LTFs
 
 Take on responsibility for upgrading it periodically.
-For example, as new versions of the language or test-framework come out. 
+For example, as new versions of the language or test-framework are released. 
 This is typically very easy - it's just that there are a _lot_ of start-points.
 
 Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Becoming the owner of one or more LTFs') if you can help.
