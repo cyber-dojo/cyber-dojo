@@ -25,7 +25,7 @@
   * [port](#overriding-the-default-port)
   * [start-point images](#overriding-the-default-start-point-images)
   * [nginx image](#overriding-the-default-nginx-image)
-  * [rails web image](#overriding-the-default-rails-web-image)
+  * [web image](#overriding-the-default-web-image)
   * [dot env files](#overriding-the-default-dot-env-files)
 - Misc
   * [List of MicroServices](#micro-services)
@@ -141,7 +141,7 @@ environment variables. Eg
   ...
   ```
 
-# overriding the default rails web image
+# overriding the default web image
 * By default your cyber-dojo server will use
 [cyberdojo/web](https://hub.docker.com/r/cyberdojo/web/tags)
 as its web service image (tagged appropriately).
