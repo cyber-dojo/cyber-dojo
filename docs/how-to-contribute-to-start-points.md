@@ -6,7 +6,6 @@ Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Supporting 
 # Contributing to cyber-dojo's Language & Test-Framework (LTF) start-points
 
 * [Ways you can help](#ways-you-can-help)
-  * [Speed up a slow LTF](#speed-up-a-slow-ltf)
   * [Become the owner of one or more LTFs](#become-the-owner-of-one-or-more-ltfs)
   * [Other ways you can contribute to the LTFs](#other-ways-you-can-contribute-to-the-ltfs)
 * [What you need to know ](#what-you-need-to-know)
@@ -20,27 +19,6 @@ Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Supporting 
 ***
 
 ## Ways you can help
-
-### Speed up a slow LTF
-
-This is the most helpful way you can contribute to the LTFs.
-
-The obvious/canonical/documented commands for a given LTF can be _slow_ for several reasons:
-- Each cyber-dojo [test] run executes in a docker container with _no_ internet access.
-- Each cyber-dojo [test] run is 100% stateless - it is executed in a _new_ docker container and cannot, for example, take advantage of caching from previous [test].
-- Default language installs tend to be tailored for large projects, not very small ones that don't need or want complicated extra bells and whistles.
-
-For example, the initial start-point for `csharp-nunit` used `dotnet` commands
-which took ~8 seconds (a long time for one trivial test). 
-Some great work from a contributor (thanks Martin) reduced this to ~2 seconds.
-
-The LTFs whose test durations are currently 5+ seconds are:
-- 6.118 [csharp-reqnroll](https://github.com/cyber-dojo-start-points/csharp-reqnroll)
-- 5.935 [typescript-jest](https://github.com/cyber-dojo-start-points/typescript-jest)
-- 5.133 [gplusplus-googlemock](https://github.com/cyber-dojo-start-points/gplusplus-googlemock)
-- 4.487 [kotlin-test](https://github.com/cyber-dojo-start-points/kotlin-test)
-
-Please email [support@cyber-dojo.org](mailto:support@cyber-dojo.org 'Speed up a slow LTF') if you can help.
 
 ### Become the owner of one or more LTFs
 
