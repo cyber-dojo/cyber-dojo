@@ -15,7 +15,7 @@
 - Running a server
   * [on docker](#running-a-server-on-docker)
   * [on docker swarm](#running-a-server-on-docker-swarm)
-  * [on Kubernetes](#running-a-server-on-kubernetes) (no-longer-maintained)
+  * [on Kubernetes](#running-a-server-on-kubernetes)
 - Versioning
   * [listing the current version](#listing-the-current-version)
   * [listing installed versions](#listing-installed-versions)
