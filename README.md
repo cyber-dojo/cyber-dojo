@@ -14,7 +14,9 @@
 - - - -
 - Running a server
   * [on docker](#running-a-server-on-docker)
-  * [on docker swarm](#running-a-server-on-docker-swarm)
+    - [setting up the server](#setting-up-the-server)
+    - [running a plain docker server](#running-a-plain-docker-server)
+    - [running a docker swarm server](#running-a-docker-swarm-server)
   * [on Kubernetes](#running-a-server-on-kubernetes)
 - Versioning
   * [listing the current version](#listing-the-current-version)
@@ -36,8 +38,35 @@
  
 - - - -
 # running a server on docker
-Follow [these instructions](https://blog.cyber-dojo.org/2014/09/setting-up-your-own-cyber-dojo-server.html)
-to install the `cyber-dojo` bash script and to prepare your server.
+A server runs natively on amd64 and arm64 hosts.
+
+## setting up the server
+1. Install Docker: [Docker Engine](https://docs.docker.com/engine/install/) on Linux,
+   [Docker Desktop](https://docs.docker.com/desktop/) on a Mac.
+   On Linux, only root and members of the `docker` group can use the docker
+   daemon, so add yourself to that group, then log out and log in again:
+   ```bash
+   $ sudo usermod -aG docker $USER
+   ```
+2. Create the directories that saver and spooler keep their data in.
+   On Linux, each must be owned by its service's user, saver (uid 19663)
+   and spooler (uid 19664), both in group nogroup (gid 65533):
+   ```bash
+   $ sudo mkdir /cyber-dojo /cyber-dojo-spooler
+   $ sudo chown 19663:65533 /cyber-dojo
+   $ sudo chown 19664:65533 /cyber-dojo-spooler
+   ```
+   On a Mac:
+   ```bash
+   $ mkdir /Users/Shared/cyber-dojo /Users/Shared/cyber-dojo-spooler
+   ```
+3. Install the `cyber-dojo` script, and put it on your PATH:
+   ```bash
+   $ curl -O https://raw.githubusercontent.com/cyber-dojo/commander/main/cyber-dojo
+   $ chmod 700 cyber-dojo
+   ```
+
+## running a plain docker server
 ```bash
 $ cyber-dojo up
 ...
@@ -46,15 +75,20 @@ Version: 0.1.497
    Type: public
 ...
 ```
+Stop it with `cyber-dojo down`.
 
-# running a server on docker swarm
-This is exploratory only and may be dropped without notice.
-Follow [these instructions](https://blog.cyber-dojo.org/2014/09/setting-up-your-own-cyber-dojo-server.html)
-to install the `cyber-dojo` bash script and to prepare your server.
+## running a docker swarm server
+Make the host a swarm manager, then bring the server up as a stack:
 ```bash
+$ docker swarm init
 $ export CYBER_DOJO_SWARM=true
 $ cyber-dojo up
+...
+$ docker stack ps cyber-dojo
 ```
+saver and spooler run on the manager node, so the manager needs the
+directories from the setup above.
+Stop it with `cyber-dojo down`, with `CYBER_DOJO_SWARM` still exported.
 
 - - - -
 # running a server on Kubernetes
