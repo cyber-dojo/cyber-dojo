@@ -23,6 +23,7 @@
   * [setting the server to a specific version](#setting-the-server-to-a-specific-version)
 - Overriding the default...
   * [port](#overriding-the-default-port)
+  * [runner spares](#overriding-the-default-runner-spares)
   * [start-point images](#overriding-the-default-start-point-images)
   * [nginx image](#overriding-the-default-nginx-image)
   * [web image](#overriding-the-default-web-image)
@@ -41,7 +42,7 @@ to install the `cyber-dojo` bash script and to prepare your server.
 $ cyber-dojo up
 ...
 $ cyber-dojo version
-Version: 0.1.462
+Version: 0.1.497
    Type: public
 ...
 ```
@@ -62,14 +63,14 @@ Follow [these instructions](https://github.com/cyber-dojo/k8s-install)
 # listing the current version
 ```bash
 $ cyber-dojo version
-Version: 0.1.462
+Version: 0.1.497
    Type: public
 ```
 
 # listing installed versions
 ```bash
 $ cyber-dojo version ls
-0.1.462      2026-02-15 20:27:03 +0000 UTC
+0.1.497      2026-10-10 06:14:11 +0000 UTC
 ...
 0.1.21       2019-08-07 11:51:48 +0000 UTC
 ...
@@ -79,25 +80,25 @@ $ cyber-dojo version ls
 ```bash
 $ cyber-dojo update latest
 $ cyber-dojo version
+Version: 0.1.497
+   Type: public
+...
+# Now make it live...
+$ cyber-dojo up
+Using version=0.1.497 (public)
+...
+```
+
+# setting the server to a specific version
+```bash
+$ cyber-dojo update 0.1.462
+$ cyber-dojo version
 Version: 0.1.462
    Type: public
 ...
 # Now make it live...
 $ cyber-dojo up
 Using version=0.1.462 (public)
-...
-```
-
-# setting the server to a specific version
-```bash
-$ cyber-dojo update 0.1.555
-$ cyber-dojo version
-Version: 0.1.555
-   Type: public
-...
-# Now make it live...
-$ cyber-dojo up
-Using version=0.1.555 (public)
 ...
 ```
 
@@ -111,11 +112,23 @@ By default your cyber-dojo server will be on port 80.
   ...
   ```
 
+# overriding the default runner spares
+By default the runner holds no spares, and each test run waits for its container to start.
+* Have the runner hold pre-started containers, so test runs are faster,
+  using the command-line argument `--runner-spares`. Eg
+  ```bash
+  $ cyber-dojo up --runner-spares=8
+  ...
+  Using runner-spares=8
+  ...
+  ```
+* Each spare costs the host up to about 12MB of memory.
+
 # overriding the default start-point images
 * The `cyber-dojo up` command uses three default start-point images (tagged appropriately)
   - --custom=[cyberdojo/custom-start-points](https://hub.docker.com/r/cyberdojo/custom-start-points/tags)
   - --exercises=[cyberdojo/exercises-start-points](https://hub.docker.com/r/cyberdojo/exercises-start-points/tags)
-  - --languages=[cyberdojo/languages-start-points-common](https://hub.docker.com/r/cyberdojo/languages-start-points-common/tags)
+  - --languages=[cyberdojo/languages-start-points](https://hub.docker.com/r/cyberdojo/languages-start-points/tags)
 * You can create and use your own alternative start-point images in place of these defaults if you wish.
   - Read how to create them by running:
     ```
@@ -197,41 +210,65 @@ following `web.env` entry:
 
 - - - -
 # Micro Services
-Each repo in the github cyber-dojo organization builds a single docker image.  
+Each repo in the github cyber-dojo organization builds a single docker image,
+except web, which builds three (web, creator, and dashboard).  
 The main Amazon ECS backed https://cyber-dojo.org uses:
 
-- [custom-start-points](https://github.com/cyber-dojo/custom-start-points) [![Github Action](https://github.com/cyber-dojo/custom-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/custom-start-points/actions)  
-  serves the custom start-points.
-- [exercises-start-points](https://github.com/cyber-dojo/exercises-start-points) [![Github Action](https://github.com/cyber-dojo/exercises-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/exercises-start-points/actions)  
-  serves the exercises start-points.
-- [languages-start-points](https://github.com/cyber-dojo/languages-start-points) [![Github Action](https://github.com/cyber-dojo/languages-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/languages-start-points/actions)  
-  serves the languages start-points.
-- [differ](https://github.com/cyber-dojo/differ) [![Github Action](https://github.com/cyber-dojo/differ/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/differ/actions)  
-  diffs two sets of files.
-- [nginx](https://github.com/cyber-dojo/nginx) [![Github Action](https://github.com/cyber-dojo/nginx/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/nginx/actions)  
-  web-proxy, security, images (jpg) cache, and service routing.
-- [runner](https://github.com/cyber-dojo/runner) [![Github Action](https://github.com/cyber-dojo/runner/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/runner/actions)  
-  runs the tests and returns `[stdout,stderr,status,timed_out,colour]`.
-- [saver](https://github.com/cyber-dojo/saver) [![Github Action](https://github.com/cyber-dojo/saver/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/saver/actions)  
-  API to GET/POST group/kata data, e.g., for individual traffic-lights.
-- [creator](https://gitlab.com/cyber-dojo/creator) Gitlab  
-  UI to configure and create (or re-enter) a group-exercise or an individual-exercise. 
-- [dashboard](https://github.com/cyber-dojo/dashboard) [![Github Action](https://github.com/cyber-dojo/dashboard/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/dashboard/actions)  
-  UI for a group session dashboard of all traffic-lights.
-- [web](https://github.com/cyber-dojo/web) [![Github Action](https://github.com/cyber-dojo/web/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/web/actions)  
-  main UX for coding, testing, and reviewing.
+| Service | CI | Role |
+|---------|----|------|
+| [custom-start-points](https://github.com/cyber-dojo/custom-start-points) | [![Github Action](https://github.com/cyber-dojo/custom-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/custom-start-points/actions) | serves the custom start-points |
+| [exercises-start-points](https://github.com/cyber-dojo/exercises-start-points) | [![Github Action](https://github.com/cyber-dojo/exercises-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/exercises-start-points/actions) | serves the exercises start-points |
+| [languages-start-points](https://github.com/cyber-dojo/languages-start-points) | [![Github Action](https://github.com/cyber-dojo/languages-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/languages-start-points/actions) | serves the languages start-points |
+| [differ](https://github.com/cyber-dojo/differ) | [![Github Action](https://github.com/cyber-dojo/differ/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/differ/actions) | diffs two sets of files |
+| [nginx](https://github.com/cyber-dojo/nginx) | [![Github Action](https://github.com/cyber-dojo/nginx/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/nginx/actions) | web-proxy, security, rate-limiting, images cache, and service routing |
+| [runner](https://github.com/cyber-dojo/runner) | [![Github Action](https://github.com/cyber-dojo/runner/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/runner/actions) | runs the tests and returns `[stdout,stderr,status,timed_out,colour]` |
+| [saver](https://github.com/cyber-dojo/saver) | [![Github Action](https://github.com/cyber-dojo/saver/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/saver/actions) | API to GET/POST group/kata data, e.g., for individual traffic-lights |
+| [spooler](https://github.com/cyber-dojo/spooler) | [![Github Action](https://github.com/cyber-dojo/spooler/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/spooler/actions) | buffers web's writes and forwards them, in order, to saver |
+| [web](https://github.com/cyber-dojo/web/tree/main/app-web) | [![Github Action](https://github.com/cyber-dojo/web/actions/workflows/main-web.yml/badge.svg)](https://github.com/cyber-dojo/web/actions/workflows/main-web.yml) | main UX for coding, testing, and reviewing |
+| [creator](https://github.com/cyber-dojo/web/tree/main/app-creator) | [![Github Action](https://github.com/cyber-dojo/web/actions/workflows/main-creator.yml/badge.svg)](https://github.com/cyber-dojo/web/actions/workflows/main-creator.yml) | UI to configure and create (or re-enter) a group-exercise or an individual-exercise |
+| [dashboard](https://github.com/cyber-dojo/web/tree/main/app-dashboard) | [![Github Action](https://github.com/cyber-dojo/web/actions/workflows/main-dashboard.yml/badge.svg)](https://github.com/cyber-dojo/web/actions/workflows/main-dashboard.yml) | UI for a group session dashboard of all traffic-lights |
 
 Locally running servers also use:
 
-- [commander](https://github.com/cyber-dojo/commander) [![Github Action](https://github.com/cyber-dojo/commander/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/commander/actions)  
-  receives commands from the [cyber-dojo](https://github.com/cyber-dojo/commander/blob/master/cyber-dojo) shell script
-- [versioner](https://github.com/cyber-dojo/versioner) [![Github Action](https://github.com/cyber-dojo/versioner/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/versioner/actions)  
-  holds consistent sets of image tags for all cyber-dojo services
+| Service | CI | Role |
+|---------|----|------|
+| [commander](https://github.com/cyber-dojo/commander) | [![Github Action](https://github.com/cyber-dojo/commander/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/commander/actions) | receives commands from the [cyber-dojo](https://github.com/cyber-dojo/commander/blob/main/cyber-dojo) shell script |
+| [versioner](https://github.com/cyber-dojo/versioner) | [![Github Action](https://github.com/cyber-dojo/versioner/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/versioner/actions) | holds consistent sets of image tags for all cyber-dojo services |
 
 - - - -
 # Image Dependencies
 
-![Image Dependency Graph](dev/image_dependency_graph.png?raw=true "image dependency graph")
+```mermaid
+flowchart LR
+  subgraph local [" "]
+    script([cyber-dojo script]) --> commander["commander<br/>&laquo;docker&raquo;<br/>&laquo;docker-compose&raquo;"]
+    commander --> versioner
+  end
+  style local fill:none,stroke:none
+  browser([browser]) --> nginx
+  subgraph ui [" "]
+    web["web<br/>&laquo;ui&raquo;"]
+    creator["creator<br/>&laquo;ui&raquo;"]
+    dashboard["dashboard<br/>&laquo;ui&raquo;"]
+  end
+  style ui fill:none,stroke:none
+  nginx --> web
+  nginx --> creator
+  nginx --> dashboard
+  nginx --> differ
+  web --> runner["runner<br/>&laquo;docker&raquo;"]
+  web -- writes --> spooler
+  spooler -- writes --> saver
+  web -- reads --> saver
+  creator -- reads --> custom-start-points
+  creator -- reads --> exercises-start-points
+  creator -- reads --> languages-start-points
+  creator --> runner
+  creator -- writes --> saver
+  dashboard -- reads --> saver
+  differ -- reads --> saver
+  runner --> ltf[[language test-framework containers]]
+```
 
 - - - -
 # Domain Model
