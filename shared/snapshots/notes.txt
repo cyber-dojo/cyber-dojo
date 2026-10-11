@@ -1,20 +1,125 @@
-group-id=dMc6L6
-fox-id=g1B8AT
-Cmd-Shift-4 to take snapshot.
-Remember to keep thin top white bar.
-Resize in Gimp:
-  Image|Scale Image...|
-     width=2100px
-     [scale] button
+How to regenerate the README screenshots
+=======================================
 
-View home page at 80%
-View review page at 90%
+Outputs (all 2100px wide, each with an 8px near-white bar on top):
+  shared/snapshots/cyber-dojo-1-home.png
+  shared/snapshots/cyber-dojo-2-edit.png
+  shared/snapshots/cyber-dojo-3-dashboard.png
+  shared/snapshots/cyber-dojo-4-review.png
+  shared/home_page_snapshot.png   (the four stacked; bad name but
+                                   lots of README.md files link to it)
 
-Cat the png files together
-to form shared/home_page_snapshot.png
-(bad name but lots of readme.md files link to it)
-at https://www.aconvert.com/image/merge/
+The shots are taken from a LOCAL stack (web repo's `make demo`), not
+from https://cyber-dojo.org, so they show the latest UI (eg syntax
+colouring). They are captured by a headless Chrome driven over the
+DevTools protocol by the node scripts in scripts/, at 2x (Retina)
+resolution. No manual Cmd-Shift-4 or Gimp is needed.
+
+Needs: docker, node 22+ (built-in WebSocket), ImageMagick (`magick`),
+Google Chrome in /Applications.
 
 
-For cyber-dojo-X-review.png prefer review page
-from dashboard page (it only has one avatar on it).
+1. Bring up the local stack with the kata rate limits raised
+------------------------------------------------------------
+nginx limits [test] and file edits to 6r/m. web's
+docker-compose-nginx.yml passes these two env vars through to nginx
+so they can be raised. In a terminal:
+
+  cd ~/repos/cyber-dojo/web
+  export CYBER_DOJO_RUN_TESTS_RATE=600r/m
+  export CYBER_DOJO_KATA_FILE_EDIT_RATE=600r/m
+  make demo
+
+Joining a group (/creator/enter) stays at 1r/m; populate.mjs waits
+and retries on a 429.
+
+
+2. Create a Print Diamond cluster of three groups
+-------------------------------------------------
+The dashboard shot shows a cluster's tabs. Only the C++ group gets
+any traffic-lights; the other two tabs stay empty.
+
+  curl -s -X POST -H 'Content-Type: application/json' \
+    -d '{"type":"cluster","exercise_name":"Print Diamond",
+         "language_names":["C++ (g++), GoogleTest",
+                           "Python, pytest","JavaScript, Jasmine"]}' \
+    http://localhost/creator/create.json
+
+  curl -s 'http://localhost/creator/cluster_children?id=CLUSTER_ID'
+
+Note the C++ group's id (GROUP_ID below).
+
+
+3. Start headless Chrome
+------------------------
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+    --headless=new --remote-debugging-port=9222 \
+    --user-data-dir=/tmp/snapshot-chrome --no-first-run \
+    --hide-scrollbars about:blank &
+
+
+4. Fill the C++ group with avatars and traffic-lights
+-----------------------------------------------------
+  cd ~/repos/cyber-dojo/cyber-dojo/shared/snapshots/scripts
+
+Each pattern arg joins one new avatar and runs one [test] per letter:
+G green, R red, A amber, E green that adds a whole TEST(Diamond, E).
+The first run writes a diamond implementation into the C++ start
+point's files (named hiker.cpp/hiker.hpp/hiker.tests.cpp).
+End ONE avatar's pattern with E; that avatar is used for the edit and
+review shots (its last light's diff is the new test). Eg:
+
+  node populate.mjs GROUP_ID RRGRGGRRGRAGGRGGRGGE \
+    RRGRGGARGRGGRGGRAGG GRRGRGGRRAGGRGRGGRGGRRRGGAGGRG \
+    RGAAGRGGRGRG RGGRRRGRGGRARRGGGRGRRGGRG RGRGGRRGGRGG \
+    GRGGRGRGRGGRGGAGRGGRGRRGGRG AAGRGRRGRAGGRGRAGRGG \
+    RGRRGGRGRGRRGGGRRGRRGGRGAGRGGRGGRAAGRGG \
+    RAAAGRGGRRRGGRGRGGAGRGGRGRRGGRGRGAAAG
+
+It prints each new kata id with its red/amber/green counts. Takes
+10-15 minutes, mostly waiting on the 1r/m join limit.
+Do not open a kata's edit page in a browser while it is running.
+
+
+5. Spread the lights over an hour
+---------------------------------
+All the runs happen within minutes, which squashes the dashboard's
+minute columns. spread_times.rb rewrites the times inside the saver
+container (its rootfs is read-only, so copy the script via stdin):
+
+  docker exec -i demo-saver-1 cp /dev/stdin /tmp/spread.rb \
+    < spread_times.rb
+  docker exec demo-saver-1 ruby /tmp/spread.rb GROUP_ID KATA_ID ...
+
+Pass every kata id populate.mjs printed. List them again with:
+  curl -s 'http://localhost/creator/group_joined?id=GROUP_ID'
+
+
+6. Capture the four pages
+-------------------------
+  mkdir -p /tmp/shots
+  node shot_home.mjs /tmp/shots/home.png
+  node shots.mjs edit      E_KATA_ID /tmp/shots/edit.png
+  node shots.mjs review    E_KATA_ID /tmp/shots/review.png
+  node shots.mjs dashboard GROUP_ID  /tmp/shots/dashboard.png
+
+E_KATA_ID is the avatar whose pattern ended in E.
+- home:      80% zoom; the red "beta" banner the local stack shows is
+             removed (production never shows it).
+- edit:      100% zoom, predict ticked, hiker.cpp selected so the
+             syntax colouring shows.
+- review:    90% zoom, the last light (the added E test as a diff).
+- dashboard: 100% zoom, auto refresh off, scrolled back to the start.
+
+Open the PNGs and check them before merging.
+
+
+7. Crop, resize and merge
+-------------------------
+  ./merge.sh /tmp/shots ~/repos/cyber-dojo/cyber-dojo
+
+The crop geometries in merge.sh suit the captures above; if a page's
+layout changes, adjust them by eye (eg the dashboard crop should cut
+between two light columns).
+
+Finally stop the headless Chrome (kill %1, or its pid).
