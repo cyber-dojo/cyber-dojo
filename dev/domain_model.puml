@@ -1,0 +1,30 @@
+@startuml
+class Cluster {
+  id : String {id}
+}
+class Group {
+  id : String {id}
+}
+class Kata {
+  id : String {id}
+  run_tests()
+}
+class Manifest {
+  display_name
+  image_name
+}
+class Event {
+  light?
+}
+class Files
+class String
+class Avatar
+
+Cluster "0..1" -right- "2..5" Group
+Group "0..1" -- "0..64" Kata
+(Group, Kata) .. Avatar
+Kata [n] -right- "1" Event
+Kata --> "1" Manifest
+Event -right-> "1" Files
+Files [path] --> "1" String : content
+@enduml
