@@ -250,16 +250,16 @@ The main Amazon ECS backed https://cyber-dojo.org uses:
 
 | Service | CI | Role |
 |---------|----|------|
-| [custom-start-points](https://github.com/cyber-dojo/custom-start-points) | [![Github Action](https://github.com/cyber-dojo/custom-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/custom-start-points/actions) | serves the custom start-points |
-| [exercises-start-points](https://github.com/cyber-dojo/exercises-start-points) | [![Github Action](https://github.com/cyber-dojo/exercises-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/exercises-start-points/actions) | serves the exercises start-points |
-| [languages-start-points](https://github.com/cyber-dojo/languages-start-points) | [![Github Action](https://github.com/cyber-dojo/languages-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/languages-start-points/actions) | serves the languages start-points |
+| [custom&#8209;start&#8209;points](https://github.com/cyber-dojo/custom-start-points) | [![Github Action](https://github.com/cyber-dojo/custom-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/custom-start-points/actions) | serves the custom start-points |
+| [exercises&#8209;start&#8209;points](https://github.com/cyber-dojo/exercises-start-points) | [![Github Action](https://github.com/cyber-dojo/exercises-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/exercises-start-points/actions) | serves the exercises start-points |
+| [languages&#8209;start&#8209;points](https://github.com/cyber-dojo/languages-start-points) | [![Github Action](https://github.com/cyber-dojo/languages-start-points/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/languages-start-points/actions) | serves the languages start-points |
 | [differ](https://github.com/cyber-dojo/differ) | [![Github Action](https://github.com/cyber-dojo/differ/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/differ/actions) | diffs two sets of files |
 | [nginx](https://github.com/cyber-dojo/nginx) | [![Github Action](https://github.com/cyber-dojo/nginx/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/nginx/actions) | web-proxy, security, rate-limiting, images cache, and service routing |
 | [runner](https://github.com/cyber-dojo/runner) | [![Github Action](https://github.com/cyber-dojo/runner/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/runner/actions) | runs the tests and returns `[stdout,stderr,status,timed_out,colour]` |
 | [saver](https://github.com/cyber-dojo/saver) | [![Github Action](https://github.com/cyber-dojo/saver/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/saver/actions) | API to GET/POST group/kata data, e.g., for individual traffic-lights |
 | [spooler](https://github.com/cyber-dojo/spooler) | [![Github Action](https://github.com/cyber-dojo/spooler/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo/spooler/actions) | buffers web's writes and forwards them, in order, to saver |
 | [web](https://github.com/cyber-dojo/web/tree/main/app-web) | [![Github Action](https://github.com/cyber-dojo/web/actions/workflows/main-web.yml/badge.svg)](https://github.com/cyber-dojo/web/actions/workflows/main-web.yml) | main UI for coding, testing, and reviewing |
-| [creator](https://github.com/cyber-dojo/web/tree/main/app-creator) | [![Github Action](https://github.com/cyber-dojo/web/actions/workflows/main-creator.yml/badge.svg)](https://github.com/cyber-dojo/web/actions/workflows/main-creator.yml) | UI to configure and create (or re-enter) a group-exercise or an individual-exercise |
+| [creator](https://github.com/cyber-dojo/web/tree/main/app-creator) | [![Github Action](https://github.com/cyber-dojo/web/actions/workflows/main-creator.yml/badge.svg)](https://github.com/cyber-dojo/web/actions/workflows/main-creator.yml) | UI to configure and create (or re-enter) a group-practice or an individual-practice |
 | [dashboard](https://github.com/cyber-dojo/web/tree/main/app-dashboard) | [![Github Action](https://github.com/cyber-dojo/web/actions/workflows/main-dashboard.yml/badge.svg)](https://github.com/cyber-dojo/web/actions/workflows/main-dashboard.yml) | UI for a group session dashboard of all traffic-lights |
 
 Locally running servers also use:
@@ -312,4 +312,4 @@ flowchart LR
 - - - -
 # Screenshots
 
-![cyber-dojo.org home page](https://github.com/cyber-dojo/cyber-dojo/blob/master/shared/home_page_snapshot.png)
+![cyber-dojo.org home page](shared/home_page_snapshot.png)
