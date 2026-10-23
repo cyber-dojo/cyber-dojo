@@ -3,10 +3,11 @@ How to regenerate the README screenshots
 
 Outputs (all 2100px wide, each with an 8px near-white bar on top):
   shared/snapshots/cyber-dojo-1-home.png
-  shared/snapshots/cyber-dojo-2-edit.png
-  shared/snapshots/cyber-dojo-3-dashboard.png
-  shared/snapshots/cyber-dojo-4-review.png
-  shared/home_page_snapshot.png   (the four stacked; bad name but
+  shared/snapshots/cyber-dojo-2-creator.png
+  shared/snapshots/cyber-dojo-3-edit.png
+  shared/snapshots/cyber-dojo-4-dashboard.png
+  shared/snapshots/cyber-dojo-5-review.png
+  shared/home_page_snapshot.png   (the five stacked; bad name but
                                    lots of README.md files link to it)
 
 The shots are taken from a LOCAL stack (web repo's `make demo`), not
@@ -95,10 +96,11 @@ Pass every kata id populate.mjs printed. List them again with:
   curl -s 'http://localhost/creator/group_joined?id=GROUP_ID'
 
 
-6. Capture the four pages
+6. Capture the five pages
 -------------------------
   mkdir -p /tmp/shots
   node shot_home.mjs /tmp/shots/home.png
+  node shots.mjs creator   -         /tmp/shots/creator.png
   node shots.mjs edit      E_KATA_ID /tmp/shots/edit.png
   node shots.mjs review    E_KATA_ID /tmp/shots/review.png
   node shots.mjs dashboard GROUP_ID  /tmp/shots/dashboard.png
@@ -106,7 +108,9 @@ Pass every kata id populate.mjs printed. List them again with:
 E_KATA_ID is the avatar whose pattern ended in E.
 - home:      80% zoom; the red "beta" banner the local stack shows is
              removed (production never shows it).
-- edit:      100% zoom, predict ticked, hiker.cpp selected so the
+- creator:   80% zoom, the group setup page with the dashboard's
+             cluster chosen (Print Diamond; C++, Python, JavaScript).
+- edit:     100% zoom, predict ticked, hiker.cpp selected so the
              syntax colouring shows.
 - review:    90% zoom, the last light (the added E test as a diff).
 - dashboard: 100% zoom, auto refresh off, scrolled back to the start.
@@ -117,6 +121,10 @@ Open the PNGs and check them before merging.
 7. Crop, resize and merge
 -------------------------
   ./merge.sh /tmp/shots ~/repos/cyber-dojo/cyber-dojo
+
+A capture missing from /tmp/shots keeps its existing finished PNG,
+so one page can be retaken and restacked on its own (the creator
+shot needs no cluster, only the stack and Chrome).
 
 The crop geometries in merge.sh suit the captures above; if a page's
 layout changes, adjust them by eye (eg the dashboard crop should cut
