@@ -15,7 +15,13 @@ if (which === 'creator') {
   page = await open('http://localhost/creator/setup?type=group', 0.8);
   await page.sleep(1500);
   // Choose the dashboard shot's cluster; the exercise goes last so the preview shows its instructions.
-  const click = (list, name) => page.eval(`$('.${list} .display-name').filter((_, e) => $(e).text().trim() === '${name}').click()`);
+  // Centre the row in its list first, as a user scrolls to it, so the choice stays in view.
+  const click = (list, name) => page.eval(`(() => {
+    const $list = $('.${list}');
+    const $row = $list.find('.display-name').filter((_, e) => $(e).text().trim() === '${name}');
+    $list.scrollTop($row[0].offsetTop - ($list[0].clientHeight - $row[0].offsetHeight) / 2);
+    $row.click();
+  })()`);
   for (const [language, framework] of [['C++ (g++)', 'GoogleTest'], ['Python', 'pytest'], ['JavaScript', 'Jasmine']]) {
     await click('languages', language);
     await page.sleep(300);
